@@ -27,11 +27,11 @@
 					setcookie("Token", "", time() - 1);
 				}
 			} else {
-				$formulaireLogin = new App\Formulaire("post", "formulaire_user_log column");
+				$formulaireLogin = new App\Formulaire("post", "formulaire_user_log column","login_form");
 				$csrf->generateInput("csrf", $formulaireLogin);
 				$formulaireLogin->inputText("Email", "Email", "text", "", "", "Email", "Email");
 				$formulaireLogin->inputText("Password", "Password", "Password", "", "", "Password", "Password");
-				$formulaireLogin->submit("Valider", "Valider", "bottum_validation_log margin-auto");
+				$formulaireLogin->inputText("", "", "button", "bottum_validation_log margin-auto bottum_validation_inscription", "Valider", "", "", "requestLogin(readDataLogin)");
 				$formulaireLogin->inputText("Remember", "Remember", "checkbox", "remember_checkbox", "true", "", "Remember me");
 				$login = $formulaireLogin->render();
 				
@@ -48,17 +48,17 @@
 			"Particulier",
 		];
 		
-		$formulaireInscription = new App\Formulaire("post", "formulaire_user_log column");
+		$formulaireInscription = new App\Formulaire("post", "formulaire_user_log column","register_form");
 		$csrf->generateInput("csrf", $formulaireInscription);
 		$formulaireInscription->select("Statut", $valueArray, "Vous êtes ?", "", "");
-		$formulaireInscription->inputText("Mail", "email", "field_inscription", "", "", "Email", "Email");
-		$formulaireInscription->inputText("Prenom", "text", "field_inscription", "", "", "Prenom", "Prenom");
-		$formulaireInscription->inputText("Nom", "text", "field_inscription", "", "", "Nom", "Nom");
-		$formulaireInscription->inputText("Age", "text", "field_inscription", "", "", "Age", "Age");
-		$formulaireInscription->inputText("Telephone", "text", "field_inscription", "", "", "Telephone", "Téléphone");
-		$formulaireInscription->inputText("Adresse", "text", "field_inscription", "", "", "Adresse", "Adresse");
-		$formulaireInscription->inputText("Password", "Password", "field_inscription", "", "", "Password", "Password");
-		$formulaireInscription->submit("Inscription", "Inscription", "bottum_validation_log margin-auto bottum_validation_inscription");
+		$formulaireInscription->inputText("Email","EMail", "email", "field_inscription", "", "Email", "Email", "Email");
+		$formulaireInscription->inputText("Prenom","Prenom", "text", "field_inscription", "", "Prenom", "Prenom", "Prenom");
+		$formulaireInscription->inputText("Nom","Nom", "text", "field_inscription", "", "Nom", "Nom", "Nom");
+		$formulaireInscription->inputText("Age","Age", "text", "field_inscription", "", "Age", "Age", "Age");
+		$formulaireInscription->inputText("Telephone","Telephone", "text", "field_inscription", "", "Telephone", "Telephone", "Téléphone");
+		$formulaireInscription->inputText("Adresse","Adresse", "text", "field_inscription", "", "Adresse", "Adresse", "Adresse");
+		$formulaireInscription->inputText("Password","Password", "Password", "field_inscription", "", "Password", "Password", "Password");
+		$formulaireInscription->inputText("", "", "button", "bottum_validation_log margin-auto bottum_validation_inscription", "Valider", "", "", "requestRegister(readDataRegister)");
 		$inscription = $formulaireInscription->render();
 		
 		echo $inscription;

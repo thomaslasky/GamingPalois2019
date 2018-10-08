@@ -3,6 +3,10 @@
 	session_start();
 	require_once 'vendor/autoload.php';
 	include 'Functions/Functions.php';
+	
+	if (isset($_SESSION["id"])) {
+		header("location: Accueil.php");
+	}
 
 ?>
 

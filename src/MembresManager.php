@@ -10,6 +10,9 @@
 		}
 		
 		public function inscription(Membres &$membres) {
+			
+			$csrf = new Csrf();
+			
 			$sql = "INSERT INTO " . $this->table . "(Email,Password,Nom,Prenom,Age,Telephone,Adresse,Statut) VALUES (:mail,:password,:nom,:prenom,:age,:telephone,:adresse,:statut)";
 			$req = $this->db->prepare($sql);
 			
@@ -23,6 +26,11 @@
 			$req->bindValue('statut', $membres->getStatut(), \PDO::PARAM_STR);
 			
 			$req->execute();
+			
+			echo json_encode([
+				"text"  => "Compte Créé",
+				"token" => $csrf->generateToken(),
+			]);
 		}
 		
 		public function readMembre($id) {
@@ -38,11 +46,14 @@
 		public function updateInformations($type, $information, $id) {
 			$sql = "UPDATE $this->table SET $type = :information WHERE IDmembre = $id";
 			$req = $this->db->prepare($sql);
-			$req->bindValue('information',$information,\PDO::PARAM_STR);
+			$req->bindValue('information', $information, \PDO::PARAM_STR);
 			$req->execute();
-	    }
+		}
 		
 		public function connexion(Membres &$membre) {
+			
+			$csrf = new Csrf();
+			
 			$sql = "SELECT * FROM {$this->table} WHERE Email = :email";
 			
 			$results = $this->db->prepare($sql);
@@ -53,7 +64,7 @@
 			
 			$info = $results->fetch();
 			
-			if (checkPassword($membre->getPassword(), $info['Password']) === true) {
+			if (checkPassword($membre->getPassword(), $info['Password']) === TRUE) {
 				
 				$_SESSION['id'] = $info['IDmembre'];
 				
@@ -62,13 +73,36 @@
 					$this->addToken($token, $membre->getEmail());
 					setcookie("Token", $token, time() + 3600 * 24 * 30);
 				}
-				header("location: Accueil.php");
-				exit;
+				
+				echo json_encode(["text" => "Connexion réussie"]);
+				
 			} else {
-				echo '<script>alert("Pseudo or Password incorrect")</script>';
+				echo json_encode([
+					"text"  => "Pseudo ou Password incorrect",
+					"token" => $csrf->generateToken(),
+				]);
 			}
 		}
-	 
+		
+		public function verifyMail($mail) {
+			
+			$sql = "SELECT Email FROM {$this->table} WHERE Email = :mail";
+			
+			$resultats = $this->db->prepare($sql);
+			
+			$resultats->bindValue("mail", $mail, \PDO::PARAM_STR);
+			
+			$resultats->execute();
+			
+			$info = $resultats->fetch();
+			
+			if (empty($info)) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		
 		public function verifyToken($token) {
 			$sql = "SELECT * FROM {$this->table} WHERE Token = :token";
 			
@@ -82,11 +116,11 @@
 			
 			if (sizeof($info) === 1) {
 				$_SESSION['id'] = $info[0]["IDmembre"];
-				return true;
+				return TRUE;
 			}
-			return false;
+			return FALSE;
 		}
-	 
+		
 		private function addToken($token, $pseudo) {
 			$sql = "UPDATE {$this->table} SET Token = :token WHERE Email = :email";
 			$req = $this->db->prepare($sql);
@@ -96,5 +130,5 @@
 			
 			$req->execute();
 		}
-	 
+		
 	}

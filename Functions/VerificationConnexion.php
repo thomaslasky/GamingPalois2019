@@ -1,7 +1,8 @@
 <?php
-	/**
-	 * Created by PhpStorm.
-	 * User: thoma
-	 * Date: 08/10/2018
-	 * Time: 23:21
-	 */
+	
+	$membreManager = new App\MembresManager();
+	$arrReplace = [];
+	
+	if (isset($_SESSION['id'])) {
+		$membre = $membreManager->readMembre($_SESSION['id']);
+	}
