@@ -1,0 +1,116 @@
+/*GENERAL*/
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.go-line {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.width-50 {
+    width: 50%;
+}
+
+.float_right {
+    float: right !important;
+}
+
+.un-surlign {
+    user-select: none !important;
+    -moz-user-select: none;
+}
+
+/*END GENERAL*/
+
+/*CURSOR*/
+
+.cursor-pointer {
+    cursor: pointer !important;
+}
+
+/*END CURSON*/
+
+/*MARGIN*/
+
+.no-margin-bottom {
+    margin-bottom: 0px !important;
+}
+
+.margin-auto {
+    margin: auto !important;
+    float: none !important;
+}
+
+.h1-connect-margin {
+    margin: 0.67em 0em !important;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+/*END MARGIN*/
+
+/*TEXTE*/
+
+/*END TEXTE*/
+
+/*DISPLAY*/
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.space-around {
+    display: flex;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 992px) {
+    .space-between {
+        display: block;
+    }
+}
+
+.position-fixed {
+    position: fixed;
+}
+
+/*END DISPLAY*/
+
+/*MODAL*/
+
+/* The Modal (background) */
+.modal_css, .modal_css_event {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 2%; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    border: 1px solid #888;
+    width: 50%;
+    height: 95%;
+    overflow: scroll;
+}
+
+/*END MODAL*/
