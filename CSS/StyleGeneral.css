@@ -1,0 +1,258 @@
+/*GENERAL*/
+
+select {
+    display: block !important;
+}
+
+body {
+    background-color: #ecf0f5;
+}
+
+label {
+    color: black !important;
+}
+
+.float_right {
+    float: right !important;
+}
+
+/*LOGIN*/
+
+.container_login {
+    margin: auto;
+    float: none !important;
+}
+
+.container_login img {
+    height: 100%;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.logo_team {
+    width: 80%;
+    margin: auto;
+}
+
+.remember_checkbox {
+    opacity: 100 !important;
+    pointer-events: auto !important;
+}
+
+/*ACCUEIL*/
+
+.picture_team {
+    max-height: 870px;
+    margin-top: 15px;
+}
+
+.container_picture_team {
+    width: 82%;
+}
+
+/*NAVIGATEUR*/
+
+.sidenav_menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.2s;
+    padding-top: 60px;
+}
+
+.sidenav_menu .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.sidenav_menu a {
+    padding: 8px 8px 8px 8px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.color_a a {
+    color: #3a3a3a;
+    font-weight: 600;
+}
+
+.destock_menu {
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.2s;
+    padding-top: 60px;
+}
+
+.logo_menu {
+    margin-top: 15px;
+}
+
+.logo_menu_mobile {
+    margin: auto !important;
+    height: 150px !important;
+}
+
+.font_size {
+    font-size: 1.3em !important;
+}
+
+.buttom_nav {
+    margin: 10px 0px;
+    cursor: pointer;
+}
+
+/*ADD EVENT*/
+
+.form_add {
+    margin: 15px auto !important;
+    float: none !important;
+}
+
+/*SHOW EVENT*/
+
+.container_all_results {
+    width: 100%;
+}
+
+.collapsible-header {
+    cursor: auto !important;
+    padding: 0 !important;
+}
+
+.icon_actions {
+    height: 50px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.container_actions_event, .container_name_event {
+    padding: 1rem;
+}
+
+.container_name_event {
+    display: flex;
+    width: 75%;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.container_name_event img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.container_name_event p {
+    font-size: 25px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.container_information_add {
+    display: flex;
+}
+
+.container_players_p {
+    margin: 0;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.collapsible-body th, .container_players_p {
+    font-size: 1.7em;
+}
+
+.collapsible-body th, .collapsible-body td {
+    text-align: center;
+}
+
+.width_orga, .width_date {
+    width: 45%
+}
+
+.width_top {
+    width: 10%;
+}
+
+.font_size_top {
+    font-size: 2em;
+}
+
+.container_game_number {
+    display: flex;
+    margin-top: 10px;
+}
+
+.container_game_number p {
+    display: block;
+}
+
+.game_number {
+    width: 100%;
+    text-align: center;
+}
+
+.container-bottom-add-result {
+    position: fixed;
+    display: table;
+    right: 24px;
+    bottom: 24px;
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.bottom-add-result-icon {
+    display: block !important;
+}
+
+.bottom-add-result {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.bottom-add-result img {
+    height: 70px;
+    margin: 0;
+}
+
+/*SHOW GAME*/
+
+.container_table_player {
+    display: flex;
+    margin: 10px;
+}
+
+.container_table_player tr, .container_table_player td, .cadre_table_player {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+/*NEW VERSION*/
+
+.content_informations_version {
+    margin-left: 50px;
+}
+
+.title_version {
+    margin-left: 10px;
+}
