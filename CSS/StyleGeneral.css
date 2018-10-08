@@ -1,0 +1,11 @@
+select {
+	display: block !important;
+}
+
+body {
+	background-color: #ecf0f5;
+}
+
+label {
+	color: black !important;
+}

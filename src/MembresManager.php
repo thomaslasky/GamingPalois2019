@@ -41,4 +41,60 @@
 			$req->bindValue('information',$information,\PDO::PARAM_STR);
 			$req->execute();
 	    }
+		
+		public function connexion(Membres &$membre) {
+			$sql = "SELECT * FROM {$this->table} WHERE Email = :email";
+			
+			$results = $this->db->prepare($sql);
+			
+			$results->bindValue("email", $membre->getEmail(), \PDO::PARAM_STR);
+			
+			$results->execute();
+			
+			$info = $results->fetch();
+			
+			if (checkPassword($membre->getPassword(), $info['Password']) === true) {
+				
+				$_SESSION['id'] = $info['IDmembre'];
+				
+				if (array_key_exists("Remember", $_POST)) {
+					$token = bin2hex(random_bytes(25));
+					$this->addToken($token, $membre->getEmail());
+					setcookie("Token", $token, time() + 3600 * 24 * 30);
+				}
+				header("location: Accueil.php");
+				exit;
+			} else {
+				echo '<script>alert("Pseudo or Password incorrect")</script>';
+			}
+		}
+	 
+		public function verifyToken($token) {
+			$sql = "SELECT * FROM {$this->table} WHERE Token = :token";
+			
+			$results = $this->db->prepare($sql);
+			
+			$results->bindValue('token', $token, \PDO::PARAM_STR);
+			
+			$results->execute();
+			
+			$info = $results->fetchAll(2);
+			
+			if (sizeof($info) === 1) {
+				$_SESSION['id'] = $info[0]["IDmembre"];
+				return true;
+			}
+			return false;
+		}
+	 
+		private function addToken($token, $pseudo) {
+			$sql = "UPDATE {$this->table} SET Token = :token WHERE Email = :email";
+			$req = $this->db->prepare($sql);
+			
+			$req->bindValue('token', $token, \PDO::PARAM_STR);
+			$req->bindValue('email', $pseudo, \PDO::PARAM_STR);
+			
+			$req->execute();
+		}
+	 
 	}

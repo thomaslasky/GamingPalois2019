@@ -20,19 +20,6 @@ function collapsible(name, id) {
     })
 }
 
-function colorTop(id) {
-    let $topResult = document.getElementById('topBR-' + id);
-    let topResult = $topResult.innerHTML;
-
-    if (topResult <= 5) {
-        $topResult.style.color = "green";
-    } else if (topResult > 5 && topResult <= 10) {
-        $topResult.style.color = "orange";
-    } else if (topResult > 10) {
-        $topResult.style.color = "red";
-    }
-}
-
 function modal(name) {
     // Get the modal
     let modal = document.getElementById('myModal-' + name);
@@ -65,17 +52,16 @@ function closeModal(name) {
     }
 }
 
-function selectedGame(idEvent, idGame) {
-    let background = document.getElementById("game-" + idEvent + "-" + idGame);
+function selectedCategorie(categorie, id) {
+    let background = document.getElementById("categorie-" + categorie + "-" + id);
 
     background.style.backgroundColor = "grey";
     background.style.border = "1px solid black";
-    background.style.borderBottom = "none";
 
-    let otherBody = document.querySelectorAll(".game_number");
+    let otherBody = document.querySelectorAll(".categorie");
 
     otherBody.forEach(function (background) {
-        if (background.id !== "game-" + idEvent + "-" + idGame) {
+        if (background.id !== "categorie-" + categorie + "-" + id) {
             background.style.backgroundColor = "";
             background.style.border = "";
         }
