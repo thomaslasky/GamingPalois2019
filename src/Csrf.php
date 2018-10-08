@@ -45,7 +45,7 @@
             exit;
         }
         
-        private function generateToken() {
+        public function generateToken() {
             $token = bin2hex(random_bytes(16));
             $_SESSION['csrf'][] = $token;
             $this->limiteTokens();

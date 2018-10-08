@@ -9,7 +9,7 @@
 	}
 	
 	function checkPassword($pwdPassed, $pwdDB) {
-		if (md5($pwdPassed) === $pwdDB) {
+		if ($pwdPassed === $pwdDB) {
 			return TRUE;
 		} else {
 			return FALSE;
