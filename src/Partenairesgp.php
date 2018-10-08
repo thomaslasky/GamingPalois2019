@@ -16,6 +16,10 @@
 		private $site;
 		private $urlimg;
 		
+		public function __construct($values) {
+			parent::__construct($values);
+		}
+		
 		/**
 		 * @return mixed
 		 */
@@ -41,7 +45,7 @@
 		 * @param mixed $nom
 		 */
 		public function setNom($nom): void {
-			$this->nom = $nom;
+			$this->nom = ucfirst($nom);
 		}
 		
 		/**
@@ -69,7 +73,11 @@
 		 * @param mixed $site
 		 */
 		public function setSite($site): void {
-			$this->site = $site;
+			if (filter_var($site,FILTER_VALIDATE_URL,"")) {
+				$this->site = $site;
+			} else {
+				$this->addError("Merci de renseigner une adresse correcte");
+			}
 		}
 		
 		/**
@@ -85,7 +93,5 @@
 		public function setUrlimg($urlimg): void {
 			$this->urlimg = $urlimg;
 		}
-		
-		
 		
 	}

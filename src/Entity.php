@@ -9,8 +9,8 @@ abstract class Entity {
     public function __construct($values) {
         $this->hydrate($values);
     }
-
-    protected function addError($error) {
+    
+	protected function addError($error) {
         $this->errors[] = $error;
     }
 

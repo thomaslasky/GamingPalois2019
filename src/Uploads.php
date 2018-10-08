@@ -21,7 +21,7 @@
 						$nameImg = $name . '.' . $ext;
 						move_uploaded_file($file->getTmpName(), $destination . '/' . $nameImg);
 					} else {
-						$error = 'Votre image dois être en .jpeg';
+						$error = 'Votre image dois être en ' . $acceptedType;
 					}
 				} else {
 					$error = 'Une erreur est survenue, merci de réesssayer plus tard.';

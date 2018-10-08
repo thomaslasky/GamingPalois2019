@@ -8,8 +8,7 @@
 	 * Date: 16/05/2018
 	 * Time: 16:31
 	 */
-	
-	class Participer extends Entity{
+	class Participer extends Entity {
 		
 		private $paiement;
 		private $vend;
@@ -32,7 +31,11 @@
 		 * @param mixed $paiement
 		 */
 		public function setPaiement($paiement): void {
-			$this->paiement = $paiement;
+			if ($paiement = 0 || $paiement = 1) {
+				$this->paiement = $paiement;
+			} else {
+				$this->addError("Une erreur est survenu, merci de refresh la page");
+			}
 		}
 		
 		/**
@@ -88,7 +91,11 @@
 		 * @param mixed $emplacement
 		 */
 		public function setEmplacement($emplacement): void {
-			$this->emplacement = $emplacement;
+			if (is_int($emplacement) && $emplacement > 0) {
+				$this->emplacement = $emplacement;
+			} else {
+				$this->addError("Merci de renseigner une valeur correct");
+			}
 		}
 		
 	}
