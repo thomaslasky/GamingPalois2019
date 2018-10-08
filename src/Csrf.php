@@ -18,7 +18,7 @@
         }
         
         public function generateInput($name,Formulaire $formulaire) {
-            $formulaire->inputHidden($name,$this->generateToken());
+            $formulaire->inputHidden($name,$this->generateToken(),"csrf");
         }
         
         public function verifyToken($name, $page) {
