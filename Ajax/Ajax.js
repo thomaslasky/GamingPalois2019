@@ -87,3 +87,27 @@ function readDataRegister(oData) {
 		document.location.href = "index.php";
 	}
 }
+
+/*
+Send Deconnexion
+*/
+
+function requestDeconnexion(callback) {
+	xhr.onreadystatechange = function () {
+		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
+			callback(xhr.responseText);
+		}
+	};
+	
+	xhr.open("GET", "Ajax/PHP/Deconnexion.php", true);
+	xhr.send(null);
+}
+
+function readDataDeconnexion(oData) {
+	
+	let json = JSON.parse(oData);
+	
+	if (json["text"] === "Vous êtes déconnecté") {
+		location.reload();
+	}
+}

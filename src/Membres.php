@@ -2,11 +2,9 @@
 	
 	namespace App;
 	
-	use function Sodium\add;
-	
 	class Membres extends Entity {
 		
-		private $idMembre;
+		private $IDmembre;
 		private $email;
 		private $password;
 		private $nom;
@@ -14,25 +12,26 @@
 		private $age;
 		private $telephone;
 		private $adresse;
-		private $statut;
+		private $status;
+		private $token;
 		
 		public function __construct($values) {
 			parent::__construct($values);
 		}
 		
-		public function getIdMembre() {
-			return $this->idMembre;
+		public function getIDmembre() {
+			return $this->IDmembre;
 		}
 		
-		public function setIdMembre($idMembre): void {
-			$this->idMembre = $idMembre;
+		public function setIDmembre($IDmembre): void {
+			$this->IDmembre = $IDmembre;
 		}
 		
 		public function getEmail() {
 			return $this->email;
 		}
 		
-		public function setEMail($email): void {
+		public function setEmail($email): void {
 			if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 				$this->email = $email;
 			} else {
@@ -81,7 +80,7 @@
 		}
 		
 		public function setTelephone($telephone): void {
-			if (strlen($telephone) < 10) {
+			if (strlen($telephone) != 10) {
 				$this->addError("Merci de renseigner un numéro valide");
 			} else {
 				$this->telephone = $telephone;
@@ -96,16 +95,31 @@
 			$this->adresse = $adresse;
 		}
 		
-		public function getStatut() {
-			return $this->statut;
+		public function getStatus() {
+			return $this->status;
 		}
 		
-		public function setStatut($statut): void {
-			if ($statut != "Professionnel" || $statut != "Particulier") {
-				$this->addError("Petit coquin ! ce n'est pas bien ! Ton IP est désormais banni de ce site ! Contact l'administrateur au plus vite : xxxx@gmail.com");
+		public function setStatus($status): void {
+			if ($status === "Professionnel" || $status === "Particulier" || $status === "Administrateur") {
+				$this->status = $status;
 			} else {
-				$this->statut = $statut;
+				$this->addError("Petit coquin ! ce n'est pas bien ! Ton IP est désormais banni de ce site ! Contact l'administrateur au plus vite : xxxx@gmail.com");
 			}
 		}
 		
+		public function getErrors(): array {
+			return $this->errors;
+		}
+		
+		public function setErrors(array $errors): void {
+			$this->errors = $errors;
+		}
+		
+		public function getToken() {
+			return $this->token;
+		}
+		
+		public function setToken($token): void {
+			$this->token = $token;
+		}
 	}

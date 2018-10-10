@@ -1,0 +1,40 @@
+.sidenav_menu {
+	display: none;
+	position: fixed; /* Stay in place */
+	z-index: 999; /* Sit on top */
+	left: 0;
+	top: 0;
+	height: 100%;
+	overflow: hidden; /* Enable scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+	padding: 0 !important;
+}
+
+@media screen and (min-width: 992px) {
+	.sidenav_menu {
+		display: block !important;
+	}
+}
+
+.sidenav_menu_content {
+	height: 100%;
+	width: 100%;
+	background-color: rgb(0, 0, 0);
+	overflow: auto;
+	padding: 15px;
+}
+
+.developped_by {
+	font-size: 10px;
+	text-align: center;
+}
+
+.navigate_link {
+	padding: 8px 8px 8px 8px;
+	text-decoration: none;
+	font-size: 18px;
+	color: #818181;
+	display: block;
+	transition: 0.3s;
+}

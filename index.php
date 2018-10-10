@@ -4,8 +4,16 @@
 	require_once 'vendor/autoload.php';
 	include 'Functions/Functions.php';
 	
-	if (isset($_SESSION["id"])) {
+	if (isset($_SESSION['id'])) {
 		header("location: Accueil.php");
+	} elseif (isset($_COOKIE["tokenuser"])) {
+		$cookies = $_COOKIE["tokenuser"];
+		if ($usersManager->verifyToken($cookies) === TRUE) {
+			header("location: Accueil.php");
+			exit;
+		} else {
+			setcookie("tokenuser", "", time() - 1);
+		}
 	}
 
 ?>
@@ -40,12 +48,16 @@
 	                    <img class="responsive-img" src="Img/Logo/logoGP.png">
                     </a>
 	            <div class="container_choice_user">
-	                <p id="categorie-log-1" class="cursor-pointer categorie" onclick="selectedCategorie('log',1) ; requestFormUser(readDataFormUser,'Login')">Login</p>
-	                <p id="categorie-log-2" class="cursor-pointer categorie"
+	                <p id="categorie-log-1" class="cursor-pointer categorie un-surlign"
+	                   onclick="selectedCategorie('log',1) ; requestFormUser(readDataFormUser,'Login')">Login</p>
+	                <p id="categorie-log-2" class="cursor-pointer categorie un-surlign"
 	                   onclick="selectedCategorie('log',2) ; requestFormUser(readDataFormUser,'Inscription')">Inscription</p>
 	            </div>
 	            <div id="index_form">
 		           
+	            </div>
+	            <div>
+		            <a href="Accueil.php">← Acceder au site</a>
 	            </div>
         </section>
     </body>

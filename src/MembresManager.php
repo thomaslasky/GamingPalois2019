@@ -11,26 +11,19 @@
 		
 		public function inscription(Membres &$membres) {
 			
-			$csrf = new Csrf();
-			
-			$sql = "INSERT INTO " . $this->table . "(Email,Password,Nom,Prenom,Age,Telephone,Adresse,Statut) VALUES (:mail,:password,:nom,:prenom,:age,:telephone,:adresse,:statut)";
+			$sql = "INSERT INTO membres (Email, Password, Nom, Prenom, Age, Telephone, Adresse, Status) VALUES (:email,:password,:nom,:prenom,:age,:telephone,:adresse,:status)";
 			$req = $this->db->prepare($sql);
 			
-			$req->bindValue('mail', $membres->getEMail(), \PDO::PARAM_STR);
+			$req->bindValue('email', $membres->getEmail(), \PDO::PARAM_STR);
 			$req->bindValue('password', $membres->getPassword(), \PDO::PARAM_STR);
 			$req->bindValue('nom', $membres->getNom(), \PDO::PARAM_STR);
 			$req->bindValue('prenom', $membres->getPrenom(), \PDO::PARAM_STR);
 			$req->bindValue('age', $membres->getAge(), \PDO::PARAM_INT);
 			$req->bindValue('telephone', $membres->getTelephone(), \PDO::PARAM_INT);
 			$req->bindValue('adresse', $membres->getAdresse(), \PDO::PARAM_STR);
-			$req->bindValue('statut', $membres->getStatut(), \PDO::PARAM_STR);
+			$req->bindValue('status', $membres->getStatus(), \PDO::PARAM_STR);
 			
 			$req->execute();
-			
-			echo json_encode([
-				"text"  => "Compte Créé",
-				"token" => $csrf->generateToken(),
-			]);
 		}
 		
 		public function readMembre($id) {
@@ -68,18 +61,17 @@
 				
 				$_SESSION['id'] = $info['IDmembre'];
 				
-				if (array_key_exists("Remember", $_POST)) {
+				if (isset($_POST['Remember'])) {
 					$token = bin2hex(random_bytes(25));
-					$this->addToken($token, $membre->getEmail());
-					setcookie("Token", $token, time() + 3600 * 24 * 30);
+					setcookie("tokenuser", $token, time() + 3600 * 24 * 30);
+					$this->addToken($token, $membre->getIDmembre());
 				}
 				
 				echo json_encode(["text" => "Connexion réussie"]);
 				
 			} else {
-				echo json_encode([
-					"text"  => "Pseudo ou Password incorrect",
-					"token" => $csrf->generateToken(),
+				echo json_encode(["text"  => "Pseudo ou Password incorrect",
+				                  "token" => $csrf->generateToken(),
 				]);
 			}
 		}
@@ -97,9 +89,9 @@
 			$info = $resultats->fetch();
 			
 			if (empty($info)) {
-				return true;
+				return TRUE;
 			} else {
-				return false;
+				return FALSE;
 			}
 		}
 		
@@ -121,12 +113,23 @@
 			return FALSE;
 		}
 		
-		private function addToken($token, $pseudo) {
-			$sql = "UPDATE {$this->table} SET Token = :token WHERE Email = :email";
+		private function addToken($token, $id) {
+			$sql = "UPDATE {$this->table} SET Token = :token WHERE IDmembre = :id";
 			$req = $this->db->prepare($sql);
 			
 			$req->bindValue('token', $token, \PDO::PARAM_STR);
-			$req->bindValue('email', $pseudo, \PDO::PARAM_STR);
+			$req->bindValue('id', $id, \PDO::PARAM_INT);
+			
+			$req->execute();
+		}
+		
+		public function deleteToken($id) {
+			$sql = "UPDATE {$this->table} SET Token = :token WHERE IDmembre = :id";
+			
+			$req = $this->db->prepare($sql);
+			
+			$req->bindValue('token', "", \PDO::PARAM_STR);
+			$req->bindValue('id', $id, \PDO::PARAM_INT);
 			
 			$req->execute();
 		}

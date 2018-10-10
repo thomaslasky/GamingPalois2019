@@ -92,7 +92,7 @@
 .modal_css, .modal_css_event {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 1000; /* Sit on top */
     padding-top: 2%; /* Location of the box */
     left: 0;
     top: 0;
@@ -108,9 +108,9 @@
     background-color: #fefefe;
     margin: auto;
     border: 1px solid #888;
-    width: 50%;
+    width: 75%;
     height: 95%;
-    overflow: scroll;
+    overflow: auto;
 }
 
 /*END MODAL*/
