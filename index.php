@@ -2,19 +2,9 @@
 	
 	session_start();
 	require_once 'vendor/autoload.php';
-	include 'Functions/Functions.php';
-	
-	if (isset($_SESSION['id'])) {
-		header("location: Accueil.php");
-	} elseif (isset($_COOKIE["tokenuser"])) {
-		$cookies = $_COOKIE["tokenuser"];
-		if ($usersManager->verifyToken($cookies) === TRUE) {
-			header("location: Accueil.php");
-			exit;
-		} else {
-			setcookie("tokenuser", "", time() - 1);
-		}
-	}
+	include 'Functions/functions.php';
+	include 'Functions/verificationconnexion.php';
+
 
 ?>
 
@@ -25,40 +15,61 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <title>Gaming Palois</title>
-	    
-	    <link rel="stylesheet" href="CSS/StyleUserLogs.css">
+        <title>Accueil</title>
+        
 	    <link rel="stylesheet" href="CSS/FrameWork.css">
 	    <link rel="stylesheet" href="CSS/StyleGeneral.css">
+	    <link rel="stylesheet" href="CSS/StyleNavigateur.css">
+	    <link rel="stylesheet" href="CSS/StyleUserLogs.css">
 	    
 	    <link rel="stylesheet" href="materialize/css/materialize.min.css">
         <script src="materialize/js/materialize.min.js"></script>
+	
+	    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+	    <script src="node_modules/jquery.nicescroll/dist/jquery.nicescroll.min.js"></script>
 	    
 	    <script type="text/javascript" src="Ajax/oXHR.js"></script>
         <script type="text/javascript" src="Ajax/Ajax.js"></script>
         <script type="text/javascript" src="JS/Functions.js"></script>
-	    
         
         <link rel="shortcut icon" type="image/png" href="Img/Logo/logoGP.png" />
     </head>
     <body>
-	    <section class="container_user_log valign-wrapper">
-            <div class="margin-auto container_log">
-                    <a href="index.php">
-	                    <img class="responsive-img" src="Img/Logo/logoGP.png">
-                    </a>
-	            <div class="container_choice_user">
-	                <p id="categorie-log-1" class="cursor-pointer categorie un-surlign"
-	                   onclick="selectedCategorie('log',1) ; requestFormUser(readDataFormUser,'Login')">Login</p>
-	                <p id="categorie-log-2" class="cursor-pointer categorie un-surlign"
-	                   onclick="selectedCategorie('log',2) ; requestFormUser(readDataFormUser,'Inscription')">Inscription</p>
-	            </div>
-	            <div id="index_form">
-		           
-	            </div>
-	            <div>
-		            <a href="Accueil.php">← Acceder au site</a>
-	            </div>
+        <section class="row">
+	        <?= $navigateur ?>
+	        <div id="output" class="col s12 m12 l9 xl10 float_right">
+		        
+                <div class=''>
+	                <div class = "">
+		                <div class = "">
+			                <h1 class = "">Vide Grenier
+				                <hr class = "no-margin">
+			                </h1>
+			                <?php echo $videGrenier ?>
+		                </div>
+		                <div class = "">
+			                <h1 class = "">LAN
+				                <hr class = "no-margin">
+			                </h1>
+			                <?php echo $LAN ?>
+		                </div>
+	                </div>
+	                <div class = "">
+		                <h1 class = "">All Events
+			                <hr class = "">
+		                </h1>
+		                <div class = "">
+			                <?php echo $allEvents ?>
+		                </div>
+	                </div>
+                </div>
+            </div>
+	        
+	        <div id='myModal-page' class='modal_css_event'>
+		        <div id="modal" class='modal-content col s10 m8 l6 xl6 margin-auto'>
+          
+		        </div>
+	        </div>
         </section>
     </body>
 </html>

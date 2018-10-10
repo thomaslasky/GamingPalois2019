@@ -11,7 +11,6 @@
 		private $prenom;
 		private $age;
 		private $telephone;
-		private $adresse;
 		private $status;
 		private $token;
 		
@@ -32,11 +31,7 @@
 		}
 		
 		public function setEmail($email): void {
-			if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-				$this->email = $email;
-			} else {
-				$this->addError("Email Invalide");
-			}
+			$this->email = $email;
 		}
 		
 		public function getPassword() {
@@ -68,11 +63,7 @@
 		}
 		
 		public function setAge($age): void {
-			if ($age < 18 || $age > 100) {
-				$this->addError("Merci de renseigner un âge valide");
-			} else {
-				$this->age = $age;
-			}
+			$this->age = $age;
 		}
 		
 		public function getTelephone() {
@@ -80,19 +71,7 @@
 		}
 		
 		public function setTelephone($telephone): void {
-			if (strlen($telephone) != 10) {
-				$this->addError("Merci de renseigner un numéro valide");
-			} else {
-				$this->telephone = $telephone;
-			}
-		}
-		
-		public function getAdresse() {
-			return $this->adresse;
-		}
-		
-		public function setAdresse($adresse): void {
-			$this->adresse = $adresse;
+			$this->telephone = $telephone;
 		}
 		
 		public function getStatus() {
@@ -100,19 +79,7 @@
 		}
 		
 		public function setStatus($status): void {
-			if ($status === "Professionnel" || $status === "Particulier" || $status === "Administrateur") {
-				$this->status = $status;
-			} else {
-				$this->addError("Petit coquin ! ce n'est pas bien ! Ton IP est désormais banni de ce site ! Contact l'administrateur au plus vite : xxxx@gmail.com");
-			}
-		}
-		
-		public function getErrors(): array {
-			return $this->errors;
-		}
-		
-		public function setErrors(array $errors): void {
-			$this->errors = $errors;
+			$this->status = $status;
 		}
 		
 		public function getToken() {

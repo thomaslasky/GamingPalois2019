@@ -4,7 +4,7 @@
 	
 	session_start();
 	require_once '../../vendor/autoload.php';
-	include '../../Functions/Functions.php';
+	include '../../Functions/functions.php';
 	
 	$csrf = new App\Csrf();
 	$usersManager = new App\MembresManager();
@@ -19,7 +19,7 @@
 			$formulaireLogin->inputText("Email", "Email", "text", "", "", "Email", "Email");
 			$formulaireLogin->inputText("Password", "Password", "Password", "", "", "Password", "Password");
 			$formulaireLogin->inputText("", "", "button", "bottum_validation_log margin-auto bottum_validation_inscription", "Valider", "", "", "requestLogin(readDataLogin)");
-			$formulaireLogin->inputText("Remember", "Remember", "checkbox", "remember_checkbox", "true", "", "Remember me");
+			//$formulaireLogin->inputText("Remember", "Remember", "checkbox", "remember_checkbox", "true", "", "Remember me");
 			$login = $formulaireLogin->render();
 			
 			echo $login;
@@ -44,9 +44,8 @@
 		$formulaireInscription->inputText("Nom", "Nom", "text", "field_inscription", "", "Nom", "Nom", "Nom");
 		$formulaireInscription->inputText("Age", "Age", "text", "field_inscription", "", "Age", "Age", "Age");
 		$formulaireInscription->inputText("Telephone", "Telephone", "text", "field_inscription", "", "Telephone", "Telephone", "Téléphone");
-		$formulaireInscription->inputText("Adresse", "Adresse", "text", "field_inscription", "", "Adresse", "Adresse", "Adresse");
 		$formulaireInscription->inputText("Password", "Password", "Password", "field_inscription", "", "Password", "Password", "Password");
-		$formulaireInscription->inputText("", "", "button", "bottum_validation_log margin-auto bottum_validation_inscription", "Valider", "", "", "requestRegister(readDataRegister)");
+		$formulaireInscription->inputText("", "", "Button", "bottum_validation_log margin-auto bottum_validation_inscription", "Valider", "", "", "requestRegister(readDataRegister)");
 		$inscription = $formulaireInscription->render();
 		
 		echo $inscription;

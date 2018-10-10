@@ -4,7 +4,7 @@
 	
 	session_start();
 	require_once '../../vendor/autoload.php';
-	include '../../Functions/Functions.php';
+	include '../../Functions/functions.php';
 	
 	$membreManager = new App\MembresManager();
 	

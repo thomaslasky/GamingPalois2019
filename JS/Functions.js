@@ -65,6 +65,9 @@ function modal(name) {
 // When the user clicks anywhere outside of the modal, close it
 	window.onclick = function (event) {
 		if (event.target === modal) {
+			if (document.title !== "Accueil") {
+				document.title = "Accueil";
+			}
 			modal.style.display = "none";
 		}
 	}

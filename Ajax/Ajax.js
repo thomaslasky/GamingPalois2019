@@ -14,12 +14,13 @@ function requestFormUser(callback, type) {
 	
 	document.title = type;
 	
-	xhr.open("GET", "Ajax/PHP/Formulaire.php?type=" + type, true);
+	xhr.open("GET", "Ajax/PHP/formulaire.php?type=" + type, true);
 	xhr.send(null);
 }
 
 function readDataFormUser(oData) {
-	document.getElementById("index_form").innerHTML = oData;
+	modal("page");
+	document.getElementById("modal").innerHTML = oData;
 }
 
 /*
@@ -35,7 +36,7 @@ function requestLogin(callback) {
 	
 	let formData = new FormData(document.getElementById("login_form"));
 	
-	xhr.open("POST", "Ajax/PHP/Login.php", true);
+	xhr.open("POST", "Ajax/PHP/login.php", true);
 	xhr.send(formData);
 }
 
@@ -51,7 +52,7 @@ function readDataLogin(oData) {
 	}
 	
 	if (json["text"] === "Connexion réussie") {
-		document.location.href = "Accueil.php";
+		document.location.href = "index.php";
 	}
 }
 
@@ -68,7 +69,7 @@ function requestRegister(callback) {
 	
 	let formData = new FormData(document.getElementById("register_form"));
 	
-	xhr.open("POST", "Ajax/PHP/Inscription.php", true);
+	xhr.open("POST", "Ajax/PHP/inscription.php", true);
 	xhr.send(formData);
 }
 
@@ -84,7 +85,8 @@ function readDataRegister(oData) {
 	}
 	
 	if (json["text"] === "Compte Créé") {
-		document.location.href = "index.php";
+		requestFormUser(readDataFormUser,"Login");
+		modal("page");
 	}
 }
 
@@ -99,13 +101,15 @@ function requestDeconnexion(callback) {
 		}
 	};
 	
-	xhr.open("GET", "Ajax/PHP/Deconnexion.php", true);
+	xhr.open("GET", "Ajax/PHP/deconnexion.php", true);
 	xhr.send(null);
 }
 
 function readDataDeconnexion(oData) {
 	
 	let json = JSON.parse(oData);
+	
+	alert(json["text"]);
 	
 	if (json["text"] === "Vous êtes déconnecté") {
 		location.reload();

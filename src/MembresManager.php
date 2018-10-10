@@ -11,7 +11,7 @@
 		
 		public function inscription(Membres &$membres) {
 			
-			$sql = "INSERT INTO membres (Email, Password, Nom, Prenom, Age, Telephone, Adresse, Status) VALUES (:email,:password,:nom,:prenom,:age,:telephone,:adresse,:status)";
+			$sql = "INSERT INTO membres (Email, Password, Nom, Prenom, Age, Telephone, Status) VALUES (:email,:password,:nom,:prenom,:age,:telephone,:status)";
 			$req = $this->db->prepare($sql);
 			
 			$req->bindValue('email', $membres->getEmail(), \PDO::PARAM_STR);
@@ -20,7 +20,6 @@
 			$req->bindValue('prenom', $membres->getPrenom(), \PDO::PARAM_STR);
 			$req->bindValue('age', $membres->getAge(), \PDO::PARAM_INT);
 			$req->bindValue('telephone', $membres->getTelephone(), \PDO::PARAM_INT);
-			$req->bindValue('adresse', $membres->getAdresse(), \PDO::PARAM_STR);
 			$req->bindValue('status', $membres->getStatus(), \PDO::PARAM_STR);
 			
 			$req->execute();
