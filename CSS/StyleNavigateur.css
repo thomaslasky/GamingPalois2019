@@ -38,3 +38,10 @@
 	display: block;
 	transition: 0.3s;
 }
+
+.container_user_tool span{
+	width: 100%;
+	text-align: center;
+	cursor: pointer;
+	user-select: none;
+}

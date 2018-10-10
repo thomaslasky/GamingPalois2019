@@ -3,7 +3,7 @@
 	session_start();
 	require_once 'vendor/autoload.php';
 	include 'Functions/Functions.php';
-	include 'Functions/Fileget.php';
+	include 'Functions/VerificationConnexion.php';
 	
 	$membreManager = new App\MembresManager();
 	
@@ -49,7 +49,7 @@
             
             </div>
 	        
-	        <div id='myModal-modify' class='modal_css_event'>
+	        <div id='myModal-page' class='modal_css_event'>
 		        <div id="modal" class='modal-content col s10 m8 l6 xl6 margin-auto'>
           
 		        </div>
