@@ -73,6 +73,16 @@ function modal(name) {
 	}
 }
 
+// Fermeture du modal
+
+function closeModal(name) {
+	let modal = document.getElementById('myModal-' + name);
+	
+	if (modal.style.display === "block") {
+		modal.style.display = "none";
+	}
+}
+
 //Fonction permettant de selectionner un élèment d'une liste afin de lui donner une couleur particulière
 
 function selectedCategorie(categorie, id) {

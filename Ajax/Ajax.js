@@ -24,6 +24,25 @@ function readDataFormUser(oData) {
 }
 
 /*
+Affichage de la barre de navigation post connexion
+*/
+
+function requestNewNav(callback) {
+	xhr.onreadystatechange = function () {
+		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
+			callback(xhr.responseText);
+		}
+	};
+	
+	xhr.open("GET", "Ajax/PHP/verificationconnexion.php", true);
+	xhr.send(null);
+}
+
+function readDataNewNav(oData) {
+	document.getElementById("is_connect").innerHTML = oData;
+}
+
+/*
 Send Data Log User
  */
 
@@ -44,7 +63,7 @@ function readDataLogin(oData) {
 	
 	let json = JSON.parse(oData);
 	
-	alert(json['text']);
+	//alert(json['text']);
 	
 	if (json["token"] !== undefined) {
 		let input = document.getElementById("csrf");
@@ -52,8 +71,9 @@ function readDataLogin(oData) {
 	}
 	
 	if (json["text"] === "Connexion réussie") {
-		location.reload();
 		M.toast({html: 'Vous êtes connecté'});
+		requestNewNav(readDataNewNav);
+		closeModal("page")
 	}
 }
 
@@ -78,16 +98,19 @@ function readDataRegister(oData) {
 	
 	let json = JSON.parse(oData);
 	
-	alert(json['text']);
-	
 	if (json["token"] !== undefined) {
 		let input = document.getElementById("csrf");
 		input.value = json['token'];
 	}
 	
 	if (json["text"] === "Compte Créé") {
+		M.toast({html: 'Compte créé'});
 		requestFormUser(readDataFormUser, "Login");
 		modal("page");
+	} else {
+		M.toast({html: json["text"]});
+		let input = document.getElementById("csrf");
+		input.value = json['token'];
 	}
 }
 
@@ -110,28 +133,9 @@ function readDataDeconnexion(oData) {
 	
 	let json = JSON.parse(oData);
 	
-	alert(json["text"]);
-	
 	if (json["text"] === "Vous êtes déconnecté") {
-		location.reload();
+		M.toast({html: 'Vous êtes déconnecté'});
+		requestNewNav(readDataNewNav);
+		closeModal("page")
 	}
-}
-
-/*
-Test d'affichage du nouveau navigateur sans refresh
-*/
-
-function requestNewNav(callback) {
-	xhr.onreadystatechange = function () {
-		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
-			callback(xhr.responseText);
-		}
-	};
-	
-	xhr.open("GET", "Ajax/PHP/verificationconnexion.php", true);
-	xhr.send(null);
-}
-
-function readDataNewNav(oData) {
-	document.getElementById("is_connect").innerHTML = oData;
 }

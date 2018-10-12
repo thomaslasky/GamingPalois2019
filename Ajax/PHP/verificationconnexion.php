@@ -1,5 +1,9 @@
 <?php
 	
+	session_start();
+	require_once '../../vendor/autoload.php';
+	include '../../Functions/functions.php';
+	
 	$membreManager = new App\MembresManager();
 	
 	$loginBarre = "<div class='container_user_tool'>";
@@ -20,4 +24,4 @@
 	
 	$loginBarre .= "</div>";
 	
-	return $loginBarre;
+	echo $loginBarre;
