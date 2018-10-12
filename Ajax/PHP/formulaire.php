@@ -14,13 +14,17 @@
 		//Création du formulaire de connexion
 		
 		if ($_GET['type'] === "Login") {
+			
+			$login = "";
+			$login .= "<div><h1 style='text-align: center'>Login</h1></div>";
+			
 			$formulaireLogin = new App\Formulaire("post", "formulaire_user_log column", "login_form");
 			$csrf->generateInput("csrf", $formulaireLogin);
 			$formulaireLogin->inputText("Email", "Email", "text", "", "", "Email", "Email");
 			$formulaireLogin->inputText("Password", "Password", "Password", "", "", "Password", "Password");
 			$formulaireLogin->inputText("", "", "button", "bottum_validation_log margin-auto bottum_validation_inscription", "Valider", "", "", "requestLogin(readDataLogin)");
 			//$formulaireLogin->inputText("Remember", "Remember", "checkbox", "remember_checkbox", "true", "", "Remember me");
-			$login = $formulaireLogin->render();
+			$login .= $formulaireLogin->render();
 			
 			echo $login;
 		}
@@ -36,6 +40,9 @@
 			"Particulier",
 		];
 		
+		$inscription = "";
+		$inscription .= "<div><h1 style='text-align: center'>Inscription</h1></div>";
+		
 		$formulaireInscription = new App\Formulaire("post", "formulaire_user_log column", "register_form");
 		$csrf->generateInput("csrf", $formulaireInscription);
 		$formulaireInscription->select("Status", $valueArray, "Vous êtes ?", "");
@@ -45,8 +52,8 @@
 		$formulaireInscription->inputText("Age", "Age", "text", "field_inscription", "", "Age", "Age", "Age");
 		$formulaireInscription->inputText("Telephone", "Telephone", "text", "field_inscription", "", "Telephone", "Telephone", "Téléphone");
 		$formulaireInscription->inputText("Password", "Password", "Password", "field_inscription", "", "Password", "Password", "Password");
-		$formulaireInscription->inputText("", "", "Button", "bottum_validation_log margin-auto bottum_validation_inscription", "Valider", "", "", "requestRegister(readDataRegister)");
-		$inscription = $formulaireInscription->render();
+		$formulaireInscription->inputText("", "Validation", "Button", "bottum_validation_log margin-auto bottum_validation_inscription", "Valider", "", "", "requestRegister(readDataRegister)");
+		$inscription .= $formulaireInscription->render();
 		
 		echo $inscription;
 	}

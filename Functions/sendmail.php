@@ -1,6 +1,6 @@
 <?php
 	
-	function sendemail($mailto, $titreEvent, $contenuMail) {
+	function sendemail($mailto, $subject, $contenuMail) {
 		
 		$mail = $mailto;
 		
@@ -14,12 +14,7 @@
 		
 		//Creation du message multiple format
 		
-		$message_txt = "coucou";
 		$message_html = $contenuMail;
-		
-		//Déclaration du sujet
-		
-		$sujet = "Confirmation participation " . $titreEvent;
 		
 		//Déclaration du Header
 		
@@ -38,12 +33,6 @@
 		$message .= "Content-Transfer-Encoding: 8bit" . $passage_ligne;
 		$message .= $passage_ligne . $message_html . $passage_ligne;
 		
-		//Ajout message format texte
-		
-		//$message .= "Content-Type: text/plain; charset=\"ISO-8859-1\"" . $passage_ligne;
-		//$message .= "Content-Transfer-Encoding: 8bit" . $passage_ligne;
-		//$message .= $passage_ligne . $message_txt . $passage_ligne;
-		
 		//fin
 		
 		$message .= $passage_ligne . "--" . $passage_ligne;
@@ -51,5 +40,5 @@
 		
 		//Envois du mail
 		
-		return mail($mail, $sujet, $message, $header);
+		return mail($mail, $subject, $message, $header);
 	}

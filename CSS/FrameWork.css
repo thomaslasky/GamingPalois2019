@@ -74,12 +74,6 @@
     justify-content: space-around;
 }
 
-@media screen and (max-width: 992px) {
-    .space-between {
-        display: block;
-    }
-}
-
 .position-fixed {
     position: fixed;
 }

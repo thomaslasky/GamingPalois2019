@@ -38,8 +38,8 @@
 <nav id = 'mySidenav' class = 'sidenav_menu col s12 m12 l3 xl2'>
 	<div class = 'sidenav_menu_content column space-between col s9 m9 l12 xl12'>
 		<div class = 'col s12 margin-auto'>
-			<a href = './Accueil.php'><img src = './Img/Logo/logoGP.png'
-			                               class = 'responsive-img logo_menu un-surlign'>
+			<a href = ''><img src = './Img/Logo/logoGP.png'
+			                  class = 'responsive-img logo_menu un-surlign'>
 			</a>
 			<ul class = 'column margin-auto color_a'>
 				<li class = 'navigate_link cursor-pointer un-surlign'>Accueil</li>
@@ -47,18 +47,16 @@
 				<li class = 'navigate_link cursor-pointer un-surlign'>Partenaires</li>
 				<li class = 'navigate_link cursor-pointer un-surlign'>WebTV</li>
 				<li class = 'navigate_link cursor-pointer un-surlign'>Contact</li>
-				
-				{{usertool}}
-				
-				<li><p id = 'myBtn' class = 'cursor-pointer un-surlign' onclick = "modal('version')">
-					version 2.0</p>
-				</li>
-				<li>
-					<p class = 'developped_by'>Developpé par : <span class = 'cursor-pointer un-surlign'
-					                                                 onclick = "window.open('http://thomastartas.tk/','_blank')">Thomas Tartas</span>
-					</p>
-				</li>
 			</ul>
+			<div id='is_connect'>
+				{{usertool}}
+			</div>
+			<p id = 'myBtn' class = 'cursor-pointer un-surlign' onclick = "modal('version')">
+				version 2.0</p>
+			
+			<p class = 'developped_by un-surlign'>Developpé par : <span class = 'cursor-pointer un-surlign'
+			                                                            onclick = "window.open('http://thomastartas.tk/','_blank')">Thomas Tartas</span>
+			</p>
 		</div>
 	</div>
 </nav>

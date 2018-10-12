@@ -2,10 +2,6 @@
 	
 	$membreManager = new App\MembresManager();
 	
-	$arrReplace = [];
-	
-	$modeleHtml = file_get_contents("Template/navigateur.html");
-	
 	$loginBarre = "<div class='container_user_tool'>";
 	
 	if (isset($_SESSION['id'])) {
@@ -24,8 +20,4 @@
 	
 	$loginBarre .= "</div>";
 	
-	$arrReplace = [
-		'{{usertool}}' => $loginBarre,
-	];
-	
-	$navigateur = strtr($modeleHtml, $arrReplace);
+	return $loginBarre;

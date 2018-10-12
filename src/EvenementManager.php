@@ -36,9 +36,9 @@
 			$req->bindValue('type', $condition, \PDO::PARAM_STR);
 			$req->execute();
 			$result = $req->fetchAll();
-			if(!empty($result)) {
+			if (!empty($result)) {
 				foreach($result as $value) {
-					if($value['Dates'] >= date("Y-d-m")) {
+					if ($value['Dates'] <= date("Y-d-m")) {
 						$event[] = new Evenement($value);
 					}
 				}
@@ -57,14 +57,14 @@
 			return new Evenement($result);
 		}
 		
-		/*public function countParticipants($id) {
+		public function countParticipants($id) {
 			$sql = "SELECT SUM(Emplacement) AS Total FROM participer WHERE IDevenement = :id";
 			$req = $this->db->prepare($sql);
 			$req->bindValue('id', $id, \PDO::PARAM_INT);
 			$req->execute();
 			$result = $req->fetch();
 			return $result['Total'];
-		}*/
+		}
 		
 		//Ajout d'un évènement en base
 		
@@ -113,20 +113,16 @@
 			$adresses = $event->getAdresse();
 			$typePlace = $event->getType();
 			$placePrise = $this->countParticipants($id);
-			$place = $event->getPlace();
-			
-			if(empty($placePrise)) {
-				$placePrise = 0;
-			}
+			$placeTotal = $event->getPlace();
+			$placeDisponible = $placeTotal - $placePrise;
 			
 			$arrReplace = [
-				'{{nomevent}}'   => $nom,
-				'{{dateevents}}' => $dates,
-				'{{adresse}}'    => $adresses,
-				'{{placetotal}}' => $place,
-				'{{typeplace}}'  => $typePlace,
-				'{{idevent}}'    => $id,
-				'{{placeprise}}' => $placePrise,
+				'{{nomevent}}'        => $nom,
+				'{{dateevents}}'      => $dates,
+				'{{adresse}}'         => $adresses,
+				'{{placedisponible}}' => $placeDisponible,
+				'{{typeplace}}'       => $typePlace,
+				'{{idevent}}'         => $id,
 			];
 			
 			return strtr($modelHTML, $arrReplace);
@@ -140,11 +136,15 @@
 			$url = $event->getUrlimg();
 			$id = $event->getIdEvenement();
 			
-			$arrReplace = [
-				'{{nom}}' => $nom,
-				'{{url}}' => $url,
-				'{{id}}'  => $id,
-			];
+			if (!file_exists("../Img/Events/" . $url)) {
+				$url = "Default.png";
+			}
+				
+				$arrReplace = [
+					'{{nom}}' => $nom,
+					'{{url}}' => $url,
+					'{{id}}'  => $id,
+				];
 			
 			return strtr($modeleHTML, $arrReplace);
 		}

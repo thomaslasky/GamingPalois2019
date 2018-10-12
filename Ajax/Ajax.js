@@ -52,7 +52,8 @@ function readDataLogin(oData) {
 	}
 	
 	if (json["text"] === "Connexion réussie") {
-		document.location.href = "index.php";
+		location.reload();
+		M.toast({html: 'Vous êtes connecté'});
 	}
 }
 
@@ -85,7 +86,7 @@ function readDataRegister(oData) {
 	}
 	
 	if (json["text"] === "Compte Créé") {
-		requestFormUser(readDataFormUser,"Login");
+		requestFormUser(readDataFormUser, "Login");
 		modal("page");
 	}
 }
@@ -114,4 +115,23 @@ function readDataDeconnexion(oData) {
 	if (json["text"] === "Vous êtes déconnecté") {
 		location.reload();
 	}
+}
+
+/*
+Test d'affichage du nouveau navigateur sans refresh
+*/
+
+function requestNewNav(callback) {
+	xhr.onreadystatechange = function () {
+		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
+			callback(xhr.responseText);
+		}
+	};
+	
+	xhr.open("GET", "Ajax/PHP/verificationconnexion.php", true);
+	xhr.send(null);
+}
+
+function readDataNewNav(oData) {
+	document.getElementById("is_connect").innerHTML = oData;
 }

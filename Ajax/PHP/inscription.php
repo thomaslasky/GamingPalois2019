@@ -5,6 +5,7 @@
 	session_start();
 	require_once '../../vendor/autoload.php';
 	include '../../Functions/functions.php';
+	include '../../Functions/sendmail.php';
 	
 	$csrf = new App\Csrf();
 	$usersManager = new App\MembresManager();
@@ -21,9 +22,12 @@
 				
 				$usersManager->inscription($inscription);
 				
-				echo json_encode([
-					"text" => "Compte Créé",
-				]);
+				if (sendemail($inscription->getEmail(), "Inscription Gaming Palois", "Vous vous êtes inscrit sur le site Gaming Palois !") === TRUE) {
+					echo json_encode([
+						"text" => "Compte Créé",
+					]);
+					exit;
+				}
 				
 			} else {
 				echo json_encode([
