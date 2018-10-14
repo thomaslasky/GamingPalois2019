@@ -20,6 +20,14 @@ function navigateur() {
 	}
 }
 
+function closeNavigateur() {
+	let navigateur = document.getElementById('mySidenav');
+	
+	if (navigateur.style.display === "block") {
+		navigateur.style.display = "none";
+	}
+}
+
 //Fonction permettant de gérer les collapssible
 
 function collapsible(name, id) {

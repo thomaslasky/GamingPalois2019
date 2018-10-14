@@ -3,11 +3,10 @@
 		<h3 class = 'center-align green-text darken-2'>{{nomevent}}</h3>
 		<p>Le {{dateevents}} à {{adresse}}</p>
 		<p>{{placedisponible}} place disponible</p>
-		<p>En cas de soucis<a href = 'Contact.php' class = 'grey-text darken-4'> contactez nous</a></p>
+		<p>En cas de soucis <span class = 'cursor-pointer blue-text darken-1'
+		                          onclick = 'requestContact(readDataContact)'>contactez nous</span></p>
 		<div>
-			<a class = 'bouton_valid margin-auto' href = 'Event.php?idevent={{idevent}}'>
-				<h2 id = 'inscription' class = 'center-align'>Informations</h2>
-			</a>
+			<h2 id = 'inscription' class = 'center-align'>Inscription</h2>
 		</div>
 	</div>
 </div>

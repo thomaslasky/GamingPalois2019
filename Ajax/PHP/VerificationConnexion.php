@@ -19,7 +19,7 @@
 		}
 		
 	} else {
-		$loginBarre .= "<div class='space-between'><span class='un-surlign' onclick='requestFormUser(readDataFormUser,\"Login\")'>Connexion</span><span class='un-surlign' onclick='requestFormUser(readDataFormUser,\"Inscription\")'>Inscription</span></div>";
+		$loginBarre .= "<div class='space-between'><span class='un-surlign' onclick='requestForm(readDataForm,\"Login\")'>Connexion</span><span class='un-surlign' onclick='requestForm(readDataForm,\"Inscription\")'>Inscription</span></div>";
 	}
 	
 	$loginBarre .= "</div>";
