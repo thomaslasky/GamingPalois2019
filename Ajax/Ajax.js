@@ -1,6 +1,14 @@
 let xhr = getXMLHttpRequest();
 
 /*
+Global readData
+*/
+
+function readData(oData,id) {
+	document.getElementById(id).innerHTML = oData;
+}
+
+/*
 Affichage Formulaire Log User
  */
 
@@ -34,16 +42,12 @@ Affichage de la barre de navigation post connexion
 function requestNewNav(callback) {
 	xhr.onreadystatechange = function () {
 		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
-			callback(xhr.responseText);
+			callback(xhr.responseText,"is_connect");
 		}
 	};
 	
 	xhr.open("GET", "Ajax/PHP/VerificationConnexion.php", true);
 	xhr.send(null);
-}
-
-function readDataNewNav(oData) {
-	document.getElementById("is_connect").innerHTML = oData;
 }
 
 /*
@@ -53,7 +57,7 @@ Affichage WebTV
 function requestWebTV(callback) {
 	xhr.onreadystatechange = function () {
 		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
-			callback(xhr.responseText);
+			callback(xhr.responseText,"output");
 		}
 	};
 	
@@ -63,10 +67,6 @@ function requestWebTV(callback) {
 	xhr.send(null);
 }
 
-function readDataWebTV(oData) {
-	document.getElementById("output").innerHTML = oData;
-}
-
 /*
 Affichage Evenements
  */
@@ -74,7 +74,7 @@ Affichage Evenements
 function requestEvenements(callback) {
 	xhr.onreadystatechange = function () {
 		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
-			callback(xhr.responseText);
+			callback(xhr.responseText,"output");
 		}
 	};
 	
@@ -84,10 +84,6 @@ function requestEvenements(callback) {
 	xhr.send(null);
 }
 
-function readDataEvenements(oData) {
-	document.getElementById("output").innerHTML = oData;
-}
-
 /*
 Affichage Contact
  */
@@ -95,7 +91,7 @@ Affichage Contact
 function requestContact(callback) {
 	xhr.onreadystatechange = function () {
 		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
-			callback(xhr.responseText);
+			callback(xhr.responseText,"output");
 		}
 	};
 	
@@ -105,10 +101,6 @@ function requestContact(callback) {
 	xhr.send(null);
 }
 
-function readDataContact(oData) {
-	document.getElementById("output").innerHTML = oData;
-}
-
 /*
 Affichage Presentation
  */
@@ -116,7 +108,7 @@ Affichage Presentation
 function requestPresentation(callback) {
 	xhr.onreadystatechange = function () {
 		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
-			callback(xhr.responseText);
+			callback(xhr.responseText,"output");
 		}
 	};
 	
@@ -124,10 +116,6 @@ function requestPresentation(callback) {
 	
 	xhr.open("GET", "Ajax/HTML/presentation.html", true);
 	xhr.send(null);
-}
-
-function readDataPresentation(oData) {
-	document.getElementById("output").innerHTML = oData;
 }
 
 /*
@@ -158,7 +146,7 @@ function readDataLogin(oData) {
 	
 	if (json["text"] === "Connexion réussie") {
 		M.toast({html: 'Vous êtes connecté'});
-		requestNewNav(readDataNewNav);
+		requestNewNav(readData);
 		closeModal("page")
 	}
 }
@@ -221,7 +209,7 @@ function readDataDeconnexion(oData) {
 	
 	if (json["text"] === "Vous êtes déconnecté") {
 		M.toast({html: 'Vous êtes déconnecté'});
-		requestNewNav(readDataNewNav);
+		requestNewNav(readData);
 		closeModal("page")
 	}
 }
@@ -254,6 +242,42 @@ function readDataSendContact(oData) {
 	
 	if (json["text"] === "Email envoyé !") {
 		M.toast({html: json["text"]});
+	} else {
+		M.toast({html: json["text"]});
+		let input = document.getElementById("csrf");
+		input.value = json['token'];
+	}
+}
+
+/*
+Send Email devenir membre
+ */
+
+function requestSendBecomeMember(callback) {
+	xhr.onreadystatechange = function () {
+		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
+			callback(xhr.responseText);
+		}
+	};
+	
+	let formData = new FormData(document.getElementById("form_contact"));
+	
+	xhr.open("POST", "Ajax/PHP/SendBecomeMember.php", true);
+	xhr.send(formData);
+}
+
+function readDataSendBecomeMember(oData) {
+	
+	let json = JSON.parse(oData);
+	
+	if (json["token"] !== undefined) {
+		let input = document.getElementById("csrf");
+		input.value = json['token'];
+	}
+	
+	if (json["text"] === "Email envoyé !") {
+		M.toast({html: json["text"]});
+		closeModal("page")
 	} else {
 		M.toast({html: json["text"]});
 		let input = document.getElementById("csrf");

@@ -2,31 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e06163c1-5936-4daf-bec3-e12c1b184b5f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Ajax/HTML/contact.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ajax/HTML/evenements.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ajax/HTML/presentation.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ajax/HTML/webtv.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ajax/PHP/Contact.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ajax/PHP/Evenements.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ajax/PHP/SendContact.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ajax/PHP/SendInscription.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ajax/PHP/SendBecomeMember.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ajax/Ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/Ajax.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ajax/PHP/deconnexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/PHP/SendDeconnexion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ajax/PHP/formulaire.php" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/PHP/Formulaire.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ajax/PHP/inscription.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ajax/PHP/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/PHP/SendLogin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ajax/PHP/verificationconnexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/PHP/VerificationConnexion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/StyleGeneral.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/StyleGeneral.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ajax/HTML/presentation.html" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/HTML/presentation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ajax/PHP/Formulaire.php" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/PHP/Formulaire.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSS/StylePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/StylePage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Functions/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Functions/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Functions/verificationconnexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/Functions/verificationconnexion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS/Functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS/Functions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Template/evenements.html" beforeDir="false" afterPath="$PROJECT_DIR$/Template/evenements.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Template/navigateur.html" beforeDir="false" afterPath="$PROJECT_DIR$/Template/navigateur.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Csrf.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Csrf.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Formulaire.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Formulaire.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -79,8 +62,8 @@
     <session id="2036488401">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="14" />
-          <entry key="project.open.time.0" value="3" />
+          <entry key="project.closed" value="17" />
+          <entry key="project.open.time.0" value="4" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.19" value="1" />
@@ -89,27 +72,30 @@
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.38" value="1" />
+          <entry key="project.open.time.33" value="1" />
+          <entry key="project.open.time.38" value="2" />
           <entry key="project.open.time.39" value="1" />
           <entry key="project.open.time.43" value="1" />
           <entry key="project.open.time.47" value="1" />
           <entry key="project.open.time.56" value="1" />
-          <entry key="project.opened" value="17" />
+          <entry key="project.opened" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="87" />
-          <entry key="gitignore" value="3" />
+          <entry key="JavaScript-modules-diagram/C:/wamp64/www/Projets/Professionnel/GamingPalois2019/JS" value="1" />
+          <entry key="PHP/C:/wamp64/www/Projets/Professionnel/GamingPalois2019/src" value="1" />
+          <entry key="css" value="89" />
+          <entry key="gitignore" value="4" />
           <entry key="htaccess" value="4" />
           <entry key="htm" value="1" />
-          <entry key="html" value="60" />
+          <entry key="html" value="73" />
           <entry key="jpg" value="1" />
-          <entry key="js" value="52" />
+          <entry key="js" value="57" />
           <entry key="json" value="4" />
           <entry key="mcd" value="1" />
           <entry key="md" value="1" />
-          <entry key="php" value="281" />
+          <entry key="php" value="306" />
           <entry key="png" value="2" />
           <entry key="sql" value="1" />
           <entry key="ts" value="1" />
@@ -117,16 +103,17 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="87" />
-          <entry key="HTML" value="61" />
+          <entry key="CSS" value="89" />
+          <entry key="HTML" value="74" />
           <entry key="Image" value="3" />
           <entry key="JSON" value="4" />
-          <entry key="JavaScript" value="52" />
+          <entry key="JavaScript" value="57" />
           <entry key="Markdown" value="1" />
-          <entry key="PHP" value="281" />
-          <entry key="PLAIN_TEXT" value="3" />
+          <entry key="PHP" value="306" />
+          <entry key="PLAIN_TEXT" value="4" />
           <entry key="Scratch" value="1" />
           <entry key="TypeScript" value="1" />
+          <entry key="UML" value="2" />
           <entry key="YAML" value="1" />
           <entry key="htaccess" value="4" />
         </counts>
@@ -138,23 +125,23 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="2276" />
+          <entry key="css" value="2320" />
           <entry key="gitignore" value="33" />
           <entry key="htaccess" value="28" />
           <entry key="htm" value="2" />
-          <entry key="html" value="2392" />
-          <entry key="js" value="2317" />
+          <entry key="html" value="2459" />
+          <entry key="js" value="2542" />
           <entry key="md" value="94" />
-          <entry key="php" value="11536" />
+          <entry key="php" value="11851" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="2276" />
-          <entry key="HTML" value="2396" />
-          <entry key="JavaScript" value="2317" />
+          <entry key="CSS" value="2320" />
+          <entry key="HTML" value="2463" />
+          <entry key="JavaScript" value="2542" />
           <entry key="Markdown" value="94" />
-          <entry key="PHP" value="11534" />
+          <entry key="PHP" value="11849" />
           <entry key="PLAIN_TEXT" value="33" />
           <entry key="htaccess" value="28" />
         </counts>
@@ -174,51 +161,28 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CSS/StylePage.css">
+        <entry file="file://$PROJECT_DIR$/Template/evenements.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="577">
-              <caret line="167" column="1" selection-start-line="167" selection-start-column="1" selection-end-line="167" selection-end-column="1" />
+            <state relative-caret-position="200">
+              <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Ajax/Ajax.js">
+        <entry file="file://$PROJECT_DIR$/src/Entity.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
-              <folding>
-                <element signature="e#32#68#0" />
-                <element signature="n#!!block;n#requestForm#0" />
-                <element signature="n#!!block;n#readDataForm#0" />
-                <element signature="e#479#535#0" />
-                <element signature="n#!!block;n#requestNewNav#0" />
-                <element signature="n#!!block;n#readDataNewNav#0" />
-                <element signature="e#903#925#0" />
-                <element signature="n#!!block;n#requestWebTV#0" />
-                <element signature="n#!!block;n#readDataWebTV#0" />
-                <element signature="e#1303#1330#0" />
-                <element signature="n#!!block;n#requestEvenements#0" />
-                <element signature="n#!!block;n#readDataEvenements#0" />
-                <element signature="e#1725#1749#0" />
-                <element signature="n#!!block;n#requestContact#0" />
-                <element signature="n#!!block;n#readDataContact#0" />
-                <element signature="e#2132#2161#0" />
-                <element signature="n#!!block;n#requestPresentation#0" />
-                <element signature="n#!!block;n#readDataPresentation#0" />
-                <element signature="e#2566#2591#0" />
-                <element signature="n#!!block;n#requestLogin#0" />
-                <element signature="n#!!block;n#readDataLogin#0" />
-                <element signature="e#3260#3285#0" />
-                <element signature="n#!!block;n#requestRegister#0" />
-                <element signature="n#!!block;n#readDataRegister#0" />
-                <element signature="e#4078#4100#0" />
-                <element signature="n#!!block;n#requestDeconnexion#0" />
-                <element signature="n#!!block;n#readDataDeconnexion#0" />
-                <element signature="e#4597#4622#0" />
-                <element signature="n#!!block;n#requestSendContact#0" />
-                <element signature="n#!!block;n#readDataSendContact#0" />
-              </folding>
+            <state relative-caret-position="480">
+              <caret line="24" column="49" lean-forward="true" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Evenement.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -245,7 +209,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Partenaires.php" />
         <option value="$PROJECT_DIR$/Ajax/PHP/Login.php" />
         <option value="$PROJECT_DIR$/debug.php" />
         <option value="$PROJECT_DIR$/Ajax/PHP/Inscription.php" />
@@ -268,7 +231,6 @@
         <option value="$PROJECT_DIR$/CSS/StyleNavigateur.css" />
         <option value="$PROJECT_DIR$/src/MembresManager.php" />
         <option value="$PROJECT_DIR$/Functions/sendmail.php" />
-        <option value="$PROJECT_DIR$/src/EvenementManager.php" />
         <option value="$PROJECT_DIR$/Template/allevents.html" />
         <option value="$PROJECT_DIR$/Ajax/PHP/verificationconnexion.php" />
         <option value="$PROJECT_DIR$/src/Csrf.php" />
@@ -280,22 +242,24 @@
         <option value="$PROJECT_DIR$/Functions/verificationconnexion.php" />
         <option value="$PROJECT_DIR$/JS/Functions.js" />
         <option value="$PROJECT_DIR$/Template/evenements.html" />
-        <option value="$PROJECT_DIR$/Functions/functions.php" />
         <option value="$PROJECT_DIR$/Ajax/PHP/SendInscription.php" />
         <option value="$PROJECT_DIR$/CSS/StyleGeneral.css" />
         <option value="$PROJECT_DIR$/Ajax/PHP/SendContact.php" />
         <option value="$PROJECT_DIR$/Ajax/PHP/DevenirMembre.php" />
-        <option value="$PROJECT_DIR$/Ajax/HTML/presentation.html" />
         <option value="$PROJECT_DIR$/src/Formulaire.php" />
         <option value="$PROJECT_DIR$/Ajax/PHP/Contact.php" />
         <option value="$PROJECT_DIR$/Ajax/PHP/Evenements.php" />
-        <option value="$PROJECT_DIR$/Template/navigateur.html" />
         <option value="$PROJECT_DIR$/Ajax/HTML/contact.html" />
         <option value="$PROJECT_DIR$/Ajax/HTML/evenements.html" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/Ajax/PHP/Formulaire.php" />
+        <option value="$PROJECT_DIR$/Ajax/PHP/SendBecomeMember.php" />
+        <option value="$PROJECT_DIR$/Functions/functions.php" />
         <option value="$PROJECT_DIR$/CSS/StylePage.css" />
         <option value="$PROJECT_DIR$/Ajax/Ajax.js" />
+        <option value="$PROJECT_DIR$/Ajax/HTML/presentation.html" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/Template/navigateur.html" />
+        <option value="$PROJECT_DIR$/src/EvenementManager.php" />
       </list>
     </option>
   </component>
@@ -351,7 +315,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -362,19 +325,20 @@
             <path>
               <item name="GamingPalois2019" type="b2602c69:ProjectViewProjectNode" />
               <item name="GamingPalois2019" type="462c0819:PsiDirectoryNode" />
-              <item name="Ajax" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Cours/JS/SimpleBar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Cours/WildCodeSchool/PHP/Quest/Tableau" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -431,18 +395,21 @@
       <workItem from="1539370571315" duration="11509000" />
       <workItem from="1539421316963" duration="27405000" />
       <workItem from="1539529838899" duration="10660000" />
-      <workItem from="1539545762137" duration="774000" />
+      <workItem from="1539545762137" duration="906000" />
+      <workItem from="1539589895668" duration="665000" />
+      <workItem from="1539595395313" duration="4582000" />
+      <workItem from="1539603709951" duration="2842000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="157607000" />
+    <option name="totallyTimeSpent" value="165828000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1328859" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13892618" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -470,17 +437,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../Cours/WildCodeSchool/GITRemote/Wild.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="15" lean-forward="true" selection-start-column="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/scrollbarwidth/scrollbarWidth.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/jquery.nicescroll/dist/zoomico.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/jquery.nicescroll/jquery.nicescroll.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1140">
@@ -498,24 +454,10 @@
     <entry file="file://$PROJECT_DIR$/Img/Logo/logoGP.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Functions/verifconnexionOLD.php" />
     <entry file="file://$PROJECT_DIR$/src/GlobalVariable.php" />
     <entry file="file://$PROJECT_DIR$/package-lock.json">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Manager.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -535,13 +477,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="69" selection-start-column="69" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Evenement.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="13" column="24" lean-forward="true" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -605,13 +540,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/PHP/VerificationConnexion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="21" column="111" lean-forward="true" selection-start-line="21" selection-start-column="111" selection-end-line="21" selection-end-column="111" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JS/Functions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="520">
@@ -640,38 +568,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EvenementManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="107" column="24" selection-start-line="107" selection-start-column="24" selection-end-line="107" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Template/evenements.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Functions/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="46" column="34" lean-forward="true" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Functions/sendmail.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
           <caret line="33" column="68" lean-forward="true" selection-start-line="33" selection-start-column="68" selection-end-line="33" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/PHP/SendContact.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="24" column="55" lean-forward="true" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
         </state>
       </provider>
     </entry>
@@ -697,62 +597,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/PHP/Contact.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="58" column="6" lean-forward="true" selection-start-line="58" selection-start-column="6" selection-end-line="58" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/PHP/Evenements.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3">
-          <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/HTML/contact.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="58" selection-start-line="2" selection-start-column="58" selection-end-line="2" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Template/navigateur.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="44" column="104" selection-start-line="44" selection-start-column="104" selection-end-line="44" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/HTML/presentation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1117">
-          <caret line="83" column="78" selection-start-line="83" selection-start-column="78" selection-end-line="83" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/HTML/evenements.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/PHP/Formulaire.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="104" column="53" selection-start-line="104" selection-start-column="53" selection-end-line="104" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="61" column="11" lean-forward="true" selection-start-line="61" selection-start-column="11" selection-end-line="61" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CSS/StyleGeneral.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -763,49 +607,227 @@
     <entry file="file://$PROJECT_DIR$/BDD/gamingpalois.mcd">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/CSS/StylePage.css">
+    <entry file="uml://PHP/C:/wamp64/www/Projets/Professionnel/GamingPalois2019/src">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>PHP</ID>
+          <OriginalElement>$PROJECT_DIR$/src</OriginalElement>
+          <nodes>
+            <node x="" y="">\App\EvenementManager</node>
+            <node x="" y="">\App\PartenairesgpManager</node>
+            <node x="" y="">\App\MembresManager</node>
+            <node x="" y="">\App\Uploads</node>
+            <node x="" y="">\App\csrf</node>
+            <node x="" y="">\App\Participer</node>
+            <node x="" y="">\App\Files</node>
+            <node x="" y="">\App\UploadResponse</node>
+            <node x="" y="">\App\Entity</node>
+            <node x="" y="">\App\Partenaires</node>
+            <node x="" y="">\App\Membres</node>
+            <node x="" y="">\App\ParticiperManager</node>
+            <node x="" y="">\App\Formulaire</node>
+            <node x="" y="">\App\Partenairesgp</node>
+            <node x="" y="">\App\Manager</node>
+            <node x="" y="">\App\Evenement</node>
+            <node x="" y="">\App\PartenairesManager</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="382.0" y="168.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="577">
-          <caret line="167" column="1" selection-start-line="167" selection-start-column="1" selection-end-line="167" selection-end-column="1" />
+        <state relative-caret-position="20">
+          <caret line="1" column="14" lean-forward="true" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram/C:/wamp64/www/Projets/Professionnel/GamingPalois2019/JS">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/JS</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="646.0" y="347.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/PHP/SendContact.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="32" column="24" lean-forward="true" selection-end-line="55" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/PHP/SendBecomeMember.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="23" column="32" lean-forward="true" selection-start-line="23" selection-start-column="32" selection-end-line="24" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/PHP/Contact.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-383">
+          <caret line="12" column="4" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/HTML/evenements.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/HTML/contact.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="58" selection-start-line="2" selection-start-column="58" selection-end-line="2" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/PHP/Evenements.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/PHP/Formulaire.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2560">
+          <caret line="128" column="156" selection-start-line="128" selection-start-column="156" selection-end-line="128" selection-end-column="156" />
+          <caret line="128" column="181" selection-start-line="128" selection-start-column="181" selection-end-line="128" selection-end-column="181" />
+          <folding>
+            <element signature="n#style#0;n#h1#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/PHP/VerificationConnexion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="21" column="109" selection-start-line="21" selection-start-column="105" selection-end-line="21" selection-end-column="109" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Ajax/Ajax.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+        <state relative-caret-position="1000">
+          <caret line="205" column="36" selection-start-line="205" selection-start-column="36" selection-end-line="205" selection-end-column="36" />
           <folding>
-            <element signature="e#32#68#0" />
+            <element signature="e#32#53#0" />
+            <element signature="e#136#172#0" />
             <element signature="n#!!block;n#requestForm#0" />
             <element signature="n#!!block;n#readDataForm#0" />
-            <element signature="e#479#535#0" />
+            <element signature="e#665#721#0" />
             <element signature="n#!!block;n#requestNewNav#0" />
-            <element signature="n#!!block;n#readDataNewNav#0" />
-            <element signature="e#903#925#0" />
+            <element signature="e#995#1017#0" />
             <element signature="n#!!block;n#requestWebTV#0" />
-            <element signature="n#!!block;n#readDataWebTV#0" />
-            <element signature="e#1303#1330#0" />
+            <element signature="e#1306#1333#0" />
             <element signature="n#!!block;n#requestEvenements#0" />
-            <element signature="n#!!block;n#readDataEvenements#0" />
-            <element signature="e#1725#1749#0" />
+            <element signature="e#1634#1658#0" />
             <element signature="n#!!block;n#requestContact#0" />
-            <element signature="n#!!block;n#readDataContact#0" />
-            <element signature="e#2132#2161#0" />
+            <element signature="e#1950#1979#0" />
             <element signature="n#!!block;n#requestPresentation#0" />
-            <element signature="n#!!block;n#readDataPresentation#0" />
-            <element signature="e#2566#2591#0" />
+            <element signature="e#2288#2313#0" />
             <element signature="n#!!block;n#requestLogin#0" />
             <element signature="n#!!block;n#readDataLogin#0" />
-            <element signature="e#3260#3285#0" />
+            <element signature="e#2982#3007#0" />
             <element signature="n#!!block;n#requestRegister#0" />
             <element signature="n#!!block;n#readDataRegister#0" />
-            <element signature="e#4078#4100#0" />
+            <element signature="e#3800#3822#0" />
             <element signature="n#!!block;n#requestDeconnexion#0" />
             <element signature="n#!!block;n#readDataDeconnexion#0" />
-            <element signature="e#4597#4622#0" />
+            <element signature="e#4319#4344#0" />
             <element signature="n#!!block;n#requestSendContact#0" />
             <element signature="n#!!block;n#readDataSendContact#0" />
+            <element signature="e#5085#5117#0" />
+            <element signature="n#!!block;n#requestSendBecomeMember#0" />
+            <element signature="n#!!block;n#readDataSendBecomeMember#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS/StylePage.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="169" column="12" selection-start-line="169" selection-start-column="12" selection-end-line="169" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/HTML/presentation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="74" column="4" lean-forward="true" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EvenementManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Template/navigateur.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="58" column="16" lean-forward="true" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Template/evenements.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Evenement.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="24" column="49" lean-forward="true" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
         </state>
       </provider>
     </entry>

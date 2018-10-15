@@ -101,8 +101,8 @@
 				$more = "";
 			}
 			
-			$becomeMember = "<h1 class='center-align'>Devenir Membre</h1>";
-			$becomeMember .= "<p>Vous sera demandé 15€ à l'inscription</p>";
+			$contact = "<h1 class='center-align'>Devenir Membre</h1>";
+			$contact .= "<p>Vous sera demandé 15€ à l'inscription</p>";
 			
 			$formulaireBecomeMember = new App\Formulaire("post", "", "form_contact");
 			$csrf->generateInput("csrf", $formulaireBecomeMember);
@@ -129,9 +129,9 @@
 			$formulaireBecomeMember->submit("Validation", "Valider", "col s12 bottum_validation_log bottum_validation_inscription", "requestSendBecomeMember(readDataSendBecomeMember)");
 			$formulaireBecomeMember->closeDiv(2);
 			
-			$becomeMember .= $formulaireBecomeMember->render();
+			$contact .= $formulaireBecomeMember->render();
 			
-			echo $becomeMember;
+			echo $contact;
 		}
 		
 	}

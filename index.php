@@ -37,12 +37,13 @@
 		
 		<link rel = "shortcut icon" type = "image/png" href = "Img/Logo/logoGP.png" />
 	</head>
-	<body onload='requestEvenements(readDataEvenements);'>
+	<body onload='requestEvenements(readData);'>
 		<section class = "row page_container">
 			
 			<?= $navigateur ?>
 			
 			<div id = "output" class = "col s12 m12 l9 xl10 float_right">
+			
 			
 			</div>
 			
