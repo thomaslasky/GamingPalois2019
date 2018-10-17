@@ -116,8 +116,8 @@ function selectedCategorie(categorie, id) {
 function modifyInput(id) {
 	document.getElementById(id).readOnly = false;
 	
-	let inputValide = "<input class='col s5 bottum_validation_log bottum_validation_inscription' name='Validation' value=\"Valider\" onclick='' type='button'>";
-	let inputAnnulation = "<input class='col s5 bottum_validation_log bottum_validation_inscription' name='Annuler' value=\"Annuler\" onclick='' type='button'>";
+	let inputValide = "<input class='col s5 bottum_validation_log bottum_validation_inscription cursor-pointer' name='Validation' value=\"Valider\" onclick='requestSendModificationProfil(readDataSendModificationProfil)' type='button'>";
+	let inputAnnulation = "<input class='col s5 bottum_validation_log bottum_validation_inscription cursor-pointer' name='Annuler' value=\"Annuler\" onclick='requestProfil(readData)' type='button'>";
 	
 	document.getElementById("modify_" + id).innerHTML = inputValide + inputAnnulation;
 }

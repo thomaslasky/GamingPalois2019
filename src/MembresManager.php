@@ -35,10 +35,12 @@
 			return new Membres($result);
 		}
 		
-		public function updateInformations($type, $information, $id) {
-			$sql = "UPDATE $this->table SET $type = :information WHERE IDmembre = $id";
+		public function updateInformations(Membres &$membre) {
+			$sql = "UPDATE {$this->table} SET Email = :email , Telephone = :telephone WHERE IDmembre = :id";
 			$req = $this->db->prepare($sql);
-			$req->bindValue('information', $information, \PDO::PARAM_STR);
+			$req->bindValue('email', $membre->getEmail(), \PDO::PARAM_STR);
+			$req->bindValue('telephone', $membre->getTelephone(), \PDO::PARAM_STR);
+			$req->bindValue('id', $membre->getIDmembre(), \PDO::PARAM_INT);
 			$req->execute();
 		}
 		
@@ -69,8 +71,9 @@
 				echo json_encode(["text" => "Connexion réussie"]);
 				
 			} else {
-				echo json_encode(["text"  => "Pseudo ou Password incorrect",
-				                  "token" => $csrf->generateToken(),
+				echo json_encode([
+					"text"  => "Pseudo ou Password incorrect",
+					"token" => $csrf->generateToken(),
 				]);
 			}
 		}

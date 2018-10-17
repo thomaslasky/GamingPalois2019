@@ -363,3 +363,34 @@ function readDataSendActionsEvent(oData, idevent) {
 	M.toast({html: json["text"]});
 	
 }
+
+/*
+Send modification
+ */
+
+function requestSendModificationProfil(callback) {
+	xhr.onreadystatechange = function () {
+		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
+			callback(xhr.responseText);
+		}
+	};
+	
+	let formData = new FormData(document.getElementById("form_modification_profil"));
+	
+	xhr.open("POST", "Ajax/PHP/SendModificationProfil.php", true);
+	xhr.send(formData);
+}
+
+function readDataSendModificationProfil(oData) {
+	
+	let json = JSON.parse(oData);
+	
+	if (json["text"] === "Modification effectué") {
+		M.toast({html: json["text"]});
+		requestProfil(readData);
+	} else {
+		M.toast({html: json["text"]});
+		let input = document.getElementById("csrf");
+		input.value = json['token'];
+	}
+}

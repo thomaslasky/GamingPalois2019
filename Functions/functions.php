@@ -48,7 +48,6 @@
 		if (!empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
 			return TRUE;
 		} else {
-			
 			return FALSE;
 		}
 	}
