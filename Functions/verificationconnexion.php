@@ -12,7 +12,7 @@
 		$membre = $membreManager->readMembre($_SESSION['id']);
 		
 		$loginBarre .= "<span style='width: 100%;text-align: center'>{$membre->getPrenom()} {$membre->getNom()}</span>\n";
-		$loginBarre .= "<div class='space-between''><span>Profil</span><span onclick = 'requestDeconnexion(readDataDeconnexion)'>Deconnexion</span></div>\n";
+		$loginBarre .= "<div class='space-between''><span onclick='requestProfil(readData)'>Profil</span><span onclick = 'requestDeconnexion(readDataDeconnexion)'>Deconnexion</span></div>\n";
 		
 		if ($membre->getStatus() === "Admimnistrateur") {
 			$loginBarre .= "<span>Administration</span>";

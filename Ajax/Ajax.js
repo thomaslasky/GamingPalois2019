@@ -153,6 +153,23 @@ function requestChoice(callback, idevent) {
 }
 
 /*
+Affichage du profil
+ */
+
+function requestProfil(callback) {
+	xhr.onreadystatechange = function () {
+		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
+			callback(xhr.responseText, "output");
+		}
+	};
+	
+	document.title = "Profil";
+	
+	xhr.open("GET", "Ajax/PHP/Profil.php", true);
+	xhr.send(null);
+}
+
+/*
 Send Data Log User
  */
 

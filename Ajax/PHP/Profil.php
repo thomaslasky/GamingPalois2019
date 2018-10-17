@@ -1,19 +1,30 @@
 <?php
 	
-	$csrf = new App\Csrf();
+	header("Content-Type: text/plain");
 	
-	$modeleHTML = file_get_contents("Template/profileinformation.html");
+	session_start();
+	require_once '../../vendor/autoload.php';
+	include '../../Functions/functions.php';
 	
-	$mail = $membre->getEmail() . "<br><span>Modifier</span>";
-	$age = $membre->getAge() . "<br><span>Modifier</span>";
-	$telephone = $membre->getTelephone() . "<br><span>Modifier</span>";
-	$adresse = $membre->getAdresse() . "<br><span>Modifier</span>";
+	$modeleHTML = file_get_contents("../HTML/profil.html");
 	
-	$arrValues = [
-		'{{mail}}'      => $mail,
-		'{{age}}'       => $age,
-		'{{telephone}}' => $telephone,
-		'{{adresse}}'   => $adresse,
-	];
-	
-	echo strtr($modeleHTML, $arrValues);
+	if (isset($_SESSION['id'])) {
+		
+		$membreManager = new App\MembresManager();
+		
+		$membre= $membreManager->readMembre($_SESSION["id"]);
+		
+		$mail = $membre->getEmail() . "<br><span>Modifier</span>";
+		$age = $membre->getAge() . "<br><span>Modifier</span>";
+		$telephone = $membre->getTelephone() . "<br><span>Modifier</span>";
+		
+		$arrValues = [
+			'{{mail}}'      => $mail,
+			'{{age}}'       => $age,
+			'{{telephone}}' => $telephone,
+		];
+		
+		echo strtr($modeleHTML, $arrValues);
+	} else {
+		echo "Cette page ne vous est pas accessible !";
+	}
