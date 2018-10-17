@@ -5,7 +5,7 @@
 	include 'Functions/Fileget.php';
 	include_once 'Functions/verificationconnexion.php';
 	include 'Functions/Functions.php';
-
+	
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +43,6 @@
 			<?= $navigateur ?>
 			
 			<div id = "output" class = "col s12 m12 l9 xl10 float_right">
-			
 			
 			</div>
 			

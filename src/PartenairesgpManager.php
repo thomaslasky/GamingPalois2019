@@ -83,7 +83,7 @@
 		public function ficheAllPartenairesGP(Partenairesgp &$partenairesgp, $modeleHTML) {
 			
 			$arrReplace = ['{{nom}}' => $partenairesgp->getNom(),
-				'{{urlimg}}' => $partenairesgp->getUrlimg(),
+				'{{urlimg}}' => $partenairesgp->getUrlimg() ?: "logoGP.png",
 				'{{id}}' => $partenairesgp->getIdPartenaire(),
 				'{{description}}' => $partenairesgp->getDescription(),
 				'{{site}}' => $partenairesgp->getSite()

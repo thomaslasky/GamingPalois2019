@@ -18,9 +18,9 @@
 			if (verifyEmail($_POST["Email"])) {
 				if (verifyTelephone($_POST["Telephone"])) {
 					
-					$message .= $_POST["Message"];
+					$message .= htmlspecialchars($_POST["Message"]);
 					
-					if (mail("thomastartas33@gmail.com", $_POST["Sujet"], $message)) {
+					if (mail("thomastartas33@gmail.com", htmlspecialchars($_POST["Sujet"]), $message)) {
 						echo json_encode([
 							"text" => "Email envoyé !",
 						]);

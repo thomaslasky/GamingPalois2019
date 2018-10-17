@@ -97,7 +97,7 @@
 		//Update d'une donnée d'évènement par sont type,
 		
 		public function updateEvent($type, $id, $value) {
-			$sql = "UPDATE $this->table SET $type = :information WHERE IDevenement = {$id}";
+			$sql = "UPDATE {$this->table} SET $type = :information WHERE IDevenement = {$id}";
 			$req = $this->db->prepare($sql);
 			$req->bindValue('information', $value, \PDO::PARAM_STR);
 			$req->execute();
@@ -105,24 +105,50 @@
 		
 		//Affichage des évènements
 		
-		public function ficheEvent(Evenement &$event, $modelHTML) {
+		public function ficheEvent(Evenement &$event, $modelHTML, $idUser) {
 			
-			$id = $event->getIdevenement();
+			setlocale(LC_TIME, 'fr', 'fr_FR', 'fr_FR.ISO8859-1');
+			
+			$participerManager = new ParticiperManager();
+			
+			$action = "";
+			
+			$idEvent = $event->getIdevenement();
 			$nom = $event->getNom();
-			$dates = $event->getDates();
+			$dates = $date = strftime('%A  %d  %B  %Y', strtotime($event->getDates()));;
 			$adresses = $event->getAdresse();
 			$typePlace = $event->getType();
-			$placePrise = $this->countParticipants($id);
+			$placePrise = $this->countParticipants($idEvent);
 			$placeTotal = $event->getPlace();
+			$urlImg = $event->getUrlimg() ?: "Default.png";
+			$description = $event->getDescription();
 			$placeDisponible = $placeTotal - $placePrise;
 			
+			$verifyRegister = $participerManager->verifyInscription($idUser, $idEvent);
+			
+			if (!empty($idUser)) {
+				if ($placeDisponible < 0 && $verifyRegister === TRUE) {
+					$action = "<span class='cursor-pointer center-align black-text darken-4'>Inscriptions Complète</span>";
+				} elseif ($verifyRegister === FALSE) {
+					$action = "<span class='cursor-pointer bouton_inscription' onclick='requestSendActionsEvent(readDataSendActionsEvent,\"inscription\",{$idEvent})'>Inscription</span>";
+				} elseif ($verifyRegister === TRUE) {
+					$action = "<span class='cursor-pointer bouton_inscription' onclick='requestSendActionsEvent(readDataSendActionsEvent,\"desinscription\",{$idEvent})'>Desinscription</span>";
+				}
+			} else {
+				$action = "";
+			}
+			
 			$arrReplace = [
+				'{{id}}'              => $idEvent,
 				'{{nomevent}}'        => $nom,
+				'{{description}}'     => $description,
 				'{{dateevents}}'      => $dates,
 				'{{adresse}}'         => $adresses,
 				'{{placedisponible}}' => $placeDisponible,
 				'{{typeplace}}'       => $typePlace,
-				'{{idevent}}'         => $id,
+				'{{idevent}}'         => $idEvent,
+				'{{urlimg}}'          => $urlImg,
+				'{{action}}'          => $action,
 			];
 			
 			return strtr($modelHTML, $arrReplace);
@@ -139,12 +165,12 @@
 			if (!file_exists("../Img/Events/" . $url)) {
 				$url = "Default.png";
 			}
-				
-				$arrReplace = [
-					'{{nom}}' => $nom,
-					'{{url}}' => $url,
-					'{{id}}'  => $id,
-				];
+			
+			$arrReplace = [
+				'{{nom}}' => $nom,
+				'{{url}}' => $url,
+				'{{id}}'  => $id,
+			];
 			
 			return strtr($modeleHTML, $arrReplace);
 		}

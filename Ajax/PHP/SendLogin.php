@@ -12,8 +12,8 @@
 	if ($csrf->verifyToken("csrf", "index.php")) {
 		if (isset($_POST['Email']) && isset($_POST['Password'])) {
 			
-			$email = $_POST['Email'];
-			$password = $_POST['Password'];
+			$email =htmlspecialchars($_POST['Email']);
+			$password = htmlspecialchars($_POST['Password']);
 			
 			$user = new App\Membres([
 				'Email'    => $email,

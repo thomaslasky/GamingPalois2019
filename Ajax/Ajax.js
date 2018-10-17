@@ -4,7 +4,7 @@ let xhr = getXMLHttpRequest();
 Global readData
 */
 
-function readData(oData,id) {
+function readData(oData, id) {
 	document.getElementById(id).innerHTML = oData;
 }
 
@@ -42,7 +42,7 @@ Affichage de la barre de navigation post connexion
 function requestNewNav(callback) {
 	xhr.onreadystatechange = function () {
 		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
-			callback(xhr.responseText,"is_connect");
+			callback(xhr.responseText, "is_connect");
 		}
 	};
 	
@@ -57,7 +57,7 @@ Affichage WebTV
 function requestWebTV(callback) {
 	xhr.onreadystatechange = function () {
 		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
-			callback(xhr.responseText,"output");
+			callback(xhr.responseText, "output");
 		}
 	};
 	
@@ -74,7 +74,7 @@ Affichage Evenements
 function requestEvenements(callback) {
 	xhr.onreadystatechange = function () {
 		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
-			callback(xhr.responseText,"output");
+			callback(xhr.responseText, "output");
 		}
 	};
 	
@@ -91,7 +91,7 @@ Affichage Contact
 function requestContact(callback) {
 	xhr.onreadystatechange = function () {
 		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
-			callback(xhr.responseText,"output");
+			callback(xhr.responseText, "output");
 		}
 	};
 	
@@ -108,13 +108,47 @@ Affichage Presentation
 function requestPresentation(callback) {
 	xhr.onreadystatechange = function () {
 		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
-			callback(xhr.responseText,"output");
+			callback(xhr.responseText, "output");
 		}
 	};
 	
 	document.title = "Presentation";
 	
 	xhr.open("GET", "Ajax/HTML/presentation.html", true);
+	xhr.send(null);
+}
+
+/*
+Affichage des partenaires
+ */
+
+function requestPartenaires(callback) {
+	xhr.onreadystatechange = function () {
+		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
+			callback(xhr.responseText, "output");
+		}
+	};
+	
+	document.title = "Evenements";
+	
+	xhr.open("GET", "Ajax/PHP/Partenaires.php", true);
+	xhr.send(null);
+}
+
+/*
+Affichage choix events
+*/
+
+function requestChoice(callback, idevent) {
+	xhr.onreadystatechange = function () {
+		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
+			callback(xhr.responseText, "choice_action-" + idevent);
+		}
+	};
+	
+	document.title = "Evenements";
+	
+	xhr.open("GET", "Ajax/PHP/VerificationInscription.php?IDevent=" + idevent, true);
 	xhr.send(null);
 }
 
@@ -283,4 +317,32 @@ function readDataSendBecomeMember(oData) {
 		let input = document.getElementById("csrf");
 		input.value = json['token'];
 	}
+}
+
+/*
+Send Actions Event Event
+*/
+
+function requestSendActionsEvent(callback, action, idevent) {
+	xhr.onreadystatechange = function () {
+		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
+			callback(xhr.responseText, idevent);
+		}
+	};
+	
+	let formDataInscirption = new FormData();
+	formDataInscirption.append('Action', action);
+	formDataInscirption.append('IDevent', idevent);
+	
+	xhr.open("POST", "Ajax/PHP/SendActionsEvents.php", true);
+	xhr.send(formDataInscirption);
+}
+
+function readDataSendActionsEvent(oData, idevent) {
+	
+	let json = JSON.parse(oData);
+	
+	requestChoice(readData, idevent);
+	M.toast({html: json["text"]});
+	
 }

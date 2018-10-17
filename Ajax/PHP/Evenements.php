@@ -25,9 +25,15 @@
 	
 	//Gestion Vide Grenier
 	
+	if (isset($_SESSION["id"])) {
+		$idUser = $_SESSION["id"];
+	} else {
+		$idUser = "";
+	}
+	
 	if (!empty($eventVideGrenier)) {
 		foreach($eventVideGrenier as $value) {
-			$videGrenier .= $eventManager->ficheEvent($value, $modeleHTML);
+			$videGrenier .= $eventManager->ficheEvent($value, $modeleHTML, $idUser);
 		}
 	} else {
 		$videGrenier = 'Aucun Vide Grenier Prévu';
@@ -37,7 +43,7 @@
 	
 	if (!empty($eventLAN)) {
 		foreach($eventLAN as $value) {
-			$LAN .= $eventManager->ficheEvent($value, $modeleHTML);
+			$LAN .= $eventManager->ficheEvent($value, $modeleHTML, $idUser);
 		}
 	} else {
 		$LAN = '<p>Aucune Lan Prévu</p>';
@@ -54,7 +60,7 @@
 	$arrReplace = [
 		"{{videgrenier}}" => $videGrenier,
 		"{{lan}}"         => $LAN,
-		"{{allevents}}"   => $allEvents
+		"{{allevents}}"   => $allEvents,
 	];
 	
-	echo strtr($evenementsHTML,$arrReplace);
+	echo strtr($evenementsHTML, $arrReplace);
