@@ -12,13 +12,15 @@
 		
 		$membreManager = new App\MembresManager();
 		
-		$membre= $membreManager->readMembre($_SESSION["id"]);
+		$membre = $membreManager->readMembre($_SESSION["id"]);
 		
-		$mail = $membre->getEmail() . "<br><span>Modifier</span>";
-		$age = $membre->getAge() . "<br><span>Modifier</span>";
-		$telephone = $membre->getTelephone() . "<br><span>Modifier</span>";
+		$mail = $membre->getEmail();
+		$age = $membre->getAge();
+		$telephone = $membre->getTelephone();
+		$identity = $membre->getPrenom() . " " . $membre->getNom();
 		
 		$arrValues = [
+			'{{identity}}'  => $identity,
 			'{{mail}}'      => $mail,
 			'{{age}}'       => $age,
 			'{{telephone}}' => $telephone,

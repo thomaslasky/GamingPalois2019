@@ -198,3 +198,15 @@
 .container_card_partenaire {
 	margin: 10px !important;
 }
+
+/*PROFIL*/
+
+.container_informations {
+	display: flex;
+	margin: 15px auto !important;
+	border: 1px solid green;
+	border-radius: 10px;
+	overflow: hidden;
+	background-color: white;
+	padding: 0 !important;
+}

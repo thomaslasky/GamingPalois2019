@@ -1,24 +1,33 @@
-<div class = "container_informations margin-auto">
-	<div>
-		<img src='../../Img/Logo/logoGP.png'>
+<div class = 'container_informations col s11 margin-auto'>
+	<div class = 'col s3'>
+		<img class = 'responsive-img' src = './Img/Logo/logoGP.png'>
 	</div>
-	<div class="space-between">
-		<div class = "width_contain center-align">
-			<p>
-				<small>Email</small>
-				: <br> {{mail}}
-			</p>
-			<p>
-				<small>Age</small>
-				: <br> {{age}}
-			</p>
+	<div class = 'col s9'>
+		<div class = 'col s12'>
+			<p class = 'center-align'>{{identity}}</p>
 		</div>
-		<div class = "width_contain center-align">
-			<p>
-				<small>Téléphone</small>
-				: <br> {{telephone}}
-			</p>
-		</div>
+		<form id = 'form_modification' class = 'row space-between col s12 valign-wrapper'>
+			<div class = 'col s12 center-align space-between'>
+				<div class = 'input-field col s6'>
+					<i class = 'material-icons prefix'>contact_mail</i>
+					<input id = 'email' class = '' type = 'email' name = 'Email' value = '{{mail}}' readonly = '' />
+					<label for = 'email'>Email</label>
+					<div id = 'modify_email'>
+						<span onclick = 'modifyInput("email")'>Modifier</span>
+					</div>
+				</div>
+				<div class = 'input-field col s6'>
+					<i class = 'material-icons prefix'>contact_phone</i>
+					<input id = 'telephone' class = '' type = 'tel' name = 'Telephone' value = '0{{telephone}}'
+					       readonly = '' />
+					<label for = 'telephone'>Telephone</label>
+					<div id = 'modify_telephone' class='space-between'>
+						<span class='center-align' onclick = 'modifyInput("telephone")'>
+						Modifier</span>
+					</div>
+				</div>
+			</div>
+		</form>
 	</div>
 	<!--<p class="center-align"><a href = "">Changer de Mot de Passe</a></p>-->
 </div>
