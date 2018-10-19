@@ -1,11 +1,52 @@
 let xhr = getXMLHttpRequest();
 
 /*
-Global readData
+Global
 */
 
 function readData(oData, id) {
 	document.getElementById(id).innerHTML = oData;
+}
+
+function reload(docTitle) {
+	return new Promise((resolve) => {
+		switch (docTitle) {
+			case "Evenements":
+				requestEvenements((oData, id) => {
+					readData(oData, id);
+					resolve();
+				});
+				break;
+			case "Presentation":
+				requestPresentation((oData, id) => {
+					readData(oData, id);
+					resolve();
+				});
+				break;
+			case "Partenaires":
+				requestPartenaires((oData, id) => {
+					readData(oData, id);
+					resolve();
+				});
+				break;
+			case "Web TV":
+				resolve();
+				break;
+			case "Contact":
+				requestContact((oData, id) => {
+					readData(oData, id);
+					resolve();
+				});
+				break;
+			case "Profil":
+				requestProfil((oData, id) => {
+					readData(oData, id);
+					resolve();
+				});
+				break;
+		}
+	})
+	
 }
 
 /*
@@ -19,12 +60,6 @@ function requestForm(callback, type) {
 			callback(xhr.responseText);
 		}
 	};
-	
-	if (type === "BecomeMember") {
-		document.title = "Devenir Membre"
-	} else {
-		document.title = type;
-	}
 	
 	xhr.open("GET", "Ajax/PHP/Formulaire.php?type=" + type, true);
 	xhr.send(null);
@@ -40,14 +75,17 @@ Affichage de la barre de navigation post connexion
 */
 
 function requestNewNav(callback) {
-	xhr.onreadystatechange = function () {
-		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
-			callback(xhr.responseText, "is_connect");
-		}
-	};
-	
-	xhr.open("GET", "Ajax/PHP/VerificationConnexion.php", true);
-	xhr.send(null);
+	return new Promise((resolve) => {
+		xhr.onreadystatechange = function () {
+			if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
+				callback(xhr.responseText, "is_connect");
+				resolve();
+			}
+		};
+		
+		xhr.open("GET", "Ajax/PHP/VerificationConnexion.php", true);
+		xhr.send(null);
+	});
 }
 
 /*
@@ -129,7 +167,7 @@ function requestPartenaires(callback) {
 		}
 	};
 	
-	document.title = "Evenements";
+	document.title = "Partenaires";
 	
 	xhr.open("GET", "Ajax/PHP/Partenaires.php", true);
 	xhr.send(null);
@@ -197,8 +235,12 @@ function readDataLogin(oData) {
 	
 	if (json["text"] === "Connexion réussie") {
 		M.toast({html: 'Vous êtes connecté'});
-		requestNewNav(readData);
-		closeModal("page")
+		reload(document.title)
+			.then(() => requestNewNav(readData))
+			.then(() => closeModal("page"))
+			.catch((err) => console.error(err));
+	} else {
+		M.toast({html: json["text"]});
 	}
 }
 
@@ -260,8 +302,9 @@ function readDataDeconnexion(oData) {
 	
 	if (json["text"] === "Vous êtes déconnecté") {
 		M.toast({html: 'Vous êtes déconnecté'});
-		requestNewNav(readData);
-		closeModal("page")
+		reload(document.title)
+			.then(() => requestNewNav(readData))
+			.catch((err) => console.error(err));
 	}
 }
 

@@ -34,7 +34,7 @@
 			if ($paiement = 0 || $paiement = 1) {
 				$this->paiement = $paiement;
 			} else {
-				$this->addError("Une erreur est survenu, merci de refresh la page");
+				$this->addError("Une erreur est survenu, merci de reload la page");
 			}
 		}
 		

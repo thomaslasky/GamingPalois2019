@@ -2,14 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e06163c1-5936-4daf-bec3-e12c1b184b5f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Ajax/PHP/SendModificationProfil.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ajax/Ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/Ajax.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ajax/HTML/evenements.html" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/HTML/evenements.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ajax/HTML/profil.html" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/HTML/profil.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Functions/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Functions/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ajax/PHP/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/PHP/Contact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ajax/PHP/Formulaire.php" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/PHP/Formulaire.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ajax/PHP/SendLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/PHP/SendLogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ajax/PHP/VerificationConnexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/PHP/VerificationConnexion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BDD/gamingpalois.mcd" beforeDir="false" afterPath="$PROJECT_DIR$/BDD/gamingpalois.mcd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Functions/verificationconnexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/Functions/verificationconnexion.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JS/Functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS/Functions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EvenementManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EvenementManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Formulaire.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Formulaire.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MembresManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MembresManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Participer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Participer.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,8 +70,8 @@
     <session id="2036488401">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="25" />
-          <entry key="project.open.time.0" value="6" />
+          <entry key="project.closed" value="32" />
+          <entry key="project.open.time.0" value="10" />
           <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.13" value="1" />
@@ -78,12 +86,14 @@
           <entry key="project.open.time.38" value="2" />
           <entry key="project.open.time.39" value="1" />
           <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.41" value="1" />
           <entry key="project.open.time.42" value="1" />
           <entry key="project.open.time.43" value="1" />
+          <entry key="project.open.time.45" value="1" />
           <entry key="project.open.time.47" value="1" />
-          <entry key="project.open.time.48" value="1" />
+          <entry key="project.open.time.48" value="2" />
           <entry key="project.open.time.56" value="1" />
-          <entry key="project.opened" value="28" />
+          <entry key="project.opened" value="35" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -94,32 +104,32 @@
           <entry key="gitignore" value="6" />
           <entry key="htaccess" value="5" />
           <entry key="htm" value="1" />
-          <entry key="html" value="116" />
+          <entry key="html" value="122" />
           <entry key="jpg" value="1" />
-          <entry key="js" value="75" />
-          <entry key="json" value="5" />
+          <entry key="js" value="86" />
+          <entry key="json" value="6" />
           <entry key="mcd" value="1" />
           <entry key="md" value="1" />
           <entry key="membres" value="1" />
-          <entry key="php" value="424" />
+          <entry key="php" value="466" />
           <entry key="png" value="2" />
           <entry key="sql" value="1" />
-          <entry key="ts" value="1" />
+          <entry key="ts" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="99" />
           <entry key="Database Element" value="1" />
-          <entry key="HTML" value="117" />
+          <entry key="HTML" value="123" />
           <entry key="Image" value="3" />
-          <entry key="JSON" value="5" />
-          <entry key="JavaScript" value="75" />
+          <entry key="JSON" value="6" />
+          <entry key="JavaScript" value="86" />
           <entry key="Markdown" value="1" />
-          <entry key="PHP" value="424" />
+          <entry key="PHP" value="466" />
           <entry key="PLAIN_TEXT" value="6" />
           <entry key="Scratch" value="1" />
-          <entry key="TypeScript" value="1" />
+          <entry key="TypeScript" value="2" />
           <entry key="UML" value="2" />
           <entry key="YAML" value="1" />
           <entry key="htaccess" value="5" />
@@ -136,19 +146,21 @@
           <entry key="gitignore" value="67" />
           <entry key="htaccess" value="28" />
           <entry key="htm" value="2" />
-          <entry key="html" value="3466" />
-          <entry key="js" value="4261" />
+          <entry key="html" value="3577" />
+          <entry key="js" value="5024" />
+          <entry key="json" value="1" />
           <entry key="md" value="94" />
-          <entry key="php" value="14735" />
+          <entry key="php" value="15125" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="2471" />
-          <entry key="HTML" value="3470" />
-          <entry key="JavaScript" value="4261" />
+          <entry key="HTML" value="3581" />
+          <entry key="JSON" value="1" />
+          <entry key="JavaScript" value="5024" />
           <entry key="Markdown" value="94" />
-          <entry key="PHP" value="14733" />
+          <entry key="PHP" value="15123" />
           <entry key="PLAIN_TEXT" value="67" />
           <entry key="htaccess" value="28" />
         </counts>
@@ -166,66 +178,106 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ajax/HTML/profil.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="15" column="53" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
-              <folding>
-                <element signature="n#div#0;n#div#0;n#!!top" />
-                <element signature="n#div#0;n#div#1;n#div#0;n#!!top" />
-                <element signature="n#input#0;n#div#1;n#div#0;n#form#0;n#div#1;n#div#0;n#!!top" />
-                <element signature="n#span#0;n#div#0;n#div#1;n#div#0;n#form#0;n#div#1;n#div#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Ajax/HTML/evenements.html">
+        <entry file="file://$PROJECT_DIR$/Ajax/Ajax.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="13" column="79" selection-start-line="13" selection-start-column="79" selection-end-line="13" selection-end-column="79" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JS/Functions.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="118" column="102" lean-forward="true" selection-start-line="118" selection-start-column="102" selection-end-line="118" selection-end-column="102" />
+            <state relative-caret-position="269">
+              <caret line="32" column="37" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
               <folding>
-                <element signature="n#!!block;n#navigateur#0" />
-                <element signature="e#122#263#0" />
-                <element signature="e#167#211#0" />
-                <element signature="e#217#260#0" />
-                <element signature="e#269#311#0" />
-                <element signature="e#417#500#0" />
-                <element signature="e#454#497#0" />
-                <element signature="n#!!block;n#closeNavigateur#0" />
-                <element signature="e#634#675#0" />
-                <element signature="n#!!block;n#collapsible#0" />
-                <element signature="e#862#985#0" />
-                <element signature="e#901#939#0" />
-                <element signature="e#945#982#0" />
-                <element signature="e#991#1027#0" />
-                <element signature="e#1140#1230#0" />
-                <element signature="e#1190#1227#0" />
-                <element signature="n#!!block;n#modal#0" />
-                <element signature="e#1463#1589#0" />
-                <element signature="e#1503#1542#0" />
-                <element signature="e#1548#1586#0" />
-                <element signature="e#1595#1632#0" />
-                <element signature="e#1733#1882#0" />
-                <element signature="e#1765#1879#0" />
-                <element signature="e#1804#1842#0" />
-                <element signature="n#!!block;n#closeModal#0" />
-                <element signature="e#2034#2070#0" />
-                <element signature="n#!!block;n#selectedCategorie#0" />
-                <element signature="e#2499#2645#0" />
-                <element signature="e#2562#2642#0" />
+                <element signature="e#32#44#0" />
+                <element signature="n#!!block;n#readData#0" />
+                <element signature="e#217#305#0" />
+                <element signature="e#309#408#0" />
+                <element signature="e#412#508#0" />
+                <element signature="e#594#734#0" />
+                <element signature="e#738#819#0" />
+                <element signature="e#832#868#0" />
+                <element signature="n#!!block;n#requestForm#0" />
+                <element signature="e#949#1062#0" />
+                <element signature="e#1023#1059#0" />
+                <element signature="n#!!block;n#readDataForm#0" />
+                <element signature="e#1253#1309#0" />
+                <element signature="n#!!block;n#requestNewNav#0" />
+                <element signature="e#1379#1654#0" />
+                <element signature="e#1420#1566#0" />
+                <element signature="e#1495#1562#0" />
+                <element signature="e#1660#1682#0" />
+                <element signature="n#!!block;n#requestWebTV#0" />
+                <element signature="e#1756#1879#0" />
+                <element signature="e#1830#1876#0" />
+                <element signature="e#1981#2008#0" />
+                <element signature="n#!!block;n#requestEvenements#0" />
+                <element signature="e#2087#2210#0" />
+                <element signature="e#2161#2207#0" />
+                <element signature="e#2319#2343#0" />
+                <element signature="n#!!block;n#requestContact#0" />
+                <element signature="e#2419#2542#0" />
+                <element signature="e#2493#2539#0" />
+                <element signature="e#2645#2674#0" />
+                <element signature="n#!!block;n#requestPresentation#0" />
+                <element signature="e#2755#2878#0" />
+                <element signature="e#2829#2875#0" />
+                <element signature="e#2993#3025#0" />
+                <element signature="n#!!block;n#requestPartenaires#0" />
+                <element signature="e#3105#3228#0" />
+                <element signature="e#3179#3225#0" />
+                <element signature="e#3339#3367#0" />
+                <element signature="n#!!block;n#requestChoice#0" />
+                <element signature="e#3451#3592#0" />
+                <element signature="e#3525#3589#0" />
+                <element signature="e#3733#3759#0" />
+                <element signature="n#!!block;n#requestProfil#0" />
+                <element signature="e#3834#3957#0" />
+                <element signature="e#3908#3954#0" />
+                <element signature="e#4058#4083#0" />
+                <element signature="n#!!block;n#requestLogin#0" />
+                <element signature="e#4157#4270#0" />
+                <element signature="e#4231#4267#0" />
+                <element signature="n#!!block;n#readDataLogin#0" />
+                <element signature="e#4521#4603#0" />
+                <element signature="e#4841#4878#0" />
+                <element signature="e#4882#4907#0" />
+                <element signature="n#!!block;n#requestRegister#0" />
+                <element signature="e#4984#5097#0" />
+                <element signature="e#5058#5094#0" />
+                <element signature="n#!!block;n#readDataRegister#0" />
+                <element signature="e#5360#5442#0" />
+                <element signature="e#5482#5575#0" />
+                <element signature="e#5581#5696#0" />
+                <element signature="e#5700#5722#0" />
+                <element signature="n#!!block;n#requestDeconnexion#0" />
+                <element signature="e#5802#5915#0" />
+                <element signature="e#5876#5912#0" />
+                <element signature="n#!!block;n#readDataDeconnexion#0" />
+                <element signature="e#6219#6244#0" />
+                <element signature="n#!!block;n#requestSendContact#0" />
+                <element signature="e#6324#6437#0" />
+                <element signature="e#6398#6434#0" />
+                <element signature="n#!!block;n#readDataSendContact#0" />
+                <element signature="e#6698#6780#0" />
+                <element signature="e#6823#6860#0" />
+                <element signature="e#6866#6981#0" />
+                <element signature="e#6985#7017#0" />
+                <element signature="n#!!block;n#requestSendBecomeMember#0" />
+                <element signature="e#7102#7215#0" />
+                <element signature="e#7176#7212#0" />
+                <element signature="n#!!block;n#readDataSendBecomeMember#0" />
+                <element signature="e#7486#7568#0" />
+                <element signature="e#7611#7669#0" />
+                <element signature="e#7675#7790#0" />
+                <element signature="e#7794#7824#0" />
+                <element signature="n#!!block;n#requestSendActionsEvent#0" />
+                <element signature="e#7926#8048#0" />
+                <element signature="e#8000#8045#0" />
+                <element signature="n#!!block;n#readDataSendActionsEvent#0" />
+                <element signature="e#8446#8470#0" />
+                <element signature="n#!!block;n#requestSendModificationProfil#0" />
+                <element signature="e#8561#8674#0" />
+                <element signature="e#8635#8671#0" />
+                <element signature="n#!!block;n#readDataSendModificationProfil#0" />
+                <element signature="e#8982#9046#0" />
+                <element signature="e#9052#9167#0" />
               </folding>
             </state>
           </provider>
@@ -253,8 +305,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Accueil.php" />
-        <option value="$PROJECT_DIR$/src/Evenement.php" />
         <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/CSS/FrameWork.css" />
         <option value="$PROJECT_DIR$/CSS/StyleNavigateur.css" />
@@ -267,12 +317,10 @@
         <option value="$PROJECT_DIR$/Ajax/PHP/formulaire.php" />
         <option value="$PROJECT_DIR$/Ajax/PHP/inscription.php" />
         <option value="$PROJECT_DIR$/Ajax/PHP/DevenirMembre.php" />
-        <option value="$PROJECT_DIR$/src/Formulaire.php" />
         <option value="$PROJECT_DIR$/Ajax/HTML/contact.html" />
         <option value="$PROJECT_DIR$/Ajax/PHP/SendBecomeMember.php" />
         <option value="$PROJECT_DIR$/Ajax/PHP/SendInscription.php" />
         <option value="$PROJECT_DIR$/Ajax/PHP/SendContact.php" />
-        <option value="$PROJECT_DIR$/Template/navigateur.html" />
         <option value="$PROJECT_DIR$/src/PartenairesgpManager.php" />
         <option value="$PROJECT_DIR$/Ajax/HTML/partenaires.html" />
         <option value="$PROJECT_DIR$/Ajax/PHP/Partenaires.php" />
@@ -280,30 +328,34 @@
         <option value="$PROJECT_DIR$/CSS/StyleGeneral.css" />
         <option value="$PROJECT_DIR$/Ajax/PHP/ActionsEvents.php" />
         <option value="$PROJECT_DIR$/Ajax/HTML/presentation.html" />
-        <option value="$PROJECT_DIR$/Ajax/PHP/SendLogin.php" />
         <option value="$PROJECT_DIR$/Ajax/PHP/Evenements.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/Ajax/PHP/Contact.php" />
         <option value="$PROJECT_DIR$/src/Manager.php" />
         <option value="$PROJECT_DIR$/src/ParticiperManager.php" />
         <option value="$PROJECT_DIR$/Ajax/PHP/SendActionsEvents.php" />
         <option value="$PROJECT_DIR$/Ajax/PHP/VerificationInscription.php" />
         <option value="$PROJECT_DIR$/Template/allevents.html" />
-        <option value="$PROJECT_DIR$/Template/evenements.html" />
-        <option value="$PROJECT_DIR$/src/EvenementManager.php" />
         <option value="$PROJECT_DIR$/src/Membres.php" />
-        <option value="$PROJECT_DIR$/Functions/verificationconnexion.php" />
         <option value="$PROJECT_DIR$/CSS/StylePage.css" />
         <option value="$PROJECT_DIR$/Ajax/PHP/Profil.php" />
-        <option value="$PROJECT_DIR$/Ajax/PHP/Formulaire.php" />
-        <option value="$PROJECT_DIR$/src/MembresManager.php" />
         <option value="$PROJECT_DIR$/Ajax/PHP/SendModificationProfil.php" />
         <option value="$PROJECT_DIR$/Functions/functions.php" />
-        <option value="$PROJECT_DIR$/Ajax/Ajax.js" />
-        <option value="$PROJECT_DIR$/JS/Functions.js" />
-        <option value="$PROJECT_DIR$/Ajax/HTML/profil.html" />
         <option value="$PROJECT_DIR$/Ajax/HTML/evenements.html" />
+        <option value="$PROJECT_DIR$/Template/navigateur.html" />
+        <option value="$PROJECT_DIR$/Functions/verificationconnexion.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/JS/Functions.js" />
+        <option value="$PROJECT_DIR$/Ajax/PHP/SendLogin.php" />
+        <option value="$PROJECT_DIR$/Ajax/PHP/VerificationConnexion.php" />
+        <option value="$PROJECT_DIR$/src/MembresManager.php" />
+        <option value="$PROJECT_DIR$/Ajax/HTML/profil.html" />
+        <option value="$PROJECT_DIR$/src/Formulaire.php" />
+        <option value="$PROJECT_DIR$/Ajax/PHP/Contact.php" />
+        <option value="$PROJECT_DIR$/Ajax/PHP/Formulaire.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/src/EvenementManager.php" />
+        <option value="$PROJECT_DIR$/Template/evenements.html" />
+        <option value="$PROJECT_DIR$/Ajax/Ajax.js" />
       </list>
     </option>
   </component>
@@ -376,6 +428,17 @@
               <item name="GamingPalois2019" type="462c0819:PsiDirectoryNode" />
               <item name="Ajax" type="462c0819:PsiDirectoryNode" />
               <item name="HTML" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GamingPalois2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GamingPalois2019" type="462c0819:PsiDirectoryNode" />
+              <item name="Ajax" type="462c0819:PsiDirectoryNode" />
+              <item name="PHP" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GamingPalois2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GamingPalois2019" type="462c0819:PsiDirectoryNode" />
+              <item name="Template" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -457,18 +520,25 @@
       <workItem from="1539712738890" duration="2109000" />
       <workItem from="1539718963628" duration="857000" />
       <workItem from="1539758859470" duration="1651000" />
-      <workItem from="1539773106741" duration="17469000" />
+      <workItem from="1539773106741" duration="18339000" />
+      <workItem from="1539805578888" duration="1718000" />
+      <workItem from="1539848196000" duration="57000" />
+      <workItem from="1539850608173" duration="11000" />
+      <workItem from="1539850920932" duration="39000" />
+      <workItem from="1539853179611" duration="920000" />
+      <workItem from="1539854980747" duration="17076000" />
+      <workItem from="1539938106883" duration="2780000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="214582000" />
+    <option name="totallyTimeSpent" value="238053000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14966443" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16375838" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -481,7 +551,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49932885" weight="0.32885906" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49932885" weight="0.33020133" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50067115" side_tool="true" weight="0.32885906" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.32885906" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -497,10 +567,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Ajax/PHP/DevenirMembre.php" />
-    <entry file="file://$PROJECT_DIR$/BDD/gamingpalois.mcd">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="uml://PHP/C:/wamp64/www/Projets/Professionnel/GamingPalois2019/src">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -553,20 +619,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Evenement.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="24" column="49" lean-forward="true" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Ajax/PHP/SendBecomeMember.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
@@ -602,13 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://c5501388-9572-4edc-945e-15dd8ad8bf97/schema/gamingpalois/table/membres">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -630,13 +675,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/HTML/presentation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="51" column="37" lean-forward="true" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Participer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -652,13 +690,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test.php" />
-    <entry file="file://$PROJECT_DIR$/Ajax/PHP/Contact.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="33" column="35" lean-forward="true" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Manager.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -670,34 +701,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="127" column="24" selection-start-line="127" selection-start-column="24" selection-end-line="127" selection-end-column="24" />
-          <folding>
-            <element signature="e#74#167#0#PHP" />
-            <element signature="e#173#734#0#PHP" />
-            <element signature="e#0#124#0" />
-            <element signature="e#740#1084#0#PHP" />
-            <element signature="e#0#81#1" />
-            <element signature="e#1090#1315#0#PHP" />
-            <element signature="e#0#96#1" />
-            <element signature="e#1321#2188#0#PHP" />
-            <element signature="e#1651#1830#0#PHP" />
-            <element signature="e#1687#1825#0#PHP" />
-            <element signature="e#1852#2127#0#PHP" />
-            <element signature="e#2194#2415#0#PHP" />
-            <element signature="e#0#53#1" />
-            <element signature="e#2421#3369#0#PHP" />
-            <element signature="e#2680#3031#0#PHP" />
-            <element signature="e#2932#3031#0#PHP" />
-            <element signature="e#3053#3313#0#PHP" />
-            <element signature="e#3375#3775#0#PHP" />
-            <element signature="e#0#53#1" />
-            <element signature="e#3632#3771#0#PHP" />
-            <element signature="e#3659#3740#0#PHP" />
-            <element signature="e#3781#4074#0#PHP" />
-            <element signature="e#0#79#1" />
-            <element signature="e#0#78#1" />
-            <element signature="e#4456#4528#0#PHP" />
-            <element signature="e#4499#4528#0#PHP" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -722,26 +725,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/PHP/Evenements.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="35" column="47" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EvenementManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="147" column="27" lean-forward="true" selection-start-line="147" selection-start-column="27" selection-end-line="147" selection-end-column="27" />
-          <folding>
-            <element signature="e#2553#2767#0#PHP" />
-            <element signature="e#2827#3082#0#PHP" />
-            <element signature="e#5022#5415#0#PHP" />
-            <element signature="e#5479#5947#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Membres.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -749,171 +732,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Template/navigateur.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="46" column="75" selection-start-line="46" selection-start-column="75" selection-end-line="46" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/PHP/VerificationConnexion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="44" lean-forward="true" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Functions/verificationconnexion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="14" column="89" selection-start-line="14" selection-start-column="89" selection-end-line="14" selection-end-column="89" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Formulaire.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="53" column="9" lean-forward="true" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CSS/StylePage.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="571">
           <caret line="203" column="24" selection-start-line="203" selection-start-column="24" selection-end-line="203" selection-end-column="24" />
-          <folding>
-            <element signature="e#29#177#0" />
-            <element signature="e#193#260#0" />
-            <element signature="e#300#395#0" />
-            <element signature="e#425#515#0" />
-            <element signature="e#542#644#0" />
-            <element signature="e#659#729#0" />
-            <element signature="e#755#776#0" />
-            <element signature="e#801#930#0" />
-            <element signature="e#958#991#0" />
-            <element signature="e#1015#1031#0" />
-            <element signature="e#1059#1114#0" />
-            <element signature="e#1167#1221#0" />
-            <element signature="e#1257#1281#0" />
-            <element signature="e#1307#1343#0" />
-            <element signature="e#1367#1433#0" />
-            <element signature="e#1435#1528#0" />
-            <element signature="e#1497#1526#0" />
-            <element signature="e#1559#1709#0" />
-            <element signature="e#1731#1767#0" />
-            <element signature="e#1792#1827#0" />
-            <element signature="e#1853#1883#0" />
-            <element signature="e#1917#2067#0" />
-            <element signature="e#2091#2143#0" />
-            <element signature="e#2169#2188#0" />
-            <element signature="e#2232#2383#0" />
-            <element signature="e#2412#2464#0" />
-            <element signature="e#2500#2518#0" />
-            <element signature="e#2528#2552#0" />
-            <element signature="e#2569#2604#0" />
-            <element signature="e#2622#2725#0" />
-            <element signature="e#2767#2918#0" />
-            <element signature="e#2946#2998#0" />
-            <element signature="e#3027#3056#0" />
-            <element signature="e#3094#3261#0" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.htaccess">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="571">
-          <caret line="56" column="7" selection-start-line="56" selection-start-column="7" selection-end-line="56" selection-end-column="7" />
-          <folding>
-            <element signature="n#script#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/PHP/Profil.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="30" column="55" lean-forward="true" selection-start-line="30" selection-start-column="55" selection-end-line="30" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/PHP/Formulaire.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-668">
-          <caret line="81" column="8" lean-forward="true" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="8" />
-          <folding>
-            <element signature="n#style#0;n#h1#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h1#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/PHP/SendContact.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="678">
-          <caret line="42" column="19" lean-forward="true" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/PHP/SendLogin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="17" column="12" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="20" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Ajax/PHP/SendInscription.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/PHP/Partenaires.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="6" column="44" lean-forward="true" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MembresManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="43" column="28" lean-forward="true" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
-          <folding>
-            <element signature="e#71#161#0#PHP" />
-            <element signature="e#167#924#0#PHP" />
-            <element signature="e#0#137#1" />
-            <element signature="e#930#1204#0#PHP" />
-            <element signature="e#0#50#1" />
-            <element signature="e#1483#2350#0#PHP" />
-            <element signature="e#0#52#1" />
-            <element signature="e#1811#2346#0#PHP" />
-            <element signature="e#1939#2134#0#PHP" />
-            <element signature="e#2205#2346#0#PHP" />
-            <element signature="e#2221#2340#0#PHP" />
-            <element signature="e#2389#2484#1#PHP" />
-            <element signature="e#2356#2718#0#PHP" />
-            <element signature="e#0#55#1" />
-            <element signature="e#2643#2714#0#PHP" />
-            <element signature="e#2685#2714#0#PHP" />
-            <element signature="e#2724#3117#0#PHP" />
-            <element signature="e#0#52#1" />
-            <element signature="e#3004#3096#0#PHP" />
-            <element signature="e#3123#3408#0#PHP" />
-            <element signature="e#0#64#1" />
-            <element signature="e#3414#3693#0#PHP" />
-            <element signature="e#0#64#1" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -924,154 +756,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/PHP/SendModificationProfil.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="33" column="30" lean-forward="true" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Ajax/PHP/SendActionsEvents.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="109">
           <caret line="28" column="16" lean-forward="true" selection-start-line="28" selection-start-column="16" selection-end-line="30" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/Ajax.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="370" column="49" selection-start-line="370" selection-start-column="49" selection-end-line="370" selection-end-column="49" />
-          <folding>
-            <element signature="e#32#53#0" />
-            <element signature="n#!!block;n#readData#0" />
-            <element signature="e#137#173#0" />
-            <element signature="n#!!block;n#requestForm#0" />
-            <element signature="e#254#367#0" />
-            <element signature="e#328#364#0" />
-            <element signature="e#401#441#0" />
-            <element signature="e#447#476#0" />
-            <element signature="n#!!block;n#readDataForm#0" />
-            <element signature="e#666#722#0" />
-            <element signature="n#!!block;n#requestNewNav#0" />
-            <element signature="e#797#924#0" />
-            <element signature="e#871#921#0" />
-            <element signature="e#1010#1032#0" />
-            <element signature="n#!!block;n#requestWebTV#0" />
-            <element signature="e#1106#1229#0" />
-            <element signature="e#1180#1226#0" />
-            <element signature="e#1331#1358#0" />
-            <element signature="n#!!block;n#requestEvenements#0" />
-            <element signature="e#1437#1560#0" />
-            <element signature="e#1511#1557#0" />
-            <element signature="e#1669#1693#0" />
-            <element signature="n#!!block;n#requestContact#0" />
-            <element signature="e#1769#1892#0" />
-            <element signature="e#1843#1889#0" />
-            <element signature="e#1995#2024#0" />
-            <element signature="n#!!block;n#requestPresentation#0" />
-            <element signature="e#2105#2228#0" />
-            <element signature="e#2179#2225#0" />
-            <element signature="e#2343#2375#0" />
-            <element signature="n#!!block;n#requestPartenaires#0" />
-            <element signature="e#2455#2578#0" />
-            <element signature="e#2529#2575#0" />
-            <element signature="e#2688#2716#0" />
-            <element signature="n#!!block;n#requestChoice#0" />
-            <element signature="e#2800#2941#0" />
-            <element signature="e#2874#2938#0" />
-            <element signature="e#3082#3108#0" />
-            <element signature="n#!!block;n#requestProfil#0" />
-            <element signature="e#3183#3306#0" />
-            <element signature="e#3257#3303#0" />
-            <element signature="e#3407#3432#0" />
-            <element signature="n#!!block;n#requestLogin#0" />
-            <element signature="e#3506#3619#0" />
-            <element signature="e#3580#3616#0" />
-            <element signature="n#!!block;n#readDataLogin#0" />
-            <element signature="e#3870#3952#0" />
-            <element signature="e#3998#4091#0" />
-            <element signature="e#4095#4120#0" />
-            <element signature="n#!!block;n#requestRegister#0" />
-            <element signature="e#4197#4310#0" />
-            <element signature="e#4271#4307#0" />
-            <element signature="n#!!block;n#readDataRegister#0" />
-            <element signature="e#4573#4655#0" />
-            <element signature="e#4695#4788#0" />
-            <element signature="e#4794#4909#0" />
-            <element signature="e#4913#4935#0" />
-            <element signature="n#!!block;n#requestDeconnexion#0" />
-            <element signature="e#5015#5128#0" />
-            <element signature="e#5089#5125#0" />
-            <element signature="n#!!block;n#readDataDeconnexion#0" />
-            <element signature="e#5327#5422#0" />
-            <element signature="e#5426#5451#0" />
-            <element signature="n#!!block;n#requestSendContact#0" />
-            <element signature="e#5531#5644#0" />
-            <element signature="e#5605#5641#0" />
-            <element signature="n#!!block;n#readDataSendContact#0" />
-            <element signature="e#5905#5987#0" />
-            <element signature="e#6030#6067#0" />
-            <element signature="e#6073#6188#0" />
-            <element signature="e#6192#6224#0" />
-            <element signature="n#!!block;n#requestSendBecomeMember#0" />
-            <element signature="e#6309#6422#0" />
-            <element signature="e#6383#6419#0" />
-            <element signature="n#!!block;n#readDataSendBecomeMember#0" />
-            <element signature="e#6693#6775#0" />
-            <element signature="e#6818#6876#0" />
-            <element signature="e#6882#6997#0" />
-            <element signature="e#7001#7031#0" />
-            <element signature="n#!!block;n#requestSendActionsEvent#0" />
-            <element signature="e#7133#7255#0" />
-            <element signature="e#7207#7252#0" />
-            <element signature="n#!!block;n#readDataSendActionsEvent#0" />
-            <element signature="e#7653#7677#0" />
-            <element signature="n#!!block;n#requestSendBecomeMember#1" />
-            <element signature="e#7762#7875#0" />
-            <element signature="e#7836#7872#0" />
-            <element signature="n#!!block;n#readDataSendBecomeMember#1" />
-            <element signature="e#8271#8329#0" />
-            <element signature="e#8335#8450#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JS/Functions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="118" column="102" lean-forward="true" selection-start-line="118" selection-start-column="102" selection-end-line="118" selection-end-column="102" />
-          <folding>
-            <element signature="n#!!block;n#navigateur#0" />
-            <element signature="e#122#263#0" />
-            <element signature="e#167#211#0" />
-            <element signature="e#217#260#0" />
-            <element signature="e#269#311#0" />
-            <element signature="e#417#500#0" />
-            <element signature="e#454#497#0" />
-            <element signature="n#!!block;n#closeNavigateur#0" />
-            <element signature="e#634#675#0" />
-            <element signature="n#!!block;n#collapsible#0" />
-            <element signature="e#862#985#0" />
-            <element signature="e#901#939#0" />
-            <element signature="e#945#982#0" />
-            <element signature="e#991#1027#0" />
-            <element signature="e#1140#1230#0" />
-            <element signature="e#1190#1227#0" />
-            <element signature="n#!!block;n#modal#0" />
-            <element signature="e#1463#1589#0" />
-            <element signature="e#1503#1542#0" />
-            <element signature="e#1548#1586#0" />
-            <element signature="e#1595#1632#0" />
-            <element signature="e#1733#1882#0" />
-            <element signature="e#1765#1879#0" />
-            <element signature="e#1804#1842#0" />
-            <element signature="n#!!block;n#closeModal#0" />
-            <element signature="e#2034#2070#0" />
-            <element signature="n#!!block;n#selectedCategorie#0" />
-            <element signature="e#2499#2645#0" />
-            <element signature="e#2562#2642#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1082,30 +770,280 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Template/evenements.html">
+    <entry file="file://$PROJECT_DIR$/Template/navigateur.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="18" lean-forward="true" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+        <state relative-caret-position="404">
+          <caret line="50" column="34" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/PHP/SendLogin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/verificationconnexion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="91" lean-forward="true" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/PHP/VerificationConnexion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="91" selection-start-line="15" selection-start-column="91" selection-end-line="15" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/PHP/SendModificationProfil.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="33" column="30" lean-forward="true" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/PHP/SendContact.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="678">
+          <caret line="42" column="19" lean-forward="true" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MembresManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Ajax/HTML/profil.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="15" column="53" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#!!top" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#!!top" />
-            <element signature="n#input#0;n#div#1;n#div#0;n#form#0;n#div#1;n#div#0;n#!!top" />
-            <element signature="n#span#0;n#div#0;n#div#1;n#div#0;n#form#0;n#div#1;n#div#0;n#!!top" />
-          </folding>
+        <state relative-caret-position="90">
+          <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Formulaire.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="112" column="116" selection-start-line="112" selection-start-column="116" selection-end-line="112" selection-end-column="116" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Evenement.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-920">
+          <caret line="36" column="34" lean-forward="true" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/PHP/Contact.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="49" column="108" selection-start-line="49" selection-start-column="108" selection-end-line="49" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/PHP/Profil.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="573">
+          <caret line="30" column="55" lean-forward="true" selection-start-line="30" selection-start-column="55" selection-end-line="30" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/PHP/Partenaires.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="6" column="44" lean-forward="true" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/PHP/Formulaire.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="126" column="121" selection-start-line="126" selection-start-column="121" selection-end-line="126" selection-end-column="121" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/HTML/presentation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1323">
+          <caret line="6" column="39" lean-forward="true" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Ajax/HTML/evenements.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="3413" column="4" selection-start-line="3413" selection-start-column="4" selection-end-line="3413" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS/Functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1722">
+          <caret line="82" column="9" selection-start-line="82" selection-start-column="9" selection-end-line="82" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/PHP/Evenements.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="35" column="50" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/oXHR.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Template/evenements.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
-          <caret line="13" column="79" selection-start-line="13" selection-start-column="79" selection-end-line="13" selection-end-column="79" />
+          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EvenementManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="137" column="168" selection-start-line="137" selection-start-column="168" selection-end-line="137" selection-end-column="168" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/Ajax.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="32" column="37" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
+          <folding>
+            <element signature="e#32#44#0" />
+            <element signature="n#!!block;n#readData#0" />
+            <element signature="e#217#305#0" />
+            <element signature="e#309#408#0" />
+            <element signature="e#412#508#0" />
+            <element signature="e#594#734#0" />
+            <element signature="e#738#819#0" />
+            <element signature="e#832#868#0" />
+            <element signature="n#!!block;n#requestForm#0" />
+            <element signature="e#949#1062#0" />
+            <element signature="e#1023#1059#0" />
+            <element signature="n#!!block;n#readDataForm#0" />
+            <element signature="e#1253#1309#0" />
+            <element signature="n#!!block;n#requestNewNav#0" />
+            <element signature="e#1379#1654#0" />
+            <element signature="e#1420#1566#0" />
+            <element signature="e#1495#1562#0" />
+            <element signature="e#1660#1682#0" />
+            <element signature="n#!!block;n#requestWebTV#0" />
+            <element signature="e#1756#1879#0" />
+            <element signature="e#1830#1876#0" />
+            <element signature="e#1981#2008#0" />
+            <element signature="n#!!block;n#requestEvenements#0" />
+            <element signature="e#2087#2210#0" />
+            <element signature="e#2161#2207#0" />
+            <element signature="e#2319#2343#0" />
+            <element signature="n#!!block;n#requestContact#0" />
+            <element signature="e#2419#2542#0" />
+            <element signature="e#2493#2539#0" />
+            <element signature="e#2645#2674#0" />
+            <element signature="n#!!block;n#requestPresentation#0" />
+            <element signature="e#2755#2878#0" />
+            <element signature="e#2829#2875#0" />
+            <element signature="e#2993#3025#0" />
+            <element signature="n#!!block;n#requestPartenaires#0" />
+            <element signature="e#3105#3228#0" />
+            <element signature="e#3179#3225#0" />
+            <element signature="e#3339#3367#0" />
+            <element signature="n#!!block;n#requestChoice#0" />
+            <element signature="e#3451#3592#0" />
+            <element signature="e#3525#3589#0" />
+            <element signature="e#3733#3759#0" />
+            <element signature="n#!!block;n#requestProfil#0" />
+            <element signature="e#3834#3957#0" />
+            <element signature="e#3908#3954#0" />
+            <element signature="e#4058#4083#0" />
+            <element signature="n#!!block;n#requestLogin#0" />
+            <element signature="e#4157#4270#0" />
+            <element signature="e#4231#4267#0" />
+            <element signature="n#!!block;n#readDataLogin#0" />
+            <element signature="e#4521#4603#0" />
+            <element signature="e#4841#4878#0" />
+            <element signature="e#4882#4907#0" />
+            <element signature="n#!!block;n#requestRegister#0" />
+            <element signature="e#4984#5097#0" />
+            <element signature="e#5058#5094#0" />
+            <element signature="n#!!block;n#readDataRegister#0" />
+            <element signature="e#5360#5442#0" />
+            <element signature="e#5482#5575#0" />
+            <element signature="e#5581#5696#0" />
+            <element signature="e#5700#5722#0" />
+            <element signature="n#!!block;n#requestDeconnexion#0" />
+            <element signature="e#5802#5915#0" />
+            <element signature="e#5876#5912#0" />
+            <element signature="n#!!block;n#readDataDeconnexion#0" />
+            <element signature="e#6219#6244#0" />
+            <element signature="n#!!block;n#requestSendContact#0" />
+            <element signature="e#6324#6437#0" />
+            <element signature="e#6398#6434#0" />
+            <element signature="n#!!block;n#readDataSendContact#0" />
+            <element signature="e#6698#6780#0" />
+            <element signature="e#6823#6860#0" />
+            <element signature="e#6866#6981#0" />
+            <element signature="e#6985#7017#0" />
+            <element signature="n#!!block;n#requestSendBecomeMember#0" />
+            <element signature="e#7102#7215#0" />
+            <element signature="e#7176#7212#0" />
+            <element signature="n#!!block;n#readDataSendBecomeMember#0" />
+            <element signature="e#7486#7568#0" />
+            <element signature="e#7611#7669#0" />
+            <element signature="e#7675#7790#0" />
+            <element signature="e#7794#7824#0" />
+            <element signature="n#!!block;n#requestSendActionsEvent#0" />
+            <element signature="e#7926#8048#0" />
+            <element signature="e#8000#8045#0" />
+            <element signature="n#!!block;n#readDataSendActionsEvent#0" />
+            <element signature="e#8446#8470#0" />
+            <element signature="n#!!block;n#requestSendModificationProfil#0" />
+            <element signature="e#8561#8674#0" />
+            <element signature="e#8635#8671#0" />
+            <element signature="n#!!block;n#readDataSendModificationProfil#0" />
+            <element signature="e#8982#9046#0" />
+            <element signature="e#9052#9167#0" />
+          </folding>
         </state>
       </provider>
     </entry>

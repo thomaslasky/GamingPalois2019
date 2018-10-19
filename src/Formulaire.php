@@ -43,38 +43,38 @@
 			}
 		}
 		
-		public function inputText($id, $nomChamp, $label, $inputClass = '', $value = '', $iClass = "", $icone = "", $more = "", $minLength = "", $maxLength = "", $onClick = "") {
+		public function inputText($id, $nomChamp, $label, $inputClass = '', $value = '', $iClass = "", $icone = "", $more = "", $labelClass = "", $minLength = "", $maxLength = "", $onClick = "") {
 			$this->rendu .= "<i class='$iClass'>$icone</i>";
 			$this->rendu .= "<input id='$id' class='$inputClass' type='text' name='$nomChamp' value='$value' minlength='$minLength' maxlength='$maxLength' onclick='$onClick' $more/>";
-			$this->rendu .= "<label for='$nomChamp'>$label</label>";
+			$this->rendu .= "<label class='$labelClass' for='$nomChamp'>$label</label>";
 		}
 		
 		public function inputTextHidden($nomChamp, $value, $id) {
 			$this->rendu .= "<input id='$id' type='hidden' name='$nomChamp' value='$value'/>";
 		}
 		
-		public function inputEmail($id, $nomChamp, $label, $inputClass = '', $value = '', $iClass = "", $icone = "", $more = "", $minLength = 0, $maxLength = 199, $onClick = "") {
+		public function inputEmail($id, $nomChamp, $label, $inputClass = '', $value = '', $iClass = "", $icone = "", $more = "", $labelClass = "", $minLength = 0, $maxLength = 199, $onClick = "") {
 			$this->rendu .= "<i class='$iClass'>$icone</i>";
 			$this->rendu .= "<input id='$id' class='$inputClass' type='email' name='$nomChamp' value='$value' minlength='$minLength' maxlength='$maxLength' onclick='$onClick' $more/>";
-			$this->rendu .= "<label for='$nomChamp'>$label</label>";
+			$this->rendu .= "<label class='$labelClass' for='$nomChamp'>$label</label>";
 		}
 		
-		public function inputNumber($id, $nomChamp, $label, $inputClass = '', $value = '', $iClass = "", $icone = "", $min = "", $max = "", $onClick = "") {
+		public function inputNumber($id, $nomChamp, $label, $inputClass = '', $value = '', $iClass = "", $icone = "", $labelClass = "", $min = "", $max = "", $onClick = "") {
 			$this->rendu .= "<i class='$iClass'>$icone</i>";
 			$this->rendu .= "<input id='$id' class='$inputClass' type='number' name='$nomChamp' value='$value' min='$min' max='$max' onclick='$onClick'/>";
-			$this->rendu .= "<label for='$nomChamp'>$label</label>";
+			$this->rendu .= "<label class='$labelClass' for='$nomChamp'>$label</label>";
 		}
 		
-		public function inputTelephone($id, $nomChamp, $label, $inputClass = '', $value = '', $iClass = "", $icone = "", $more ="", $min = "", $max = "", $onClick = "") {
+		public function inputTelephone($id, $nomChamp, $label, $inputClass = '', $value = '', $iClass = "", $icone = "", $more = "", $labelClass = "", $min = "", $max = "", $onClick = "") {
 			$this->rendu .= "<i class='$iClass'>$icone</i>";
 			$this->rendu .= "<input id='$id' class='$inputClass' type='tel' name='$nomChamp' value='$value' min='$min' max='$max' onclick='$onClick' $more/>";
-			$this->rendu .= "<label for='$nomChamp'>$label</label>";
+			$this->rendu .= "<label class='$labelClass' for='$nomChamp'>$label</label>";
 		}
 		
-		public function inputPassword($id, $nomChamp, $label, $inputClass = '', $value = '', $iClass = "", $icone = "", $min = "", $max = "", $onClick = "") {
+		public function inputPassword($id, $nomChamp, $label, $inputClass = '', $value = '', $iClass = "", $icone = "", $labelClass = "", $min = "", $max = "", $onClick = "") {
 			$this->rendu .= "<i class='$iClass'>$icone</i>";
 			$this->rendu .= "<input id='$id' class='$inputClass' type='password' name='$nomChamp' value='$value' min='$min' max='$max' onclick='$onClick' />";
-			$this->rendu .= "<label for='$nomChamp'>$label</label>";
+			$this->rendu .= "<label class='$labelClass' for='$nomChamp'>$label</label>";
 		}
 		
 		public function select($nomSelect, $valuesArray, $label, $spanClass) {
@@ -110,7 +110,11 @@
 		}*/
 		
 		public function submit($name, $send, $class = '', $onclick = "") {
-			$this->rendu .= "<input type='button' class='$class' name='$name' value='$send' onclick='$onclick'/><br>";
+				$this->rendu .= "<input type='button' class='$class' name='$name' value='$send' onclick='$onclick'/>";
+		}
+		
+		public function submitButton($name, $send, $class = '', $onclick = "") {
+			$this->rendu .= "<button type='submit' class='$class' name='$name' value='$send' onclick='$onclick'/>Envoyer<i class='material-icons right'>send</i></<button>";
 		}
 		
 		public function render() {

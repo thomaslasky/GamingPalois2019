@@ -93,12 +93,14 @@
 				$mail = $user->getEmail();
 				$telephone = "0" . $user->getTelephone();
 				$more = "readonly";
+				$labelClass = "active";
 			} else {
 				$prenom = "";
 				$nom = "";
 				$mail = "";
 				$telephone = "";
 				$more = "";
+				$labelClass = "";
 			}
 			
 			$contact = "<h1 class='center-align'>Devenir Membre</h1>";
@@ -107,22 +109,22 @@
 			$formulaireBecomeMember = new App\Formulaire("post", "", "form_contact");
 			$csrf->generateInput("csrf", $formulaireBecomeMember);
 			$formulaireBecomeMember->openDiv("", "input-field col s6");
-			$formulaireBecomeMember->inputText("Prenom", "Prenom", "Prenom", "", $prenom, "material-icons prefix", "person", $more);
+			$formulaireBecomeMember->inputText("Prenom", "Prenom", "Prenom", "", $prenom, "material-icons prefix", "person", $more,$labelClass);
 			$formulaireBecomeMember->closeDiv();
 			$formulaireBecomeMember->openDiv("", "input-field col s6");
-			$formulaireBecomeMember->inputText("Nom", "Nom", "Nom", "", $nom, "material-icons prefix", "person", $more);
+			$formulaireBecomeMember->inputText("Nom", "Nom", "Nom", "", $nom, "material-icons prefix", "person", $more,$labelClass);
 			$formulaireBecomeMember->closeDiv();
 			$formulaireBecomeMember->openDiv("", "input-field col s12");
-			$formulaireBecomeMember->inputEmail("Email", "Email", "Email", "", $mail, "material-icons prefix", "contact_mail", $more);
+			$formulaireBecomeMember->inputEmail("Email", "Email", "Email", "", $mail, "material-icons prefix", "contact_mail", $more,$labelClass);
 			$formulaireBecomeMember->closeDiv();
 			$formulaireBecomeMember->openDiv("", "input-field col s7");
-			$formulaireBecomeMember->inputTelephone("Telephone", "Telephone", "Portable", "", $telephone, "material-icons prefix", "contact_phone", $more);
+			$formulaireBecomeMember->inputTelephone("Telephone", "Telephone", "Portable", "", $telephone, "material-icons prefix", "contact_phone", $more,$labelClass);
 			$formulaireBecomeMember->closeDiv();
 			$formulaireBecomeMember->openDiv("", "input-field col s5");
-			$formulaireBecomeMember->inputText("Sujet", "Sujet", "Sujet", "", "Devenir Membre", "material-icons prefix", "subject", "readonly");
+			$formulaireBecomeMember->inputText("Sujet", "Sujet", "Sujet", "", "Devenir Membre", "material-icons prefix", "subject", "readonly","active");
 			$formulaireBecomeMember->closeDiv();
 			$formulaireBecomeMember->openDiv("", "input-field col s12");
-			$formulaireBecomeMember->inputText("Message", "Message", "Message", "", "", "material-icons prefix", "person");
+			$formulaireBecomeMember->inputText("Message", "Message", "Message", "", "", "material-icons prefix", "message","");
 			$formulaireBecomeMember->closeDiv();
 			$formulaireBecomeMember->openDiv("", "input-field col s12");
 			$formulaireBecomeMember->openDiv("", "input-field col s6 margin-auto");

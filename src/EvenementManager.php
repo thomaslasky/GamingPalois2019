@@ -135,7 +135,7 @@
 					$action = "<span class='cursor-pointer bouton_inscription' onclick='requestSendActionsEvent(readDataSendActionsEvent,\"desinscription\",{$idEvent})'>Desinscription</span>";
 				}
 			} else {
-				$action = "";
+				$action = "<p><span class='cursor-pointer blue-text darken-2' onclick='requestForm(readDataForm,\"Login\")'>Connectez vous</span> pour vous inscrire</p>";
 			}
 			
 			$arrReplace = [

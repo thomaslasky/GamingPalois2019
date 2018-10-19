@@ -5,7 +5,7 @@
 	include 'Functions/Fileget.php';
 	include_once 'Functions/verificationconnexion.php';
 	include 'Functions/Functions.php';
-	
+
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +23,7 @@
 		<link rel = "stylesheet" href = "CSS/StyleUserLogs.css">
 		<link rel = "stylesheet" href = "CSS/StylePage.css">
 		
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet">
 		<link rel = "stylesheet" href = "node_modules/materialize-css/dist/css/materialize.min.css">
 		<script src = "node_modules/materialize-css/dist/js/materialize.min.js"></script>
 		
@@ -37,7 +37,7 @@
 		
 		<link rel = "shortcut icon" type = "image/png" href = "Img/Logo/logoGP.png" />
 	</head>
-	<body onload='requestEvenements(readData);'>
+	<body onload = 'requestEvenements(readData);'>
 		<section class = "row page_container">
 			
 			<?= $navigateur ?>

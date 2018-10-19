@@ -19,7 +19,7 @@
 			$req->bindValue('nom', $membres->getNom(), \PDO::PARAM_STR);
 			$req->bindValue('prenom', $membres->getPrenom(), \PDO::PARAM_STR);
 			$req->bindValue('age', $membres->getAge(), \PDO::PARAM_INT);
-			$req->bindValue('telephone', $membres->getTelephone(), \PDO::PARAM_INT);
+			$req->bindValue('telephone', $membres->getTelephone(), \PDO::PARAM_STR);
 			$req->bindValue('status', $membres->getStatus(), \PDO::PARAM_STR);
 			
 			$req->execute();
@@ -62,19 +62,14 @@
 				
 				$_SESSION['id'] = $info['IDmembre'];
 				
-				if (isset($_POST['Remember'])) {
+				/*if (isset($_POST['Remember'])) {
 					$token = bin2hex(random_bytes(25));
 					setcookie("tokenuser", $token, time() + 3600 * 24 * 30);
 					$this->addToken($token, $membre->getIDmembre());
-				}
-				
-				echo json_encode(["text" => "Connexion réussie"]);
-				
+				}*/
+				return TRUE;
 			} else {
-				echo json_encode([
-					"text"  => "Pseudo ou Password incorrect",
-					"token" => $csrf->generateToken(),
-				]);
+				return FALSE;
 			}
 		}
 		

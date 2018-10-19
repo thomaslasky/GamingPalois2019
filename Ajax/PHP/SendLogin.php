@@ -12,7 +12,7 @@
 	if ($csrf->verifyToken("csrf", "index.php")) {
 		if (isset($_POST['Email']) && isset($_POST['Password'])) {
 			
-			$email =htmlspecialchars($_POST['Email']);
+			$email = htmlspecialchars($_POST['Email']);
 			$password = htmlspecialchars($_POST['Password']);
 			
 			$user = new App\Membres([
@@ -20,8 +20,14 @@
 				'Password' => $password,
 			]);
 			
-			$usersManager->connexion($user);
-			
+			if ($usersManager->connexion($user) === true) {
+				echo json_encode(["text" => "Connexion réussie"]);
+			} else {
+				echo json_encode([
+					"text"  => "Pseudo ou Password incorrect",
+					"token" => $csrf->generateToken(),
+				]);
+			}
 		} else {
 			echo json_encode([
 				"text"  => "Merci de renseigner des valeurs correct",

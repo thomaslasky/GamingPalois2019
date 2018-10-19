@@ -6,6 +6,7 @@
       "email": "35836004+thomaslasky@users.noreply.github.com"
     }
   ],
+
   "autoload": {
     "psr-4": {
       "App\\": "src"
