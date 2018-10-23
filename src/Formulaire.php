@@ -49,6 +49,10 @@
 			$this->rendu .= "<label class='$labelClass' for='$nomChamp'>$label</label>";
 		}
 		
+		public function inputTextChips($id, $nomChamp, $label, $inputClass = '') {
+			$this->rendu .= "<input id='$id' class='$inputClass' type='text' name='$nomChamp'/>";
+		}
+		
 		public function inputTextHidden($nomChamp, $value, $id) {
 			$this->rendu .= "<input id='$id' type='hidden' name='$nomChamp' value='$value'/>";
 		}

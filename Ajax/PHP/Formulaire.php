@@ -109,22 +109,22 @@
 			$formulaireBecomeMember = new App\Formulaire("post", "", "form_contact");
 			$csrf->generateInput("csrf", $formulaireBecomeMember);
 			$formulaireBecomeMember->openDiv("", "input-field col s6");
-			$formulaireBecomeMember->inputText("Prenom", "Prenom", "Prenom", "", $prenom, "material-icons prefix", "person", $more,$labelClass);
+			$formulaireBecomeMember->inputText("Prenom", "Prenom", "Prenom", "", $prenom, "material-icons prefix", "person", $more, $labelClass);
 			$formulaireBecomeMember->closeDiv();
 			$formulaireBecomeMember->openDiv("", "input-field col s6");
-			$formulaireBecomeMember->inputText("Nom", "Nom", "Nom", "", $nom, "material-icons prefix", "person", $more,$labelClass);
+			$formulaireBecomeMember->inputText("Nom", "Nom", "Nom", "", $nom, "material-icons prefix", "person", $more, $labelClass);
 			$formulaireBecomeMember->closeDiv();
 			$formulaireBecomeMember->openDiv("", "input-field col s12");
-			$formulaireBecomeMember->inputEmail("Email", "Email", "Email", "", $mail, "material-icons prefix", "contact_mail", $more,$labelClass);
+			$formulaireBecomeMember->inputEmail("Email", "Email", "Email", "", $mail, "material-icons prefix", "contact_mail", $more, $labelClass);
 			$formulaireBecomeMember->closeDiv();
 			$formulaireBecomeMember->openDiv("", "input-field col s7");
-			$formulaireBecomeMember->inputTelephone("Telephone", "Telephone", "Portable", "", $telephone, "material-icons prefix", "contact_phone", $more,$labelClass);
+			$formulaireBecomeMember->inputTelephone("Telephone", "Telephone", "Portable", "", $telephone, "material-icons prefix", "contact_phone", $more, $labelClass);
 			$formulaireBecomeMember->closeDiv();
 			$formulaireBecomeMember->openDiv("", "input-field col s5");
-			$formulaireBecomeMember->inputText("Sujet", "Sujet", "Sujet", "", "Devenir Membre", "material-icons prefix", "subject", "readonly","active");
+			$formulaireBecomeMember->inputText("Sujet", "Sujet", "Sujet", "", "Devenir Membre", "material-icons prefix", "subject", "readonly", "active");
 			$formulaireBecomeMember->closeDiv();
 			$formulaireBecomeMember->openDiv("", "input-field col s12");
-			$formulaireBecomeMember->inputText("Message", "Message", "Message", "", "", "material-icons prefix", "message","");
+			$formulaireBecomeMember->inputText("Message", "Message", "Message", "", "", "material-icons prefix", "message", "");
 			$formulaireBecomeMember->closeDiv();
 			$formulaireBecomeMember->openDiv("", "input-field col s12");
 			$formulaireBecomeMember->openDiv("", "input-field col s6 margin-auto");
@@ -133,6 +133,28 @@
 			
 			$contact .= $formulaireBecomeMember->render();
 			
+			echo $contact;
+		}
+		
+		//Création du formulaire d'inscription
+		
+		if ($_GET["type"] === "InscriptionEvent" && isset($_GET["idevent"])) {
+			
+			$contact = "<h1 class='center-align'>Inscription à un événement</h1>";
+			
+			$formulaireInscriptionEvent = new App\Formulaire("post", "", "form_contact");
+			$csrf->generateInput("csrf", $formulaireInscriptionEvent);
+			$formulaireInscriptionEvent->openDiv("", "input-field col s12");
+			$formulaireInscriptionEvent->inputNumber("Table","Table","Nombre de table","","","material-icons prefix","assignment","","0","30");
+			$formulaireInscriptionEvent->closeDiv();
+			$formulaireInscriptionEvent->openDiv("","input-field col s12");
+			$formulaireInscriptionEvent->inputText("Vendre","Vendre","A vendre :","","",'material-icons prefix','shopping_cart');
+			$formulaireInscriptionEvent->closeDiv();
+			$formulaireInscriptionEvent->openDiv("","col s12");
+			$formulaireInscriptionEvent->submit("Submit","Envoyer","col s4 margin-auto","requestSendVideGrenier(readDataSendVideGrenier,{$_GET['idevent']})");
+			$formulaireInscriptionEvent->closeDiv();
+			
+			$contact .= $formulaireInscriptionEvent->render();
 			echo $contact;
 		}
 		

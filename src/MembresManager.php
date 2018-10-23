@@ -11,7 +11,7 @@
 		
 		public function inscription(Membres &$membres) {
 			
-			$sql = "INSERT INTO membres (Email, Password, Nom, Prenom, Age, Telephone, Status) VALUES (:email,:password,:nom,:prenom,:age,:telephone,:status)";
+			$sql = "INSERT INTO {$this->db} (Email, Password, Nom, Prenom, Age, Telephone, Status) VALUES (:email,:password,:nom,:prenom,:age,:telephone,:status)";
 			$req = $this->db->prepare($sql);
 			
 			$req->bindValue('email', $membres->getEmail(), \PDO::PARAM_STR);

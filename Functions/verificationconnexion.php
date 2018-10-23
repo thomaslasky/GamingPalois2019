@@ -1,5 +1,5 @@
 <?php
-
+	
 	$membreManager = new App\MembresManager();
 	
 	$arrReplace = [];
@@ -11,11 +11,11 @@
 	if (isset($_SESSION['id'])) {
 		$membre = $membreManager->readMembre($_SESSION['id']);
 		
-		$loginBarre .= "<span style='width: 100%;text-align: center'>{$membre->getPrenom()} {$membre->getNom()}</span>\n";
-		$loginBarre .= "<div class='space-between''><span onclick='requestProfil(readData)'>Profil</span><span onclick = 'requestDeconnexion(readDataDeconnexion)'>Deconnexion</span></div>\n";
+		$loginBarre .= "<span style='width: 100%;text-align: center'>{$membre->getPrenom()} {$membre->getNom()}</span>";
+		$loginBarre .= "<div class='space-between'><span onclick='requestProfil(readData)'>Profil</span><span onclick = 'requestDeconnexion(readDataDeconnexion)'>Deconnexion</span></div>\n";
 		
-		if ($membre->getStatus() === "Admimnistrateur") {
-			$loginBarre .= "<span>Administration</span>";
+		if ($membre->getStatus() === "Administrateur") {
+			$loginBarre .= "<span onclick='requestAdministration(readData)'>Administration</span>";
 		}
 		
 	} else {

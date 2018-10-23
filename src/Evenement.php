@@ -9,6 +9,7 @@
 		private $dates;
 		private $adresse;
 		private $place;
+		private $prix;
 		private $description;
 		private $type;
 		private $urlimg;
@@ -129,5 +130,17 @@
 			$this->urlimg = $urlimg;
 		}
 		
+		/**
+		 * @return mixed
+		 */
+		public function getPrix() {
+			return $this->prix;
+		}
 		
+		/**
+		 * @param mixed $prix
+		 */
+		public function setPrix($prix): void {
+			$this->prix = $prix;
+		}
 	}

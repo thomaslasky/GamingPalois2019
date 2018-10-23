@@ -10,7 +10,7 @@
 		}
 		
 		public function inscription(Participer &$participer) {
-			$sql = "INSERT INTO `participer` (Paiement, Vend, Emplacement, IDmembre, IDevenement) VALUES ('0', :vend, :emp, :idmembre, :idevent);";
+			$sql = "INSERT INTO `participer` (Paiement, Vend, Emplacement, IDmembre, IDevenement) VALUES (0, :vend, :emp, :idmembre, :idevent);";
 			$req = $this->db->prepare($sql);
 			
 			$req->bindValue('vend', $participer->getVend(), \PDO::PARAM_STR);

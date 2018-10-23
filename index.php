@@ -23,11 +23,13 @@
 		<link rel = "stylesheet" href = "CSS/StyleUserLogs.css">
 		<link rel = "stylesheet" href = "CSS/StylePage.css">
 		
-		<link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet">
-		<link rel = "stylesheet" href = "node_modules/materialize-css/dist/css/materialize.min.css">
-		<script src = "node_modules/materialize-css/dist/js/materialize.min.js"></script>
-		
 		<script src = "node_modules/jquery/dist/jquery.min.js"></script>
+		
+		<link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet">
+		<link rel = "stylesheet"
+		      href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+		<script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+		
 		
 		<script src = "node_modules/jquery.nicescroll/dist/jquery.nicescroll.min.js"></script>
 		
@@ -55,13 +57,10 @@
 </html>
 
 <script>
+	
 	$(document).ready(function () {
-		$("#output").niceScroll({
-			cursorcolor: "#713B75",
-			cursorwidth: "8px",
-		});
 		
-		$("#block_event").niceScroll({
+		$("#output").niceScroll({
 			cursorcolor: "#713B75",
 			cursorwidth: "8px",
 		});

@@ -71,6 +71,22 @@ function readDataForm(oData) {
 }
 
 /*
+Affichage formulaire vide grenier
+*/
+
+function requestFormVideGrenier(callback, type, id) {
+	
+	xhr.onreadystatechange = function () {
+		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
+			callback(xhr.responseText);
+		}
+	};
+	
+	xhr.open("GET", "Ajax/PHP/Formulaire.php?type=" + type + "&idevent=" + id, true);
+	xhr.send(null);
+}
+
+/*
 Affichage de la barre de navigation post connexion
 */
 
@@ -184,11 +200,41 @@ function requestChoice(callback, idevent) {
 		}
 	};
 	
-	document.title = "Evenements";
-	
 	xhr.open("GET", "Ajax/PHP/VerificationInscription.php?IDevent=" + idevent, true);
 	xhr.send(null);
 }
+
+/*
+Affichage Administration
+ */
+
+function requestAdministration(callback) {
+	xhr.onreadystatechange = function () {
+		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
+			callback(xhr.responseText, "output");
+		}
+	};
+	
+	document.title = "Partenaires";
+	
+	xhr.open("GET", "Ajax/HTML/administration.html", true);
+	xhr.send(null);
+}
+
+/*
+Affichage place disponible
+ */
+
+/*function requestPlaceDispo(callback,idevent) {
+	xhr.onreadystatechange = function () {
+		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
+			callback(xhr.responseText, "choice_action-place-" + idevent);
+		}
+	};
+	
+	xhr.open("GET", "Ajax/PHP/VerificationNumberIn.php?idevent=" + idevent, true);
+	xhr.send(null);
+}*/
 
 /*
 Affichage du profil
@@ -234,13 +280,13 @@ function readDataLogin(oData) {
 	}
 	
 	if (json["text"] === "Connexion réussie") {
-		M.toast({html: 'Vous êtes connecté'});
+		Materialize.toast("Vous êtes connecté", 3000);
 		reload(document.title)
 			.then(() => requestNewNav(readData))
 			.then(() => closeModal("page"))
 			.catch((err) => console.error(err));
 	} else {
-		M.toast({html: json["text"]});
+		Materialize.toast(json["text"], 2500);
 	}
 }
 
@@ -271,11 +317,11 @@ function readDataRegister(oData) {
 	}
 	
 	if (json["text"] === "Compte Créé") {
-		M.toast({html: 'Compte créé'});
+		Materialize.toast("Compte Créé", 2000);
 		requestForm(readDataForm, "Login");
 		modal("page");
 	} else {
-		M.toast({html: json["text"]});
+		Materialize.toast(json["text"], 2000);
 		let input = document.getElementById("csrf");
 		input.value = json['token'];
 	}
@@ -301,7 +347,7 @@ function readDataDeconnexion(oData) {
 	let json = JSON.parse(oData);
 	
 	if (json["text"] === "Vous êtes déconnecté") {
-		M.toast({html: 'Vous êtes déconnecté'});
+		Materialize.toast("Vous êtes deconnecté", 2000);
 		reload(document.title)
 			.then(() => requestNewNav(readData))
 			.catch((err) => console.error(err));
@@ -335,9 +381,9 @@ function readDataSendContact(oData) {
 	}
 	
 	if (json["text"] === "Email envoyé !") {
-		M.toast({html: json["text"]});
+		Materialize.toast("Email envoyé !");
 	} else {
-		M.toast({html: json["text"]});
+		Materialize.toast(json["text"], 2000);
 		let input = document.getElementById("csrf");
 		input.value = json['token'];
 	}
@@ -370,20 +416,20 @@ function readDataSendBecomeMember(oData) {
 	}
 	
 	if (json["text"] === "Email envoyé !") {
-		M.toast({html: json["text"]});
+		Materialize.toast(json["text"], 1500);
 		closeModal("page")
 	} else {
-		M.toast({html: json["text"]});
+		Materialize.toast(json["text"], 2500);
 		let input = document.getElementById("csrf");
 		input.value = json['token'];
 	}
 }
 
 /*
-Send Actions Event Event
+Send inscription LAN
 */
 
-function requestSendActionsEvent(callback, action, idevent) {
+function requestSendLAN(callback, idevent) {
 	xhr.onreadystatechange = function () {
 		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
 			callback(xhr.responseText, idevent);
@@ -391,20 +437,23 @@ function requestSendActionsEvent(callback, action, idevent) {
 	};
 	
 	let formDataInscirption = new FormData();
-	formDataInscirption.append('Action', action);
 	formDataInscirption.append('IDevent', idevent);
 	
-	xhr.open("POST", "Ajax/PHP/SendActionsEvents.php", true);
+	xhr.open("POST", "Ajax/PHP/SendInscriptionLAN.php", true);
 	xhr.send(formDataInscirption);
 }
 
-function readDataSendActionsEvent(oData, idevent) {
+function readDataSendLAN(oData, idevent) {
 	
 	let json = JSON.parse(oData);
 	
-	requestChoice(readData, idevent);
-	M.toast({html: json["text"]});
-	
+	if (json["text"] === "Inscription effectué !") {
+		Materialize.toast(json["text"], 1500);
+		//requestPlaceDispo(readDataPlace, idevent);
+		requestChoice(readData, idevent);
+	} else {
+		Materialize.toast(json["text"], 2500);
+	}
 }
 
 /*
@@ -429,11 +478,76 @@ function readDataSendModificationProfil(oData) {
 	let json = JSON.parse(oData);
 	
 	if (json["text"] === "Modification effectué") {
-		M.toast({html: json["text"]});
+		Materialize.toast(json["text"], 1500);
 		requestProfil(readData);
 	} else {
-		M.toast({html: json["text"]});
+		Materialize.toast(json["text"], 2500);
 		let input = document.getElementById("csrf");
 		input.value = json['token'];
+	}
+}
+
+/*
+Send Inscription vide grenier
+ */
+
+function requestSendVideGrenier(callback, id) {
+	xhr.onreadystatechange = function () {
+		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
+			callback(xhr.responseText, id);
+		}
+	};
+	
+	let formData = new FormData(document.getElementById("form_contact"));
+	formData.append("IDevent", id);
+	
+	xhr.open("POST", "Ajax/PHP/SendInscriptionVideGrenier.php", true);
+	xhr.send(formData);
+}
+
+function readDataSendVideGrenier(oData, idevent) {
+	
+	let json = JSON.parse(oData);
+	
+	if (json["text"] === "Inscription effectué !") {
+		Materialize.toast(json["text"], 1500);
+		closeModal("page");
+		//requestPlaceDispo(readDataPlace, idevent);
+		requestChoice(readData, idevent);
+	} else {
+		Materialize.toast(json["text"], 2500);
+		let input = document.getElementById("csrf");
+		input.value = json['token'];
+	}
+}
+
+/*
+Send Desinscription event
+ */
+
+function requestSendDesinscription(callback, id) {
+	xhr.onreadystatechange = function () {
+		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
+			callback(xhr.responseText, id);
+		}
+	};
+	
+	let formData = new FormData();
+	formData.append("IDevent", id);
+	
+	xhr.open("POST", "Ajax/PHP/SendDesinscriptionEvent.php", true);
+	xhr.send(formData);
+}
+
+function readDataSendDesinscriptionEvent(oData, idevent) {
+	
+	let json = JSON.parse(oData);
+	
+	if (json["text"] === "Vous êtes desinscrit !") {
+		Materialize.toast(json["text"], 1500);
+		//requestPlaceDispo(readData, idevent);
+		requestChoice(readData, idevent);
+	} else {
+		Materialize.toast(json["text"], 2500);
 	}
 }

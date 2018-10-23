@@ -122,6 +122,7 @@
 			$placeTotal = $event->getPlace();
 			$urlImg = $event->getUrlimg() ?: "Default.png";
 			$description = $event->getDescription();
+			$prix = $event->getPrix();
 			$placeDisponible = $placeTotal - $placePrise;
 			
 			$verifyRegister = $participerManager->verifyInscription($idUser, $idEvent);
@@ -130,9 +131,13 @@
 				if ($placeDisponible < 0 && $verifyRegister === TRUE) {
 					$action = "<span class='cursor-pointer center-align black-text darken-4'>Inscriptions Complète</span>";
 				} elseif ($verifyRegister === FALSE) {
-					$action = "<span class='cursor-pointer bouton_inscription' onclick='requestSendActionsEvent(readDataSendActionsEvent,\"inscription\",{$idEvent})'>Inscription</span>";
+					if ($event->getType() === "Vide Grenier") {
+						$action = "<span class='cursor-pointer bouton_inscription' onclick='requestFormVideGrenier(readDataForm,\"InscriptionEvent\",{$idEvent})'>Inscription</span>";
+					} else {
+						$action = "<span class='cursor-pointer bouton_inscription' onclick='requestSendLAN(readDataSendLAN,{$idEvent})'>Inscription</span>";
+					}
 				} elseif ($verifyRegister === TRUE) {
-					$action = "<span class='cursor-pointer bouton_inscription' onclick='requestSendActionsEvent(readDataSendActionsEvent,\"desinscription\",{$idEvent})'>Desinscription</span>";
+					$action = "<span class='cursor-pointer bouton_inscription' onclick='requestSendDesinscription(readDataSendDesinscriptionEvent,{$idEvent})'>Desinscription</span>";
 				}
 			} else {
 				$action = "<p><span class='cursor-pointer blue-text darken-2' onclick='requestForm(readDataForm,\"Login\")'>Connectez vous</span> pour vous inscrire</p>";
@@ -149,6 +154,7 @@
 				'{{idevent}}'         => $idEvent,
 				'{{urlimg}}'          => $urlImg,
 				'{{action}}'          => $action,
+				'{{prix}}'            => $prix . "€",
 			];
 			
 			return strtr($modelHTML, $arrReplace);
