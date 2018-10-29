@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e06163c1-5936-4daf-bec3-e12c1b184b5f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Manager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/src/.gitignore" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -133,7 +132,7 @@
         <counts>
           <entry key="css" value="2813" />
           <entry key="dummy" value="11" />
-          <entry key="gitignore" value="105" />
+          <entry key="gitignore" value="108" />
           <entry key="htaccess" value="28" />
           <entry key="htm" value="2" />
           <entry key="html" value="5961" />
@@ -151,7 +150,7 @@
           <entry key="JavaScript" value="9126" />
           <entry key="Markdown" value="94" />
           <entry key="PHP" value="27509" />
-          <entry key="PLAIN_TEXT" value="116" />
+          <entry key="PLAIN_TEXT" value="119" />
           <entry key="htaccess" value="28" />
         </counts>
       </usages-collector>
@@ -180,7 +179,11 @@
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/.gitignore">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="13" selection-start-column="13" selection-end-column="13" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -442,12 +445,12 @@
       <workItem from="1540566381763" duration="62000" />
       <workItem from="1540738704342" duration="21857000" />
       <workItem from="1540805996202" duration="21970000" />
-      <workItem from="1540839186682" duration="5595000" />
+      <workItem from="1540839186682" duration="5708000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="364722000" />
+    <option name="totallyTimeSpent" value="364835000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
@@ -1241,7 +1244,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
