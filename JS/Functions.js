@@ -118,3 +118,20 @@ function modifyInput(id) {
 	
 	document.getElementById("modify_" + id).innerHTML = inputValide + inputAnnulation;
 }
+
+//Fonction d'affichage du loader
+
+function initLoader(type, id) {
+	let elem = document.getElementById("loader-" + type + "-" + id);
+	
+	elem.innerHTML = "<img src='Img/Icone/loader.gif' alt='loading' />";
+}
+
+//Fonction modifiant la barre de navigation admin
+
+function modifNavAdmin(id, tableau) {
+	let nav = document.getElementById(id);
+	let newNav = nav.innerHTML + "<span onclick = '" + tableau[0] + "' class = 'breadcrumb cursor-pointer no-select'>" + tableau[1] + "</span>";
+	
+	nav.innerHTML = newNav;
+}

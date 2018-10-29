@@ -1,3 +1,9 @@
+/*GENERAL*/
+
+#output {
+	padding: 0 !important;
+}
+
 /*ACCUEIL*/
 
 .page_container {
@@ -209,4 +215,98 @@
 	overflow: hidden;
 	background-color: white;
 	padding: 0 !important;
+}
+
+/*Administration*/
+
+/*ACCUEIL*/
+
+.section_administration {
+	margin-top: 15px;
+}
+
+/*CREATE EVENR*/
+
+.container_form_createvent {
+	margin: auto !important;
+	float: none !important;
+	border: 1px solid green;
+	border-radius: 10px;
+	overflow: hidden;
+	background-color: white;
+	padding: 0 !important;
+}
+
+.container_form_createvent h1 {
+	border-top: #00b0ff solid 15px;
+	margin-top: 0;
+}
+
+.valide_form {
+	display: block;
+	margin: auto;
+}
+
+/*GESTION PARTENAIRES*/
+
+.container_card_partenaire_admin {
+	float: none !important;
+	margin: auto !important;
+}
+
+.container-bottom-add-result {
+	position: fixed;
+	display: table;
+	right: 24px;
+	bottom: 24px;
+	height: 50px;
+	width: 50px;
+	overflow: hidden;
+	border-radius: 50%;
+}
+
+.bottom-add-result-icon {
+	display: block !important;
+}
+
+.bottom-add-result {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.bottom-add-result img {
+	height: 3em;
+	margin: 0;
+}
+
+.option_card_admin {
+	position: absolute;
+	bottom: -13px;
+	left: 70%;
+}
+
+.option_card_admin i{
+	border-radius: 50%;
+}
+
+/*GESTION EVENT*/
+
+.container_event_admin {
+	margin: 15px auto !important;
+	border: 1px solid green;
+	border-radius: 10px;
+	overflow: hidden;
+	background-color: white;
+	padding: 0 !important;
+}
+
+.container_event_admin h1 {
+	border-top: #00b0ff solid 15px;
+	margin-top: 0;
+}
+
+.option_modif_event_admin {
+	bottom: -13px;
+	left: 70%;
 }

@@ -20,7 +20,7 @@
 	$eventLAN = $eventManager->readAllEventWhere('LAN');
 	$eventsAll = $eventManager->readAllEvent();
 	
-	$modeleHTML = file_get_contents('../../Template/evenements.html');
+	$modeleHTML = file_get_contents('../../Template/cardevenements.html');
 	$modeleHTMLAllEvent = file_get_contents('../../Template/allevents.html');
 	
 	//Gestion Vide Grenier

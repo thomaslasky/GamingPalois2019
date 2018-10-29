@@ -25,7 +25,7 @@
 					$message .= "Téléphone : " . $_POST["Telephone"]. "\n\n";
 					$message .= $_POST["Message"];
 					
-					if (mail("thomastartas33@gmail.com", $sujet, $message)) {
+					if (mail("contact@gamingpalois.fr", $sujet, $message)) {
 						echo json_encode([
 							"text" => "Email envoyé !",
 						]);

@@ -26,15 +26,20 @@
 					if (verifyTelephone($nouveauCompte["Telephone"]) === TRUE) {
 						if (verifyEmail($nouveauCompte["Email"])) {
 							if ($usersManager->verifyMail($nouveauCompte["Email"]) === TRUE) {
+								
 								$inscription = new App\Membres($nouveauCompte);
 								
 								$usersManager->inscription($inscription);
 								
 								if (mail($inscription->getEmail(), "Inscription Gaming Palois", "Vous vous êtes inscrit sur le site Gaming Palois !")) {
 									echo json_encode([
-										"text" => "Compte Créé",
+										"text" => "Compte Créé mail de confirmation envoyé",
 									]);
 									exit;
+								} else {
+									echo json_encode([
+										"text" => "Compte Créé !",
+									]);
 								}
 							} else {
 								echo json_encode([

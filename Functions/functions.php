@@ -51,3 +51,11 @@
 			return FALSE;
 		}
 	}
+	
+	function verifyUrl($url) {
+		if (!empty($url) && filter_var($url, FILTER_VALIDATE_URL)) {
+			return TRUE;
+		} else {
+			return FALSE;
+		}
+	}

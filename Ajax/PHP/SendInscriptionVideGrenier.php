@@ -7,6 +7,8 @@
 	include '../../Functions/functions.php';
 	
 	$participerManager = new App\ParticiperManager();
+	$evenementManager = new \App\EvenementManager();
+	$userManager = new \App\MembresManager();
 	
 	if (isset($_SESSION['id'])) {
 		
@@ -14,6 +16,9 @@
 		$idEvent = $_POST["IDevent"];
 		$table = $_POST["Table"];
 		$vendre = $_POST["Vendre"] ?: "Non Renseigné";
+		
+		$userInfo = $userManager->readMembre($idUser);
+		$evenementInfo = $evenementManager->readEventByID($idEvent);
 		
 		$inscription = new App\Participer([
 			"IDevenement" => $idEvent,
@@ -24,10 +29,18 @@
 		
 		$participerManager->inscription($inscription);
 		
-		echo json_encode([
-			"text" => "Inscription effectué !",
-		]);
+		$msg = "Vous vous êtes inscrit à l'événement {$evenementInfo->getNom()} ! Vous pouvez modifier vos informations directement sur votre compte dans la rubrique Profil.";
 		
+		if (mail($userInfo->getEmail(), "Inscription à l'évènement " . $evenementInfo->getNom(), $msg)) {
+			echo json_encode([
+				"text" => "Inscription effectué !",
+			]);
+			exit;
+		} else {
+			echo json_encode([
+				"text" => "Inscription effectué, vous recevrez un mail sous peu",
+			]);
+		}
 	} else {
 		echo json_encode([
 			"text" => "Vous n'avez pas les autorisations pour effectuer cette action",

@@ -10,6 +10,7 @@
 	
 	
 	class PartenairesgpManager extends Manager {
+		
 		public function __construct() {
 			parent::__construct();
 			$this->table = "partenairesgp";
@@ -19,10 +20,10 @@
 			$sql = "INSERT INTO {$this->table} (Nom,Description,Site,Urlimg) VALUES (:nom,:description,:site,:url)";
 			$req = $this->db->prepare($sql);
 			
-			$req->bindValue('nom',$partenairesgp->getNom(),\PDO::PARAM_STR);
-			$req->bindValue('description',$partenairesgp->getDescription(),\PDO::PARAM_STR);
-			$req->bindValue('site',$partenairesgp->getSite(),\PDO::PARAM_STR);
-			$req->bindValue('url',$partenairesgp->getUrlimg(),\PDO::PARAM_STR);
+			$req->bindValue('nom', $partenairesgp->getNom(), \PDO::PARAM_STR);
+			$req->bindValue('description', $partenairesgp->getDescription(), \PDO::PARAM_STR);
+			$req->bindValue('site', $partenairesgp->getSite(), \PDO::PARAM_STR);
+			$req->bindValue('url', $partenairesgp->getUrlimg(), \PDO::PARAM_STR);
 			
 			$req->execute();
 		}
@@ -39,16 +40,26 @@
 			return new Partenairesgp($result);
 		}
 		
-		public function updatePartenaireGP(Partenairesgp &$partenairesgp,$id) {
-			$sql = "UPDATE {$this->table} SET Nom = :nom, Description = :descr, Site = :site, Urlimg = :url WHERE IDpartenaire = :id";
+		public function updatePartenaireGP(Partenairesgp &$partenairesgp) {
+			$sql = "UPDATE {$this->table} SET Nom = :nom, Description = :descr, Site = :site WHERE IDpartenaire = :id";
 			
 			$req = $this->db->prepare($sql);
 			
-			$req->bindValue('nom',$partenairesgp->getNom(),\PDO::PARAM_STR);
-			$req->bindValue('descr',$partenairesgp->getDescription(),\PDO::PARAM_STR);
-			$req->bindValue('site',$partenairesgp->getSite(),\PDO::PARAM_STR);
-			$req->bindValue('url',$partenairesgp->getUrlimg(),\PDO::PARAM_STR);
-			$req->bindValue('id',$id,\PDO::PARAM_INT);
+			$req->bindValue('nom', $partenairesgp->getNom(), \PDO::PARAM_STR);
+			$req->bindValue('descr', $partenairesgp->getDescription(), \PDO::PARAM_STR);
+			$req->bindValue('site', $partenairesgp->getSite(), \PDO::PARAM_STR);
+			$req->bindValue('id', $partenairesgp->getIdPartenaire(), \PDO::PARAM_INT);
+			
+			$req->execute();
+		}
+		
+		public function updateImgPartenaireGP(Partenairesgp &$partenairesgp) {
+			$sql = "UPDATE {$this->table} SET Urlimg = :url WHERE IDpartenaire = :id";
+			
+			$req = $this->db->prepare($sql);
+			
+			$req->bindValue('url', $partenairesgp->getUrlimg(), \PDO::PARAM_STR);
+			$req->bindValue('id', $partenairesgp->getIdPartenaire(), \PDO::PARAM_INT);
 			
 			$req->execute();
 		}
@@ -57,7 +68,7 @@
 			$sql = "DELETE FROM {$this->table} WHERE IDpartenaire = :id";
 			$req = $this->db->prepare($sql);
 			
-			$req->bindValue('id',$id,\PDO::PARAM_INT);
+			$req->bindValue('id', $id, \PDO::PARAM_INT);
 			
 			$req->execute();
 		}
@@ -73,7 +84,7 @@
 			
 			$result = $req->fetchAll();
 			
-			foreach ($result as $value) {
+			foreach($result as $value) {
 				$allPartenaireGP[] = new Partenairesgp($value);
 			}
 			
@@ -82,11 +93,12 @@
 		
 		public function ficheAllPartenairesGP(Partenairesgp &$partenairesgp, $modeleHTML) {
 			
-			$arrReplace = ['{{nom}}' => $partenairesgp->getNom(),
-				'{{urlimg}}' => $partenairesgp->getUrlimg() ?: "logoGP.png",
-				'{{id}}' => $partenairesgp->getIdPartenaire(),
+			$arrReplace = [
+				'{{nom}}'         => $partenairesgp->getNom(),
+				'{{urlimg}}'      => $partenairesgp->getUrlimg() ?: "Default.png",
+				'{{id}}'          => $partenairesgp->getIdPartenaire(),
 				'{{description}}' => $partenairesgp->getDescription(),
-				'{{site}}' => $partenairesgp->getSite()
+				'{{site}}'        => $partenairesgp->getSite(),
 			];
 			
 			return strtr($modeleHTML, $arrReplace);

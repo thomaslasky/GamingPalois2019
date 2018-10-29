@@ -16,7 +16,7 @@
 			
 			$allEvents = [];
 			
-			$sql = "SELECT * FROM " . $this->table . " ORDER BY Dates ASC LIMIT 5";
+			$sql = "SELECT * FROM " . $this->table . " ORDER BY Dates DESC LIMIT 5";
 			$req = $this->db->prepare($sql);
 			$req->execute();
 			$result = $req->fetchAll();
@@ -69,7 +69,7 @@
 		//Ajout d'un évènement en base
 		
 		public function addEvent(Evenement &$event) {
-			$sql = "INSERT INTO {$this->table} (Nom,Dates,Adresse,Place,Type,Urlimg,Description) VALUES (:nom,:dates,:adresse,:place,:type,:url,:description)";
+			$sql = "INSERT INTO evenements (Nom, Description, Dates, Adresse, Place, Prix, Type, Urlimg) VALUES (:nom,:description,:dates,:adresse,:place,:prix,:type,:url)";
 			$req = $this->db->prepare($sql);
 			
 			$req->bindValue('nom', $event->getNom(), \PDO::PARAM_STR);
@@ -79,6 +79,7 @@
 			$req->bindValue('url', $event->getUrlimg(), \PDO::PARAM_STR);
 			$req->bindValue('description', $event->getDescription(), \PDO::PARAM_STR);
 			$req->bindValue('type', $event->getType(), \PDO::PARAM_STR);
+			$req->bindValue('prix', $event->getPrix(), \PDO::PARAM_INT);
 			
 			$req->execute();
 		}
@@ -96,10 +97,30 @@
 		
 		//Update d'une donnée d'évènement par sont type,
 		
-		public function updateEvent($type, $id, $value) {
-			$sql = "UPDATE {$this->table} SET $type = :information WHERE IDevenement = {$id}";
+		public function updateEvent(Evenement &$evenement) {
+			$sql = "UPDATE {$this->table} SET Nom = :nom , Dates = :date , Adresse = :adresse , Place = :place , Prix = :prix, Description = :descr  WHERE IDevenement = :id";
 			$req = $this->db->prepare($sql);
-			$req->bindValue('information', $value, \PDO::PARAM_STR);
+			
+			$req->bindValue("nom", $evenement->getNom(), \PDO::PARAM_STR);
+			$req->bindValue("date", $evenement->getDates(), \PDO::PARAM_STR);
+			$req->bindValue("adresse", $evenement->getAdresse(), \PDO::PARAM_STR);
+			$req->bindValue("place", $evenement->getPlace(), \PDO::PARAM_INT);
+			$req->bindValue("prix", $evenement->getPrix(), \PDO::PARAM_INT);
+			$req->bindValue("descr", $evenement->getDescription(), \PDO::PARAM_STR);
+			$req->bindValue("id", $evenement->getIdEvenement(), \PDO::PARAM_INT);
+			
+			$req->execute();
+		}
+		
+		//Update image event
+		
+		public function updateImgEvent(Evenement $evenement) {
+			$sql = "UPDATE {$this->table} SET Urlimg = :url  WHERE IDevenement = :id";
+			$req = $this->db->prepare($sql);
+			
+			$req->bindValue("url", $evenement->getUrlimg(), \PDO::PARAM_STR);
+			$req->bindValue("id", $evenement->getIdEvenement(), \PDO::PARAM_INT);
+			
 			$req->execute();
 		}
 		
@@ -109,55 +130,63 @@
 			
 			setlocale(LC_TIME, 'fr', 'fr_FR', 'fr_FR.ISO8859-1');
 			
-			$participerManager = new ParticiperManager();
-			
-			$action = "";
-			
-			$idEvent = $event->getIdevenement();
-			$nom = $event->getNom();
-			$dates = $date = strftime('%A  %d  %B  %Y', strtotime($event->getDates()));;
-			$adresses = $event->getAdresse();
-			$typePlace = $event->getType();
-			$placePrise = $this->countParticipants($idEvent);
-			$placeTotal = $event->getPlace();
-			$urlImg = $event->getUrlimg() ?: "Default.png";
-			$description = $event->getDescription();
-			$prix = $event->getPrix();
-			$placeDisponible = $placeTotal - $placePrise;
-			
-			$verifyRegister = $participerManager->verifyInscription($idUser, $idEvent);
-			
-			if (!empty($idUser)) {
-				if ($placeDisponible < 0 && $verifyRegister === TRUE) {
-					$action = "<span class='cursor-pointer center-align black-text darken-4'>Inscriptions Complète</span>";
-				} elseif ($verifyRegister === FALSE) {
-					if ($event->getType() === "Vide Grenier") {
-						$action = "<span class='cursor-pointer bouton_inscription' onclick='requestFormVideGrenier(readDataForm,\"InscriptionEvent\",{$idEvent})'>Inscription</span>";
-					} else {
-						$action = "<span class='cursor-pointer bouton_inscription' onclick='requestSendLAN(readDataSendLAN,{$idEvent})'>Inscription</span>";
+			if (date("Y-m-d") < $event->getDates()) {
+				
+				$participerManager = new ParticiperManager();
+				
+				$action = "";
+				
+				$idEvent = $event->getIdevenement();
+				$nom = $event->getNom();
+				$dates = new \DateTime($event->getDates());
+				$date = strftime('%A  %d  %B  %Y', strtotime($event->getDates()));
+				$adresses = $event->getAdresse();
+				$typePlace = $event->getType();
+				$placePrise = $this->countParticipants($idEvent);
+				$placeTotal = $event->getPlace();
+				$urlImg = $event->getUrlimg() ?: "Default.png";
+				$description = $event->getDescription();
+				$prix = $event->getPrix();
+				$placeDisponible = $placeTotal - $placePrise;
+				
+				$verifyRegister = $participerManager->verifyInscription($idUser, $idEvent);
+				
+				if (!empty($idUser)) {
+					if ($placeDisponible < 0 && $verifyRegister === TRUE) {
+						$action = "<span class='cursor-pointer center-align black-text darken-4'>Inscriptions Complète</span>";
+					} elseif ($verifyRegister === FALSE) {
+						if (date("Y-m-d") < $dates) {
+							if ($event->getType() === "Vide Grenier") {
+								$action = "<span id='loader-register-{$idEvent}' class='cursor-pointer bouton_inscription' onclick='requestFormVideGrenier(readDataForm,\"InscriptionEvent\",{$idEvent}),initLoader(\"register\",{$idEvent})'>Inscription</span>";
+							} else {
+								$action = "<span id='loader-register-{$idEvent}' class='cursor-pointer bouton_inscription' onclick='requestSendLAN(readDataSendLAN,{$idEvent}), initLoader(\"register\",{$idEvent})'>Inscription</span>";
+							}
+						} else {
+							$action = "<span class='bouton_inscription'>Inscription Fermé</span>";
+						}
+					} elseif ($verifyRegister === TRUE) {
+						$action = "<span id='loader-register-{$idEvent}' class='cursor-pointer bouton_inscription' onclick='requestSendDesinscription(readDataSendDesinscriptionEvent,{$idEvent}), initLoader(\"register\",{$idEvent})'>Desinscription</span>";
 					}
-				} elseif ($verifyRegister === TRUE) {
-					$action = "<span class='cursor-pointer bouton_inscription' onclick='requestSendDesinscription(readDataSendDesinscriptionEvent,{$idEvent})'>Desinscription</span>";
+				} else {
+					$action = "<p><span class='cursor-pointer blue-text darken-2' onclick='requestForm(readDataForm,\"Login\")'>Connectez vous</span> pour vous inscrire</p>";
 				}
-			} else {
-				$action = "<p><span class='cursor-pointer blue-text darken-2' onclick='requestForm(readDataForm,\"Login\")'>Connectez vous</span> pour vous inscrire</p>";
+				
+				$arrReplace = [
+					'{{id}}'              => $idEvent,
+					'{{nomevent}}'        => $nom,
+					'{{description}}'     => $description,
+					'{{dateevents}}'      => $date,
+					'{{adresse}}'         => $adresses,
+					'{{placedisponible}}' => $placeDisponible,
+					'{{typeplace}}'       => $typePlace,
+					'{{idevent}}'         => $idEvent,
+					'{{urlimg}}'          => $urlImg,
+					'{{action}}'          => $action,
+					'{{prix}}'            => $prix . "€",
+				];
+				
+				return strtr($modelHTML, $arrReplace);
 			}
-			
-			$arrReplace = [
-				'{{id}}'              => $idEvent,
-				'{{nomevent}}'        => $nom,
-				'{{description}}'     => $description,
-				'{{dateevents}}'      => $dates,
-				'{{adresse}}'         => $adresses,
-				'{{placedisponible}}' => $placeDisponible,
-				'{{typeplace}}'       => $typePlace,
-				'{{idevent}}'         => $idEvent,
-				'{{urlimg}}'          => $urlImg,
-				'{{action}}'          => $action,
-				'{{prix}}'            => $prix . "€",
-			];
-			
-			return strtr($modelHTML, $arrReplace);
 		}
 		
 		//Affichage de tout les évènements
@@ -181,18 +210,4 @@
 			return strtr($modeleHTML, $arrReplace);
 		}
 		
-		//[Administrateur] Affiche de la gestion d'évènement
-		
-		public function ficheAllEventsgestion(Evenement &$event, $modeleHTML) {
-			$arrReplace = [
-				'{{url}}'         => $event->getUrlimg(),
-				'{{name}}'        => $event->getNom(),
-				'{{date}}'        => $event->getDates(),
-				'{{description}}' => $event->getDescription(),
-				'{{place}}'       => $event->getPlace(),
-				'{{type}}'        => $event->getType(),
-				'{{id}}'          => $event->getIdEvenement(),
-			];
-			return strtr($modeleHTML, $arrReplace);
-		}
 	}

@@ -20,7 +20,7 @@
 					
 					$message .= htmlspecialchars($_POST["Message"]);
 					
-					if (mail("thomastartas33@gmail.com", htmlspecialchars($_POST["Sujet"]), $message)) {
+					if (mail("contact@gamingpalois.fr", htmlspecialchars($_POST["Sujet"]), $message)) {
 						echo json_encode([
 							"text" => "Email envoyé !",
 						]);

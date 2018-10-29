@@ -9,6 +9,22 @@
 			$this->table = "participer";
 		}
 		
+		public function readParticipant($idEvent) {
+			$event = [];
+			
+			$sql = "SELECT * FROM " . $this->table . " WHERE IDevenement = :id";
+			$req = $this->db->prepare($sql);
+			$req->bindValue('id', $idEvent, \PDO::PARAM_INT);
+			$req->execute();
+			$result = $req->fetchAll(\PDO::FETCH_ASSOC);
+			if (!empty($result)) {
+				foreach($result as $value) {
+					$event[] = $value;
+				}
+				return $event;
+			}
+		}
+		
 		public function inscription(Participer &$participer) {
 			$sql = "INSERT INTO `participer` (Paiement, Vend, Emplacement, IDmembre, IDevenement) VALUES (0, :vend, :emp, :idmembre, :idevent);";
 			$req = $this->db->prepare($sql);
@@ -45,8 +61,13 @@
 			
 			$idEvent = $event->getIdEvenement();
 			
-			$participantsTotal = $this->sumParticipants($event->getIdEvenement());
 			$allParticipants = $this->selectParticipants($event->getIdEvenement());
+			
+			if ($event->getType() === "Vide Grenier") {
+				$moreHead = "<th>Vend</th><th>Table</th><th>Paiement</th>";
+			} else {
+				$moreHead = "";
+			}
 			
 			if (!empty($allParticipants)) {
 				foreach($allParticipants as $value) {
@@ -55,11 +76,17 @@
 			}
 			
 			$arrReplace = [
-				'{{nom}}'                 => $event->getNom(),
-				'{{date}}'                => $event->getDates(),
-				'{{id}}'                  => $event->getIdEvenement(),
-				'{{totalparticipants}}'   => $participantsTotal,
-				'{{foreachparticipants}}' => $participantsListe,
+				'{{url}}'         => $event->getUrlimg(),
+				'{{nom}}'         => $event->getNom(),
+				'{{description}}' => $event->getDescription(),
+				'{{date}}'        => $event->getDates(),
+				'{{adresse}}'     => $event->getAdresse(),
+				'{{place}}'       => $event->getPlace(),
+				'{{prix}}'        => $event->getPrix(),
+				'{{type}}'        => $event->getType(),
+				'{{id}}'          => $event->getIdEvenement(),
+				'{{morehead}}'    => $moreHead,
+				'{{user}}'        => $participantsListe,
 			];
 			
 			return strtr($modeleHTMLstructure, $arrReplace);
@@ -72,30 +99,44 @@
 			$req->bindValue('id', $id, \PDO::PARAM_INT);
 			
 			$req->execute();
+			
+			return TRUE;
 		}
 		
 		private function listeAllParticipantsInfo(Participer &$participer, $modeleHTMLinfo, $idEvent) {
-			$membreManager = new MembresManager();
 			
-			$class = "";
-			$action = "";
+			$membreManager = new MembresManager();
+			$eventManager = new EvenementManager();
+			
+			$event = $eventManager->readEventByID($idEvent);
+			
+			/*$class = "";
+			$action = "";*/
 			
 			$infoMembre = $membreManager->readMembre($participer->getIDmembre());
 			
-			if ($participer->getPaiement() === "0") {
+			/*if ($participer->getPaiement() === "0") {
 				$class = "red darken-3";
-				//$action = "<a href='?suppr={$participer->getIDmembre()}&event={$idEvent}'>Supprimer</a><br><a href='?valider={$participer->getIDmembre()}&event={$idEvent}'>Valider</a>";
 			} elseif ($participer->getPaiement() === "1") {
 				$class = "green darken-2";
 				$action = "";
+			}*/
+			
+			if ($event->getType() === "Vide Grenier") {
+				$more = "<td>{$participer->getVend()}</td><td>{$participer->getEmplacement()}</td><td>{$participer->getPaiement()}</td>";
+			} else {
+				$more = "";
 			}
 			
 			$arrReplace = [
-				'{{class}}'       => $class,
-				'{{nomprenom}}'   => $infoMembre->getNom() . " " . $infoMembre->getPrenom(),
-				'{{mail}}'        => $infoMembre->getEmail(),
-				'{{emplacement}}' => $participer->getEmplacement(),
-				'{{action}}'      => $action,
+				'{{idparticipant}}'        => $infoMembre->getIDmembre(),
+				'{{emailparticipant}}'     => $infoMembre->getEmail(),
+				'{{prenomparticipant}}'    => $infoMembre->getPrenom(),
+				'{{nomparticipant}}'       => $infoMembre->getNom(),
+				'{{ageparticipant}}'       => $infoMembre->getAge(),
+				'{{telephoneparticipant}}' => $infoMembre->getTelephone(),
+				'{{statusparticipant}}'    => $infoMembre->getStatus(),
+				'{{more}}'                 => $more,
 			];
 			
 			return strtr($modeleHTMLinfo, $arrReplace);

@@ -10,7 +10,7 @@
 	
 	$allPartenaires = $partenairesGPManager->allPartenaireGP();
 	
-	$modeleHtml = file_get_contents("../HTML/partenaires.html");
+	$modeleHtml = file_get_contents("../HTML/cardpartenaires.html");
 	
 	$allPartenairesGP = "<div class='container_partenaires col s10 margin-auto'>";
 	$allPartenairesGP .= "<h1 class='center-align'>Partenaires</h1><hr>";

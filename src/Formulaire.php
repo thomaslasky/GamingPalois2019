@@ -49,10 +49,6 @@
 			$this->rendu .= "<label class='$labelClass' for='$nomChamp'>$label</label>";
 		}
 		
-		public function inputTextChips($id, $nomChamp, $label, $inputClass = '') {
-			$this->rendu .= "<input id='$id' class='$inputClass' type='text' name='$nomChamp'/>";
-		}
-		
 		public function inputTextHidden($nomChamp, $value, $id) {
 			$this->rendu .= "<input id='$id' type='hidden' name='$nomChamp' value='$value'/>";
 		}
@@ -78,6 +74,24 @@
 		public function inputPassword($id, $nomChamp, $label, $inputClass = '', $value = '', $iClass = "", $icone = "", $labelClass = "", $min = "", $max = "", $onClick = "") {
 			$this->rendu .= "<i class='$iClass'>$icone</i>";
 			$this->rendu .= "<input id='$id' class='$inputClass' type='password' name='$nomChamp' value='$value' min='$min' max='$max' onclick='$onClick' />";
+			$this->rendu .= "<label class='$labelClass' for='$nomChamp'>$label</label>";
+		}
+		
+		public function inputDate($id, $nomChamp, $label, $inputClass = '', $value = '', $iClass = "", $icone = "", $labelClass = "") {
+			$this->rendu .= "<i class='$iClass'>$icone</i>";
+			$this->rendu .= "<input id='$id' class='$inputClass' type='date' name='$nomChamp' value='$value'/>";
+			$this->rendu .= "<label class='$labelClass' for='$nomChamp'>$label</label>";
+		}
+		
+		public function inputFile($id, $nomChamp, $label, $inputClass = '', $iClass = "", $icone = "", $labelClass = "") {
+			$this->rendu .= "<i class='$iClass'>$icone</i>";
+			$this->rendu .= "<input id='$id' class='$inputClass' type='file' name='$nomChamp'/>";
+			$this->rendu .= "<label class='$labelClass' for='$nomChamp'>$label</label>";
+		}
+		
+		public function inputLink($id, $nomChamp, $label, $inputClass = '', $value = '', $iClass = "", $icone = "", $more = "", $labelClass = "") {
+			$this->rendu .= "<i class='$iClass'>$icone</i>";
+			$this->rendu .= "<input id='$id' class='$inputClass' type='url' name='$nomChamp' value='$value' $more/>";
 			$this->rendu .= "<label class='$labelClass' for='$nomChamp'>$label</label>";
 		}
 		
@@ -114,7 +128,7 @@
 		}*/
 		
 		public function submit($name, $send, $class = '', $onclick = "") {
-				$this->rendu .= "<input type='button' class='$class' name='$name' value='$send' onclick='$onclick'/>";
+			$this->rendu .= "<input type='button' class='$class' name='$name' value='$send' onclick='$onclick'/>";
 		}
 		
 		public function submitButton($name, $send, $class = '', $onclick = "") {

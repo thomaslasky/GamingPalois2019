@@ -11,7 +11,7 @@
 		
 		public function inscription(Membres &$membres) {
 			
-			$sql = "INSERT INTO {$this->db} (Email, Password, Nom, Prenom, Age, Telephone, Status) VALUES (:email,:password,:nom,:prenom,:age,:telephone,:status)";
+			$sql = "INSERT INTO {$this->table} (Email, Password, Nom, Prenom, Age, Telephone, Status) VALUES (:email,:password,:nom,:prenom,:age,:telephone,:status)";
 			$req = $this->db->prepare($sql);
 			
 			$req->bindValue('email', $membres->getEmail(), \PDO::PARAM_STR);
@@ -33,6 +33,16 @@
 			$result = $req->fetch();
 			
 			return new Membres($result);
+		}
+		
+		public function readMembreTab($id) {
+			$sql = "SELECT * FROM " . $this->table . " WHERE IDmembre = :id";
+			$req = $this->db->prepare($sql);
+			$req->bindValue('id', $id, \PDO::PARAM_INT);
+			$req->execute();
+			$result = $req->fetch(\PDO::FETCH_ASSOC);
+			
+			return $result;
 		}
 		
 		public function updateInformations(Membres &$membre) {
