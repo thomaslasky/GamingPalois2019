@@ -18,6 +18,9 @@
 			if (verifyEmail($_POST["Email"])) {
 				if (verifyTelephone($_POST["Telephone"])) {
 					
+					$message .= strtoupper(htmlspecialchars($_POST["Nom"])) . ' ' . ucfirst(htmlspecialchars($_POST['Prenom'])) . "\n";
+					$message .= htmlspecialchars($_POST["Email"]) . "\n";
+					$message .= htmlspecialchars($_POST["Telephone"]) . "\n\n";
 					$message .= htmlspecialchars($_POST["Message"]);
 					
 					if (mail("contact@gamingpalois.fr", htmlspecialchars($_POST["Sujet"]), $message)) {

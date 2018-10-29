@@ -21,8 +21,8 @@
 					$sujet = $_POST["Nom"] . "\n" . $_POST["Prenom"] . " souhaite devenir membre";
 					
 					$message .= $_POST["Prenom"] . " " . $_POST["Nom"] . "\n";
-					$message .= "Email de contact : " . $_POST["Email"]. "\n";
-					$message .= "Téléphone : " . $_POST["Telephone"]. "\n\n";
+					$message .= "Email de contact : " . $_POST["Email"] . "\n";
+					$message .= "Téléphone : " . $_POST["Telephone"] . "\n\n";
 					$message .= $_POST["Message"];
 					
 					if (mail("contact@gamingpalois.fr", $sujet, $message)) {
