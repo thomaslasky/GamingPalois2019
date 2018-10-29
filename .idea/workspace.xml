@@ -2,66 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e06163c1-5936-4daf-bec3-e12c1b184b5f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Ajax/HTML/cardpartenairesadmin.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ajax/HTML/listeadminevent.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ajax/HTML/listeparticipant.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ajax/PHP/AdministrerEvent.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ajax/PHP/CreateEvent.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ajax/PHP/GeneratePDF.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ajax/PHP/GestionPartenaires.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ajax/PHP/SendAddPartenaire.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ajax/PHP/SendCreateEvent.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ajax/PHP/SendDeleteEvent.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ajax/PHP/SendDeletePartenaire.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ajax/PHP/SendModificationEvent.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ajax/PHP/SendModificationImgEvent.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ajax/PHP/SendModificationImgPartenaire.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ajax/PHP/SendModificationPartenaire.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Img/Icone/Add.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Img/Icone/Delete.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Img/Icone/Edit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Img/Icone/loader.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Template/cardevenements.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/GamingPalois2019.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GamingPalois2019.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c5501388-9572-4edc-945e-15dd8ad8bf97.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c5501388-9572-4edc-945e-15dd8ad8bf97.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ajax/Ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/Ajax.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ajax/HTML/administration.html" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/HTML/administration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ajax/HTML/partenaires.html" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/HTML/cardpartenaires.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ajax/HTML/presentation.html" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/HTML/presentation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ajax/PHP/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/PHP/Contact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ajax/PHP/Evenements.php" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/PHP/Evenements.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ajax/PHP/Formulaire.php" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/PHP/Formulaire.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ajax/PHP/Partenaires.php" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/PHP/Partenaires.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ajax/PHP/SendBecomeMember.php" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/PHP/SendBecomeMember.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ajax/PHP/SendContact.php" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/PHP/SendContact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ajax/PHP/SendDesinscriptionEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/PHP/SendDesinscriptionEvent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ajax/PHP/SendInscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/PHP/SendInscription.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ajax/PHP/SendInscriptionLAN.php" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/PHP/SendInscriptionLAN.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ajax/PHP/SendInscriptionVideGrenier.php" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/PHP/SendInscriptionVideGrenier.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ajax/PHP/VerificationInscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/PHP/VerificationInscription.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/StyleGeneral.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/StyleGeneral.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/StylePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/StylePage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Functions/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Functions/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Img/Icone/Read Me.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Img/Icone/demo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Img/Icone/selection.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Img/Icone/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Img/Partenaires/Event/test.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Img/Partenaires/logoGP.png" beforeDir="false" afterPath="$PROJECT_DIR$/Img/Partenaires/Default.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS/Functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS/Functions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Template/allevents.html" beforeDir="false" afterPath="$PROJECT_DIR$/Template/allevents.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Template/evenements.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Template/navigateur.html" beforeDir="false" afterPath="$PROJECT_DIR$/Template/navigateur.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EvenementManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EvenementManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Formulaire.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Formulaire.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Manager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MembresManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MembresManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PartenairesgpManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/PartenairesgpManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ParticiperManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ParticiperManager.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -144,7 +86,7 @@
           <entry key="PHP/C:/wamp64/www/Projets/Professionnel/GamingPalois2019/src" value="2" />
           <entry key="css" value="114" />
           <entry key="evenements" value="1" />
-          <entry key="gitignore" value="7" />
+          <entry key="gitignore" value="8" />
           <entry key="htaccess" value="6" />
           <entry key="htm" value="1" />
           <entry key="html" value="206" />
@@ -173,7 +115,7 @@
           <entry key="JavaScript" value="144" />
           <entry key="Markdown" value="2" />
           <entry key="PHP" value="757" />
-          <entry key="PLAIN_TEXT" value="10" />
+          <entry key="PLAIN_TEXT" value="11" />
           <entry key="SCSS" value="1" />
           <entry key="Scratch" value="1" />
           <entry key="TypeScript" value="3" />
@@ -227,13 +169,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="63">
               <caret line="3" column="17" lean-forward="true" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/.gitignore">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -259,7 +206,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Participer.php" />
         <option value="$PROJECT_DIR$/Ajax/PHP/VerificationNumberIn.php" />
         <option value="$PROJECT_DIR$/administration.php" />
         <option value="$PROJECT_DIR$/Ajax/PHP/VerificationConnexion.php" />
@@ -310,6 +256,7 @@
         <option value="$PROJECT_DIR$/Ajax/PHP/SendBecomeMember.php" />
         <option value="$PROJECT_DIR$/Ajax/PHP/SendContact.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/.gitignore" />
       </list>
     </option>
   </component>
@@ -407,17 +354,17 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.PHP" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\Projets\Professionnel\GamingPalois2019\Img\Icone" />
-      <recent name="C:\wamp64\www\Projets\Professionnel\GamingPalois2019\Img\Partenaires" />
-      <recent name="C:\wamp64\www\Projets\Professionnel\GamingPalois2019\Ajax\PHP" />
-      <recent name="C:\wamp64\www\Projets\Professionnel\GamingPalois2019\Img\Events" />
-      <recent name="C:\wamp64\www\Projets\Professionnel\GamingPalois2019\Template" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\Projets\Professionnel\GamingPalois2019\Img\Icone" />
       <recent name="C:\wamp64\www\Projets\Professionnel\GamingPalois2019" />
       <recent name="C:\wamp64\www\Projets\Professionnel\GamingPalois2019\src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Projets\Professionnel\GamingPalois2019\src" />
+      <recent name="C:\wamp64\www\Projets\Professionnel\GamingPalois2019\Img\Icone" />
+      <recent name="C:\wamp64\www\Projets\Professionnel\GamingPalois2019\Img\Partenaires" />
+      <recent name="C:\wamp64\www\Projets\Professionnel\GamingPalois2019\Ajax\PHP" />
+      <recent name="C:\wamp64\www\Projets\Professionnel\GamingPalois2019\Img\Events" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -495,12 +442,12 @@
       <workItem from="1540566381763" duration="62000" />
       <workItem from="1540738704342" duration="21857000" />
       <workItem from="1540805996202" duration="21970000" />
-      <workItem from="1540839186682" duration="2244000" />
+      <workItem from="1540839186682" duration="2350000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="361371000" />
+    <option name="totallyTimeSpent" value="361477000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
@@ -535,13 +482,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://c5501388-9572-4edc-945e-15dd8ad8bf97/schema/gamingpalois/table/evenements">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://c5501388-9572-4edc-945e-15dd8ad8bf97/schema/gamingpalois/table/membres">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1264,6 +1204,9 @@
           <caret line="3" column="17" lean-forward="true" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">
