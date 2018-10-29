@@ -152,8 +152,8 @@
 				$verifyRegister = $participerManager->verifyInscription($idUser, $idEvent);
 				
 				if (!empty($idUser)) {
-					if ($placeDisponible < 0 && $verifyRegister === TRUE) {
-						$action = "<span class='cursor-pointer center-align black-text darken-4'>Inscriptions Complète</span>";
+					if ($placeDisponible <= 0) {
+						$action = "<span class='center-align black-text darken-4'>Inscriptions Complète</span>";
 					} elseif ($verifyRegister === FALSE) {
 						if (date("Y-m-d") < $dates) {
 							if ($event->getType() === "Vide Grenier") {
