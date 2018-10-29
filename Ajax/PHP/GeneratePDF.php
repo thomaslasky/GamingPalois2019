@@ -83,8 +83,8 @@
 		$pdf->Output("../../Files/ListePDF/" . $nameFile, "F");
 		
 		echo json_encode([
-			"text" => "Fichier Généré !",
-			"name" => $nameFile
+			"text" => "PDF Généré !",
+			"name" => $nameFile,
 		]);
 		
 	} else {

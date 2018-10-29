@@ -912,8 +912,8 @@ function readDataGeneratePDF(oData) {
 	let json = JSON.parse(oData);
 	
 	if (json["text"] === "PDF Généré !") {
-		var $toastContent = $("<span style='margin-right: 10px'>" + json['text'] + "</span>").add($("<span onclick='requestTelechargementListePDF(\"" + json['name'] + "\")' class='btn - flattoast - action'>Telecharger</span>"));
-		Materialize.toast($toastContent, 5000);
+		var $toastContent = $("<span style='margin-right: 10px'>" + json['text'] + "</span><span onclick='requestTelechargementListePDF(\"" + json['name'] + "\")' class='btn - flattoast - action'>Telecharger</span>");
+		Materialize.toast($toastContent, 155000);
 	} else {
 		Materialize.toast(json["text"], 2500);
 	}
