@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e06163c1-5936-4daf-bec3-e12c1b184b5f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Ajax/Ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/Ajax.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ajax/PHP/GeneratePDF.php" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/PHP/GeneratePDF.php" afterDir="false" />
-    </list>
+    <list default="true" id="e06163c1-5936-4daf-bec3-e12c1b184b5f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +166,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Ajax/Ajax.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="511">
@@ -392,15 +389,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Ajax/PHP/GeneratePDF.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="85" column="26" selection-start-line="85" selection-start-column="26" selection-end-line="85" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -473,8 +461,8 @@
         <option value="$PROJECT_DIR$/Ajax/PHP/SendContact.php" />
         <option value="$PROJECT_DIR$/Ajax/PHP/SendBecomeMember.php" />
         <option value="$PROJECT_DIR$/src/EvenementManager.php" />
-        <option value="$PROJECT_DIR$/Ajax/PHP/GeneratePDF.php" />
         <option value="$PROJECT_DIR$/Ajax/Ajax.js" />
+        <option value="$PROJECT_DIR$/Ajax/PHP/GeneratePDF.php" />
       </list>
     </option>
   </component>
@@ -501,8 +489,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="570" />
-    <option name="y" value="20" />
+    <option name="x" value="217" />
+    <option name="y" value="55" />
     <option name="width" value="880" />
     <option name="height" value="1090" />
   </component>
@@ -548,6 +536,11 @@
               <item name="GamingPalois2019" type="462c0819:PsiDirectoryNode" />
               <item name="Ajax" type="462c0819:PsiDirectoryNode" />
               <item name="PHP" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GamingPalois2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GamingPalois2019" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -666,16 +659,15 @@
       <workItem from="1540566381763" duration="62000" />
       <workItem from="1540738704342" duration="21857000" />
       <workItem from="1540805996202" duration="21970000" />
-      <workItem from="1540839186682" duration="4963000" />
+      <workItem from="1540839186682" duration="5205000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="364090000" />
+    <option name="totallyTimeSpent" value="364332000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="878" extended-state="7" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16912752" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -1240,6 +1232,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/PHP/GeneratePDF.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="85" column="26" selection-start-line="85" selection-start-column="26" selection-end-line="85" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Ajax/Ajax.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="511">
@@ -1458,13 +1457,6 @@
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
             <element signature="e#21006#21051#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/PHP/GeneratePDF.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="85" column="26" selection-start-line="85" selection-start-column="26" selection-end-line="85" selection-end-column="26" />
         </state>
       </provider>
     </entry>
