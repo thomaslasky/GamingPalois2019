@@ -36,7 +36,7 @@
 			$videGrenier .= $eventManager->ficheEvent($value, $modeleHTML, $idUser);
 		}
 	} else {
-		$videGrenier = 'Aucun Vide Grenier Prévu';
+		$videGrenier = '<p>Aucun Vide Grenier Prévu</p>';
 	}
 	
 	//Gestion LAN
