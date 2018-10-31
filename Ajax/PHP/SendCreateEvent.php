@@ -56,6 +56,11 @@
 								"token" => $csrf->generateToken(),
 							]);
 						}
+					} else {
+						echo json_encode([
+							"text"  => "Merci de renseigner une date correct",
+							"token" => $csrf->generateToken(),
+						]);
 					}
 				} else {
 					echo json_encode([

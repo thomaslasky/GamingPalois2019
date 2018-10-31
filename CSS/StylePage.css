@@ -2,7 +2,8 @@
 
 #output {
 	/*TODO : Temporary correction for the scroll event bug*/
-	overflow: scroll;
+	overflow-y: scroll;
+	overflow-x: hidden;
 	padding: 0 !important;
 }
 

@@ -34,11 +34,14 @@
 			$participerManager = new App\ParticiperManager();
 			$membreManager = new \App\MembresManager();
 			$participer = $participerManager->readParticipant($id);
-			foreach($participer as $v) {
-				$membre = $membreManager->readMembreTab($v["IDmembre"]);
-				$data[] = $membre;
+			if (!empty($participer)) {
+				foreach($participer as $v) {
+					$membre = $membreManager->readMembreTab($v["IDmembre"]);
+					$data[] = $membre;
+				}
+				return $data;
 			}
-			return $data;
+			return FALSE;
 		}
 		
 		function BasicTable($header, $data) {
@@ -74,19 +77,24 @@
 		];
 		
 		$data = $pdf->LoadData($_POST["idevent"]);
-		$titre = 'Liste des participants';
-		$pdf->SetFont('Arial', '', 10);
-		$pdf->SetTitle($titre);
-		$pdf->AddPage();
-		$pdf->BasicTable($header, $data);
-		$nameFile = date("Ymdhis") . $_POST["idevent"] . ".pdf";
-		$pdf->Output("../../Files/ListePDF/" . $nameFile, "F");
-		
-		echo json_encode([
-			"text" => "PDF Généré !",
-			"name" => $nameFile,
-		]);
-		
+		if ($data !== FALSE) {
+			$titre = 'Liste des participants';
+			$pdf->SetFont('Arial', '', 10);
+			$pdf->SetTitle($titre);
+			$pdf->AddPage();
+			$pdf->BasicTable($header, $data);
+			$nameFile = date("Ymdhis") . $_POST["idevent"] . ".pdf";
+			$pdf->Output("../../Files/ListePDF/" . $nameFile, "F");
+			
+			echo json_encode([
+				"text" => "PDF Généré !",
+				"name" => $nameFile,
+			]);
+		} else {
+			echo json_encode([
+				"text" => "Il n'y a pas de participants !",
+			]);
+		}
 	} else {
 		echo json_encode([
 			"text" => "Une erreur est survenu, réessayez !",

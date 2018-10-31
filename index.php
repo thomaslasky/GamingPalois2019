@@ -58,7 +58,7 @@
 
 <script>
 	
-/*	$(document).ready(function () {
+/*$(document).ready(function () {
 		$("#output").niceScroll({
 			cursorcolor: "#713B75",
 			cursorwidth: "8px",
