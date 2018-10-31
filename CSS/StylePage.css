@@ -1,6 +1,8 @@
 /*GENERAL*/
 
 #output {
+	/*TODO : Temporary correction for the scroll event bug*/
+	overflow: scroll;
 	padding: 0 !important;
 }
 
