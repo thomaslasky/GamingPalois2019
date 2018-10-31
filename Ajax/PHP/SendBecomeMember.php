@@ -12,13 +12,11 @@
 		
 		$message = "";
 		
-		$monMail = "contact@gamingpalois.fr";
-		
 		if (!empty($_POST["Nom"]) && !empty($_POST["Prenom"]) && !empty($_POST["Message"]) && !empty($_POST["Message"])) {
 			if (verifyEmail($_POST["Email"])) {
 				if (verifyTelephone($_POST["Telephone"])) {
 					
-					$sujet = $_POST["Nom"] . "\n" . $_POST["Prenom"] . " souhaite devenir membre";
+					$sujet = $_POST["Nom"] . " " . $_POST["Prenom"] . " souhaite devenir membre";
 					
 					$message .= $_POST["Prenom"] . " " . $_POST["Nom"] . "\n";
 					$message .= "Email de contact : " . $_POST["Email"] . "\n";

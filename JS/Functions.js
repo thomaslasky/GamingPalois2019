@@ -135,3 +135,9 @@ function modifNavAdmin(id, tableau) {
 	
 	nav.innerHTML = newNav;
 }
+
+//Remove Toast
+
+function removeToast() {
+	Materialize.Toast.removeAll();
+}

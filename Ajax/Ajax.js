@@ -912,7 +912,7 @@ function readDataGeneratePDF(oData) {
 	let json = JSON.parse(oData);
 	
 	if (json["text"] === "PDF Généré !") {
-		var $toastContent = $("<span style='margin-right: 10px'>" + json['text'] + "</span><span onclick='requestTelechargementListePDF(\"" + json['name'] + "\")' class='btn - flattoast - action'>Telecharger</span>");
+		let $toastContent = $("<span style='margin-right: 10px'>" + json['text'] + "</span><span onclick='requestTelechargementListePDF(\"" + json['name'] + "\")' class='btn - flattoast - action'>Telecharger</span>");
 		Materialize.toast($toastContent, 5000);
 	} else {
 		Materialize.toast(json["text"], 2500);
@@ -924,6 +924,29 @@ Télécharger le fichier PDF de la liste
  */
 
 function requestTelechargementListePDF(name) {
-	console.log("ça passe");
 	window.open("Files/ListePDF/" + name, "_blank");
+}
+
+/*
+Confirmation DELETE
+ */
+
+function requestDeleteEventConfirm(id) {
+	let idEvent = parseInt(id);
+	let $toastContent = $("<span>Souhaitez vous supprimer l'événement ?</span>")
+		.add($("<button class='btn-flat toast-action' onclick='requestDeleteEvenement(readDataDeleteEvenement," + idEvent + ") ; removeToast()'>Oui</button>"))
+		.add($("<button class='btn-flat toast-action' onclick='removeToast()'>Non</button>"));
+	Materialize.toast($toastContent, 7000);
+}
+
+/*
+Confirmation DELETE Partenaire
+ */
+
+function requestDeletePartenaireConfirm(id) {
+	let idEvent = parseInt(id);
+	let $toastContent = $("<span>Souhaitez vous supprimer le Partenaire ?</span>")
+		.add($("<button class='btn-flat toast-action' onclick='requestDeletePartenaireGP(readDataDeletePartenaireGP," + idEvent + ") ; removeToast()'>Oui</button>"))
+		.add($("<button class='btn-flat toast-action' onclick='removeToast()'>Non</button>"));
+	Materialize.toast($toastContent, 7000);
 }
