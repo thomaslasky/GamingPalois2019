@@ -76,6 +76,5 @@
 				'{{url}}' => htmlspecialchars($url)];
 			
 			return strtr($modelePartenaire, $arrReplace);
-			
 		}
 	}

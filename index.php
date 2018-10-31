@@ -2,51 +2,66 @@
 	
 	session_start();
 	require_once 'vendor/autoload.php';
+	include 'Functions/Fileget.php';
+	include_once 'Functions/verificationconnexion.php';
 	include 'Functions/Functions.php';
-	
-	if (isset($_SESSION["id"])) {
-		header("location: Accueil.php");
-	}
 
 ?>
 
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <title>Gaming Palois</title>
-	    
-	    <link rel="stylesheet" href="CSS/StyleUserLogs.css">
-	    <link rel="stylesheet" href="CSS/FrameWork.css">
-	    <link rel="stylesheet" href="CSS/StyleGeneral.css">
-	    
-	    <link rel="stylesheet" href="materialize/css/materialize.min.css">
-        <script src="materialize/js/materialize.min.js"></script>
-	    
-	    <script type="text/javascript" src="Ajax/oXHR.js"></script>
-        <script type="text/javascript" src="Ajax/Ajax.js"></script>
-        <script type="text/javascript" src="JS/Functions.js"></script>
-	    
-        
-        <link rel="shortcut icon" type="image/png" href="Img/Logo/logoGP.png" />
-    </head>
-    <body>
-	    <section class="container_user_log valign-wrapper">
-            <div class="margin-auto container_log">
-                    <a href="index.php">
-	                    <img class="responsive-img" src="Img/Logo/logoGP.png">
-                    </a>
-	            <div class="container_choice_user">
-	                <p id="categorie-log-1" class="cursor-pointer categorie" onclick="selectedCategorie('log',1) ; requestFormUser(readDataFormUser,'Login')">Login</p>
-	                <p id="categorie-log-2" class="cursor-pointer categorie"
-	                   onclick="selectedCategorie('log',2) ; requestFormUser(readDataFormUser,'Inscription')">Inscription</p>
-	            </div>
-	            <div id="index_form">
-		           
-	            </div>
-        </section>
-    </body>
+	<head>
+		<meta charset = "UTF-8">
+		<meta name = "viewport" content = "width=device-width, initial-scale=1">
+		
+		<title>Accueil</title>
+		
+		<link rel = "stylesheet" href = "CSS/FrameWork.css">
+		<link rel = "stylesheet" href = "CSS/StyleGeneral.css">
+		<link rel = "stylesheet" href = "CSS/StyleNavigateur.css">
+		<link rel = "stylesheet" href = "CSS/StyleUserLogs.css">
+		<link rel = "stylesheet" href = "CSS/StylePage.css">
+		
+		<script src = "node_modules/jquery/dist/jquery.min.js"></script>
+		
+		<link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet">
+		<link rel = "stylesheet"
+		      href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+		<script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+		
+		
+		<script src = "node_modules/jquery.nicescroll/dist/jquery.nicescroll.min.js"></script>
+		
+		<script type = "text/javascript" src = "Ajax/oXHR.js"></script>
+		<script type = "text/javascript" src = "Ajax/Ajax.js"></script>
+		<script type = "text/javascript" src = "JS/Functions.js"></script>
+		
+		<link rel = "shortcut icon" type = "image/png" href = "Img/Logo/logoGP.png" />
+	</head>
+	<body onload = 'requestEvenements(readData);'>
+		<section class = "row page_container">
+			
+			<?= $navigateur ?>
+			
+			<div id = "output" class = "col s12 m12 l9 xl10 float_right">
+			
+			</div>
+			
+			<div id = 'myModal-page' class = 'modal_css_event'>
+				<div id = "modal" class = 'modal-content col s10 m8 l6 xl6 margin-auto'>
+				</div>
+			</div>
+		</section>
+	</body>
 </html>
+
+<script>
+	
+/*	$(document).ready(function () {
+		$("#output").niceScroll({
+			cursorcolor: "#713B75",
+			cursorwidth: "8px",
+		});
+	});*/
+</script>

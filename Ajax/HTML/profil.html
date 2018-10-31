@@ -1,0 +1,33 @@
+<div class = 'container_informations col s11 margin-auto'>
+	<div class = 'col s3'>
+		<img class = 'responsive-img' src = './Img/Logo/logoGP.png'>
+	</div>
+	<div class = 'col s9'>
+		<div class = 'col s12'>
+			<p class = 'center-align'>{{identity}}</p>
+		</div>
+		<form id = 'form_modification_profil' class = 'row space-between col s12 valign-wrapper'>
+			<div class = 'col s12 center-align space-between'>
+				<div class = 'input-field col s6'>
+					<i class = 'material-icons prefix'>contact_mail</i>
+					<input id = 'email' class = '' type = 'email' name = 'Email' value = '{{mail}}' readonly = '' />
+					<label class='active' for = 'email'>Email</label>
+					<div id = 'modify_email' class = 'space-between'>
+						<span class = 'cursor-pointer' onclick = 'modifyInput("email")'>Modifier</span>
+					</div>
+				</div>
+				<div class = 'input-field col s6'>
+					<i class = 'material-icons prefix'>contact_phone</i>
+					<input id = 'telephone' class = '' type = 'tel' name = 'Telephone' value = '{{telephone}}'
+					       readonly = '' />
+					<label class='active' for = 'telephone'>Telephone</label>
+					<div id = 'modify_telephone' class = 'space-between'>
+						<span class = 'cursor-pointer' onclick = 'modifyInput("telephone")'>
+						Modifier</span>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+	<!--<p class="center-align"><a href = "">Changer de Mot de Passe</a></p>-->
+</div>

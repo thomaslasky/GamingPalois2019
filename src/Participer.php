@@ -31,11 +31,7 @@
 		 * @param mixed $paiement
 		 */
 		public function setPaiement($paiement): void {
-			if ($paiement = 0 || $paiement = 1) {
-				$this->paiement = $paiement;
-			} else {
-				$this->addError("Une erreur est survenu, merci de refresh la page");
-			}
+			$this->paiement = $paiement;
 		}
 		
 		/**
@@ -91,11 +87,7 @@
 		 * @param mixed $emplacement
 		 */
 		public function setEmplacement($emplacement): void {
-			if (is_int($emplacement) && $emplacement > 0) {
-				$this->emplacement = $emplacement;
-			} else {
-				$this->addError("Merci de renseigner une valeur correct");
-			}
+			$this->emplacement = $emplacement;
 		}
 		
 	}

@@ -1,0 +1,47 @@
+.sidenav_menu {
+	display: none;
+	position: fixed;
+	z-index: 999;
+	left: 0;
+	top: 0;
+	height: 100%;
+	overflow: hidden;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.4);
+	padding: 0 !important;
+}
+
+@media screen and (min-width: 992px) {
+	.sidenav_menu {
+		display: block !important;
+	}
+}
+
+.sidenav_menu_content {
+	height: 100%;
+	width: 100%;
+	background-color: rgb(0, 0, 0);
+	/*overflow: auto;*/
+	padding: 15px;
+}
+
+.developped_by {
+	font-size: 10px;
+	text-align: center;
+}
+
+.navigate_link {
+	padding: 8px 8px 8px 8px;
+	text-decoration: none;
+	font-size: 18px;
+	color: #818181;
+	display: block;
+	transition: 0.3s;
+}
+
+.container_user_tool span{
+	width: 100%;
+	text-align: center;
+	cursor: pointer;
+	user-select: none;
+}

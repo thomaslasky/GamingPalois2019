@@ -11,26 +11,18 @@
 		
 		public function inscription(Membres &$membres) {
 			
-			$csrf = new Csrf();
-			
-			$sql = "INSERT INTO " . $this->table . "(Email,Password,Nom,Prenom,Age,Telephone,Adresse,Statut) VALUES (:mail,:password,:nom,:prenom,:age,:telephone,:adresse,:statut)";
+			$sql = "INSERT INTO {$this->table} (Email, Password, Nom, Prenom, Age, Telephone, Status) VALUES (:email,:password,:nom,:prenom,:age,:telephone,:status)";
 			$req = $this->db->prepare($sql);
 			
-			$req->bindValue('mail', $membres->getEMail(), \PDO::PARAM_STR);
+			$req->bindValue('email', $membres->getEmail(), \PDO::PARAM_STR);
 			$req->bindValue('password', $membres->getPassword(), \PDO::PARAM_STR);
 			$req->bindValue('nom', $membres->getNom(), \PDO::PARAM_STR);
 			$req->bindValue('prenom', $membres->getPrenom(), \PDO::PARAM_STR);
 			$req->bindValue('age', $membres->getAge(), \PDO::PARAM_INT);
-			$req->bindValue('telephone', $membres->getTelephone(), \PDO::PARAM_INT);
-			$req->bindValue('adresse', $membres->getAdresse(), \PDO::PARAM_STR);
-			$req->bindValue('statut', $membres->getStatut(), \PDO::PARAM_STR);
+			$req->bindValue('telephone', $membres->getTelephone(), \PDO::PARAM_STR);
+			$req->bindValue('status', $membres->getStatus(), \PDO::PARAM_STR);
 			
 			$req->execute();
-			
-			echo json_encode([
-				"text"  => "Compte Créé",
-				"token" => $csrf->generateToken(),
-			]);
 		}
 		
 		public function readMembre($id) {
@@ -43,10 +35,22 @@
 			return new Membres($result);
 		}
 		
-		public function updateInformations($type, $information, $id) {
-			$sql = "UPDATE $this->table SET $type = :information WHERE IDmembre = $id";
+		public function readMembreTab($id) {
+			$sql = "SELECT * FROM " . $this->table . " WHERE IDmembre = :id";
 			$req = $this->db->prepare($sql);
-			$req->bindValue('information', $information, \PDO::PARAM_STR);
+			$req->bindValue('id', $id, \PDO::PARAM_INT);
+			$req->execute();
+			$result = $req->fetch(\PDO::FETCH_ASSOC);
+			
+			return $result;
+		}
+		
+		public function updateInformations(Membres &$membre) {
+			$sql = "UPDATE {$this->table} SET Email = :email , Telephone = :telephone WHERE IDmembre = :id";
+			$req = $this->db->prepare($sql);
+			$req->bindValue('email', $membre->getEmail(), \PDO::PARAM_STR);
+			$req->bindValue('telephone', $membre->getTelephone(), \PDO::PARAM_STR);
+			$req->bindValue('id', $membre->getIDmembre(), \PDO::PARAM_INT);
 			$req->execute();
 		}
 		
@@ -68,19 +72,14 @@
 				
 				$_SESSION['id'] = $info['IDmembre'];
 				
-				if (array_key_exists("Remember", $_POST)) {
+				/*if (isset($_POST['Remember'])) {
 					$token = bin2hex(random_bytes(25));
-					$this->addToken($token, $membre->getEmail());
-					setcookie("Token", $token, time() + 3600 * 24 * 30);
-				}
-				
-				echo json_encode(["text" => "Connexion réussie"]);
-				
+					setcookie("tokenuser", $token, time() + 3600 * 24 * 30);
+					$this->addToken($token, $membre->getIDmembre());
+				}*/
+				return TRUE;
 			} else {
-				echo json_encode([
-					"text"  => "Pseudo ou Password incorrect",
-					"token" => $csrf->generateToken(),
-				]);
+				return FALSE;
 			}
 		}
 		
@@ -97,9 +96,9 @@
 			$info = $resultats->fetch();
 			
 			if (empty($info)) {
-				return true;
+				return TRUE;
 			} else {
-				return false;
+				return FALSE;
 			}
 		}
 		
@@ -121,12 +120,23 @@
 			return FALSE;
 		}
 		
-		private function addToken($token, $pseudo) {
-			$sql = "UPDATE {$this->table} SET Token = :token WHERE Email = :email";
+		private function addToken($token, $id) {
+			$sql = "UPDATE {$this->table} SET Token = :token WHERE IDmembre = :id";
 			$req = $this->db->prepare($sql);
 			
 			$req->bindValue('token', $token, \PDO::PARAM_STR);
-			$req->bindValue('email', $pseudo, \PDO::PARAM_STR);
+			$req->bindValue('id', $id, \PDO::PARAM_INT);
+			
+			$req->execute();
+		}
+		
+		public function deleteToken($id) {
+			$sql = "UPDATE {$this->table} SET Token = :token WHERE IDmembre = :id";
+			
+			$req = $this->db->prepare($sql);
+			
+			$req->bindValue('token', "", \PDO::PARAM_STR);
+			$req->bindValue('id', $id, \PDO::PARAM_INT);
 			
 			$req->execute();
 		}

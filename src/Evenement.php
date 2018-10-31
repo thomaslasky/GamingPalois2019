@@ -9,6 +9,7 @@
 		private $dates;
 		private $adresse;
 		private $place;
+		private $prix;
 		private $description;
 		private $type;
 		private $urlimg;
@@ -84,11 +85,7 @@
 		 * @param mixed $place
 		 */
 		public function setPlace($place): void {
-			if(!is_int($place) || $place <= 0) {
-				$this->addError("Merci de renseigner un nombre correct");
-			} else {
 				$this->place = $place;
-			}
 		}
 		
 		/**
@@ -102,11 +99,7 @@
 		 * @param mixed $type
 		 */
 		public function setType($type): void {
-			if($type === "Vide Grenier" || $type === "LAN") {
 				$this->type = $type;
-			} else {
-				$this->addError("Merci de renseigner un type correct");
-			}
 		}
 		
 		/**
@@ -137,5 +130,17 @@
 			$this->urlimg = $urlimg;
 		}
 		
+		/**
+		 * @return mixed
+		 */
+		public function getPrix() {
+			return $this->prix;
+		}
 		
+		/**
+		 * @param mixed $prix
+		 */
+		public function setPrix($prix): void {
+			$this->prix = $prix;
+		}
 	}

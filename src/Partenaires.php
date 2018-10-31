@@ -2,13 +2,6 @@
 	
 	namespace App;
 	
-	/**
-	 * Created by PhpStorm.
-	 * User: thoma
-	 * Date: 15/05/2018
-	 * Time: 16:33
-	 */
-	
 	class Partenaires extends Entity {
 		
 		private $idPartenaire;

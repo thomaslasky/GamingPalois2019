@@ -4,7 +4,7 @@
 	
 abstract class Entity {
 
-    private $errors = [];
+    protected $errors = [];
 
     public function __construct($values) {
         $this->hydrate($values);
@@ -16,7 +16,7 @@ abstract class Entity {
 
     public function readError() {
         foreach ($this->errors as $key => $value) {
-            echo $key . ' ' . $value . '<br>';
+            echo $key . " " . $value . '<br>';
         }
     }
 

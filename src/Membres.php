@@ -2,42 +2,36 @@
 	
 	namespace App;
 	
-	use function Sodium\add;
-	
 	class Membres extends Entity {
 		
-		private $idMembre;
+		private $IDmembre;
 		private $email;
 		private $password;
 		private $nom;
 		private $prenom;
 		private $age;
 		private $telephone;
-		private $adresse;
-		private $statut;
+		private $status;
+		private $token;
 		
 		public function __construct($values) {
 			parent::__construct($values);
 		}
 		
-		public function getIdMembre() {
-			return $this->idMembre;
+		public function getIDmembre() {
+			return $this->IDmembre;
 		}
 		
-		public function setIdMembre($idMembre): void {
-			$this->idMembre = $idMembre;
+		public function setIDmembre($IDmembre): void {
+			$this->IDmembre = $IDmembre;
 		}
 		
 		public function getEmail() {
 			return $this->email;
 		}
 		
-		public function setEMail($email): void {
-			if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-				$this->email = $email;
-			} else {
-				$this->addError("Email Invalide");
-			}
+		public function setEmail($email): void {
+			$this->email = $email;
 		}
 		
 		public function getPassword() {
@@ -69,11 +63,7 @@
 		}
 		
 		public function setAge($age): void {
-			if ($age < 18 || $age > 100) {
-				$this->addError("Merci de renseigner un âge valide");
-			} else {
-				$this->age = $age;
-			}
+			$this->age = $age;
 		}
 		
 		public function getTelephone() {
@@ -81,31 +71,22 @@
 		}
 		
 		public function setTelephone($telephone): void {
-			if (strlen($telephone) < 10) {
-				$this->addError("Merci de renseigner un numéro valide");
-			} else {
-				$this->telephone = $telephone;
-			}
+			$this->telephone = $telephone;
 		}
 		
-		public function getAdresse() {
-			return $this->adresse;
+		public function getStatus() {
+			return $this->status;
 		}
 		
-		public function setAdresse($adresse): void {
-			$this->adresse = $adresse;
+		public function setStatus($status): void {
+			$this->status = $status;
 		}
 		
-		public function getStatut() {
-			return $this->statut;
+		public function getToken() {
+			return $this->token;
 		}
 		
-		public function setStatut($statut): void {
-			if ($statut != "Professionnel" || $statut != "Particulier") {
-				$this->addError("Petit coquin ! ce n'est pas bien ! Ton IP est désormais banni de ce site ! Contact l'administrateur au plus vite : xxxx@gmail.com");
-			} else {
-				$this->statut = $statut;
-			}
+		public function setToken($token): void {
+			$this->token = $token;
 		}
-		
 	}
