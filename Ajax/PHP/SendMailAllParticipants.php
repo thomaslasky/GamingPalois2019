@@ -24,19 +24,17 @@
 			}
 			
 			$message = "";
-			$message .= htmlspecialchars($_POST["Message"]);
-			$message .= "Merci de ne pas répondre à ce mail, si vous avez besoin de nous contacter suivez ce lien <a href='https://gamingpalois.fr'>Lien</a>";
-			
-			debug("coucou");
-			die;
+			$message .= htmlspecialchars($_POST["Message"]) . "\n\n";
+			$message .= "Merci de ne pas répondre à ce mail, si vous avez besoin de nous contacter suivez ce lien https://gamingpalois.fr";
 			
 			foreach($email as $value) {
-				mail($value, htmlspecialchars($_POST["Sujet"]), $message);
+				mail($value, htmlspecialchars($_POST["Sujet"]), htmlspecialchars($message));
 			}
 			
 			echo json_encode([
 				"text" => "Les Email ont été envoyé !",
 			]);
+			
 		} else {
 			echo json_encode([
 				"text"  => "Merci de remplir tout les champs",

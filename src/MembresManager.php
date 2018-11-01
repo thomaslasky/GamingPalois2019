@@ -55,13 +55,12 @@
 		}
 		
 		public function emailParticipant($idMembre) {
-			$sql = "SELECT Email FROM " . $this->table . " WHERE IDmembre = :id";
+			$sql = "SELECT Email FROM {$this->table} WHERE IDmembre = :id";
 			$req = $this->db->prepare($sql);
-			$req->bindValue('id', $idMembre, \PDO::PARAM_INT);
+			$req->bindValue('id', $idMembre["IDmembre"], \PDO::PARAM_INT);
 			$req->execute();
 			$result = $req->fetch();
-			
-			return $result;
+			return $result["Email"];
 		}
 		
 		public function connexion(Membres &$membre) {

@@ -980,7 +980,7 @@ function readDataSendMailAllParticipants(oData) {
 	
 	if (json["text"] === "Les Email ont été envoyé !") {
 		Materialize.toast(json["text"], 2000);
-		requestAdminEvent(readData);
+		closeModal("page");
 	} else {
 		Materialize.toast(json["text"], 2000);
 		let input = document.getElementById("csrf");
