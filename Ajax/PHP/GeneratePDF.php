@@ -77,7 +77,7 @@
 		];
 		
 		$data = $pdf->LoadData($_POST["idevent"]);
-		if ($data !== FALSE) {
+		if ($data != FALSE) {
 			$titre = 'Liste des participants';
 			$pdf->SetFont('Arial', '', 10);
 			$pdf->SetTitle($titre);

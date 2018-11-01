@@ -47,6 +47,22 @@
 			$req->execute();
 		}
 		
+		public function idParticipants($idEvent) {
+			$event = [];
+			
+			$sql = "SELECT IDmembre FROM " . $this->table . " WHERE IDevenement = :id";
+			$req = $this->db->prepare($sql);
+			$req->bindValue('id', $idEvent, \PDO::PARAM_INT);
+			$req->execute();
+			$result = $req->fetchAll(\PDO::FETCH_ASSOC);
+			if (!empty($result)) {
+				foreach($result as $value) {
+					$event[] = $value;
+				}
+				return $event;
+			}
+		}
+		
 		public function validatePayement($idEvent, $idUser) {
 			
 			$sql = "UPDATE participer SET Paiement = 1 WHERE IDmembre = {$idUser} AND IDevenement = {$idEvent}";

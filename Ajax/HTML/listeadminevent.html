@@ -5,9 +5,11 @@
 		</div>
 		<div>
 		<span class = 'option_modif_event_admin'>
-				<i onclick = 'requestFormVideGrenier(readDataForm,"ModificationImgEvent","{{id}}")'
+				<!--<i onclick = 'requestFormEvent(readDataForm,"SendEmailAllParticipant","{{id}}")'
+				   class = 'small material-icons cursor-pointer waves-effect waves-light blue'>email</i>-->
+				<i onclick = 'requestFormEvent(readDataForm,"ModificationImgEvent","{{id}}")'
 				   class = 'small material-icons cursor-pointer waves-effect waves-light green'>insert_photo</i>
-				<i onclick = 'requestFormVideGrenier(readDataForm,"ModificationEventInfo","{{id}}")'
+				<i onclick = 'requestFormEvent(readDataForm,"ModificationEventInfo","{{id}}")'
 				   class = 'small material-icons cursor-pointer waves-effect waves-light yellow'>edit</i>
 				<i onclick = 'requestDeleteEventConfirm("{{id}}")'
 				   class = 'small material-icons cursor-pointer waves-effect waves-light red'>delete</i>
@@ -51,8 +53,9 @@
 					<div class = 'col s9' onclick = "collapsible('participants','{{id}}')">
 						<p class = 'valign-wrapper un-surlign col s9'>Participants</p>
 					</div>
-					<div class='col s3 cursor-pointer'>
-						<p class='' onclick='requestGeneratePDF(readDataGeneratePDF,"{{id}}")'>Générer une liste PDF</p>
+					<div class = 'col s3 cursor-pointer'>
+						<p class = '' onclick = 'requestGeneratePDF(readDataGeneratePDF,"{{id}}")'>Générer une liste
+						                                                                           PDF</p>
 					</div>
 				</div>
 				<div id = 'collaps-participants-{{id}}' class = 'collapsible-body collapsible-body-event'>

@@ -31,14 +31,14 @@
 		public function readAllEventWhere($condition) {
 			$event = [];
 			
-			$sql = "SELECT * FROM " . $this->table . " WHERE Type = :type";
+			$sql = "SELECT * FROM evenements WHERE Type = :type";
 			$req = $this->db->prepare($sql);
 			$req->bindValue('type', $condition, \PDO::PARAM_STR);
 			$req->execute();
 			$result = $req->fetchAll();
 			if (!empty($result)) {
 				foreach($result as $value) {
-					if ($value['Dates'] <= date("Y-d-m")) {
+					if ($value['Dates'] > date("Y-d-m")) {
 						$event[] = new Evenement($value);
 					}
 				}
@@ -130,7 +130,7 @@
 			
 			setlocale(LC_TIME, 'fr', 'fr_FR', 'fr_FR.ISO8859-1');
 			
-			if (date("Y-m-d") < $event->getDates()) {
+			if (date("Y-m-d") <= $event->getDates()) {
 				
 				$participerManager = new ParticiperManager();
 				
@@ -157,7 +157,7 @@
 					} elseif ($verifyRegister === FALSE) {
 						if (date("Y-m-d") < $dates) {
 							if ($event->getType() === "Vide Grenier") {
-								$action = "<span id='loader-register-{$idEvent}' class='cursor-pointer bouton_inscription' onclick='requestFormVideGrenier(readDataForm,\"InscriptionEvent\",{$idEvent}),initLoader(\"register\",{$idEvent})'>Inscription</span>";
+								$action = "<span id='loader-register-{$idEvent}' class='cursor-pointer bouton_inscription' onclick='requestFormEvent(readDataForm,\"InscriptionEvent\",{$idEvent}),initLoader(\"register\",{$idEvent})'>Inscription</span>";
 							} else {
 								$action = "<span id='loader-register-{$idEvent}' class='cursor-pointer bouton_inscription' onclick='requestSendLAN(readDataSendLAN,{$idEvent}), initLoader(\"register\",{$idEvent})'>Inscription</span>";
 							}

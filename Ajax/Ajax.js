@@ -74,7 +74,7 @@ function readDataForm(oData) {
 Affichage formulaire vide grenier
 */
 
-function requestFormVideGrenier(callback, type, id) {
+function requestFormEvent(callback, type, id) {
 	
 	xhr.onreadystatechange = function () {
 		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
@@ -949,4 +949,41 @@ function requestDeletePartenaireConfirm(id) {
 		.add($("<button class='btn-flat toast-action' onclick='requestDeletePartenaireGP(readDataDeletePartenaireGP," + idEvent + ") ; removeToast()'>Oui</button>"))
 		.add($("<button class='btn-flat toast-action' onclick='removeToast()'>Non</button>"));
 	Materialize.toast($toastContent, 7000);
+}
+
+/*
+Envois des mail aux participants
+ */
+
+function requestSendMailAllParticipants(callback, idEvent) {
+	xhr.onreadystatechange = function () {
+		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
+			callback(xhr.responseText);
+		}
+	};
+	
+	let formData = new FormData(document.getElementById("form_send_mail_all"));
+	formData.append("idevent", idEvent);
+	
+	xhr.open("POST", "Ajax/PHP/SendMailAllParticipants.php", true);
+	xhr.send(formData);
+}
+
+function readDataSendMailAllParticipants(oData) {
+	
+	let json = JSON.parse(oData);
+	
+	if (json["token"] !== undefined) {
+		let input = document.getElementById("csrf");
+		input.value = json['token'];
+	}
+	
+	if (json["text"] === "Les Email ont été envoyé !") {
+		Materialize.toast(json["text"], 2000);
+		requestAdminEvent(readData);
+	} else {
+		Materialize.toast(json["text"], 2000);
+		let input = document.getElementById("csrf");
+		input.value = json['token'];
+	}
 }

@@ -298,4 +298,28 @@
 			
 			echo $modif;
 		}
+		
+		//Création formulaire d'envoi de mail à tout les participants d'un event
+		
+		if ($_GET["type"] === "SendEmailAllParticipant" && isset($_GET["idevent"])) {
+			
+			$sendEmailAll = "";
+			$sendEmailAll .= "<div><h1 style='text-align: center;font-size: 3.2em'>Envoyez un Email à tout les Participants</h1></div>";
+			
+			$formulaireSendMailAllParticipant = new \App\Formulaire("post", "", "form_send_mail_all");
+			$csrf->generateInput("csrf", $formulaireSendMailAllParticipant);
+			$formulaireSendMailAllParticipant->openDiv("", "input-field col s12");
+			$formulaireSendMailAllParticipant->inputText("Sujet", "Sujet", "Sujet", "", "", "material-icons prefix", "email", "", "");
+			$formulaireSendMailAllParticipant->closeDiv();
+			$formulaireSendMailAllParticipant->openDiv("", "input-field col s12");
+			$formulaireSendMailAllParticipant->inputText("Message", "Message", "Message", "", "", "material-icons prefix", "email", "", "");
+			$formulaireSendMailAllParticipant->closeDiv();
+			$formulaireSendMailAllParticipant->openDiv("", "input-field col s12 m8 l4 xl4 margin-auto");
+			$formulaireSendMailAllParticipant->submit("Validation", "Valider", "col s12 bottum_validation_log margin-auto bottum_validation_inscription", "requestSendMailAllParticipants(readDataSendMailAllParticipants,{$_GET["idevent"]})");
+			$formulaireSendMailAllParticipant->closeDiv();
+			
+			$sendEmailAll .= $formulaireSendMailAllParticipant->render();
+			
+			echo $sendEmailAll;
+		}
 	}

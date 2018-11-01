@@ -30,7 +30,7 @@
 				$intervale = new \DateInterval("PT{$secondes}S");
 				if (date("Y-m-d") < $dates->sub($intervale)) {
 					if ($event->getType() === "Vide Grenier") {
-						$action = "<span id='loader-register-{$idEvent}' class='cursor-pointer bouton_inscription' onclick='requestFormVideGrenier(readDataForm,\"InscriptionEvent\",{$idEvent})'>Inscription</span>";
+						$action = "<span id='loader-register-{$idEvent}' class='cursor-pointer bouton_inscription' onclick='requestFormEvent(readDataForm,\"InscriptionEvent\",{$idEvent})'>Inscription</span>";
 					} else {
 						$action = "<span id='loader-register-{$idEvent}' class='cursor-pointer bouton_inscription' onclick='requestSendLAN(readDataSendLAN,{$idEvent}), initLoader(\"register\",{$idEvent})'>Inscription</span>";
 					}
