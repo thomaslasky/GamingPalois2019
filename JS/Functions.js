@@ -141,3 +141,20 @@ function modifNavAdmin(id, tableau) {
 function removeToast() {
 	Materialize.Toast.removeAll();
 }
+
+//Montrer une image avant upload
+
+function showPicture(input) {
+	if (input.files && input.files[0]) {
+		let reader = new FileReader();
+		
+		reader.onload = function (e) {
+			$('#blah')
+				.attr('src', e.target.result)
+				.width("50%")
+				.height("100%")
+		};
+		
+		reader.readAsDataURL(input.files[0]);
+	}
+}

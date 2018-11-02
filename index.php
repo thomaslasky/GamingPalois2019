@@ -15,7 +15,7 @@
 		<meta charset = "UTF-8">
 		<meta name = "viewport" content = "width=device-width, initial-scale=1">
 		
-		<title>Accueil</title>
+		<title>Evenements</title>
 		
 		<link rel = "stylesheet" href = "CSS/FrameWork.css">
 		<link rel = "stylesheet" href = "CSS/StyleGeneral.css">
@@ -23,19 +23,9 @@
 		<link rel = "stylesheet" href = "CSS/StyleUserLogs.css">
 		<link rel = "stylesheet" href = "CSS/StylePage.css">
 		
-		<script src = "node_modules/jquery/dist/jquery.min.js"></script>
-		
 		<link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet">
 		<link rel = "stylesheet"
 		      href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-		<script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-		
-		
-		<script src = "node_modules/jquery.nicescroll/dist/jquery.nicescroll.min.js"></script>
-		
-		<script type = "text/javascript" src = "Ajax/oXHR.js"></script>
-		<script type = "text/javascript" src = "Ajax/Ajax.js"></script>
-		<script type = "text/javascript" src = "JS/Functions.js"></script>
 		
 		<link rel = "shortcut icon" type = "image/png" href = "Img/Logo/logoGP.png" />
 	</head>
@@ -53,15 +43,33 @@
 				</div>
 			</div>
 		</section>
+		
+		<script src = "node_modules/jquery/dist/jquery.min.js"></script>
+		
+		<script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+		
+		<script src = "node_modules/jquery.nicescroll/dist/jquery.nicescroll.min.js"></script>
+		
+		<script type = "text/javascript" src = "Ajax/oXHR.js"></script>
+		<script type = "text/javascript" src = "Ajax/Ajax.js"></script>
+		<script type = "text/javascript" src = "JS/Functions.js"></script>
+		
+		<script>
+			
+			$(document).ready(function () {
+				$(".sidenav_menu_content").niceScroll({
+					cursorcolor: "#713B75",
+					cursorwidth: "8px",
+				});
+			});
+			
+			/*$(document).ready(function () {
+					$("#output").niceScroll({
+						cursorcolor: "#713B75",
+						cursorwidth: "8px",
+					});
+				});*/
+		</script>
 	</body>
 </html>
 
-<script>
-	
-/*$(document).ready(function () {
-		$("#output").niceScroll({
-			cursorcolor: "#713B75",
-			cursorwidth: "8px",
-		});
-	});*/
-</script>

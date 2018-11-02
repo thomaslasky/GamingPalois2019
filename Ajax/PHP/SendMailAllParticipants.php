@@ -28,7 +28,15 @@
 			$message .= "Merci de ne pas répondre à ce mail, si vous avez besoin de nous contacter suivez ce lien https://gamingpalois.fr";
 			
 			foreach($email as $value) {
-				mail($value, htmlspecialchars($_POST["Sujet"]), htmlspecialchars($message));
+				if (mail($value, htmlspecialchars($_POST["Sujet"]), htmlspecialchars($message))) {
+					continue;
+				} else {
+					echo json_encode([
+						"text" => "Une erreur est survenu, merci de réessayer !",
+						"token" => $csrf->generateToken(),
+					]);
+					exit;
+				}
 			}
 			
 			echo json_encode([

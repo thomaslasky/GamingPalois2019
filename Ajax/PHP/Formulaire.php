@@ -288,13 +288,14 @@
 			$formulaireModifEvent = new \App\Formulaire("post", "", "form_modif_event");
 			$csrf->generateInput("csrf", $formulaireModifEvent);
 			$formulaireModifEvent->openDiv("", "input-field col s12");
-			$formulaireModifEvent->inputFile("Logo", "Logo", "Logo", "", "", "", "active");
+			$formulaireModifEvent->inputFile("Logo", "Logo", "Logo", "", "", "", "active", "onchange='showPicture(this);'");
 			$formulaireModifEvent->closeDiv();
 			$formulaireModifEvent->openDiv("", "input-field col s12 m8 l4 xl4 margin-auto");
 			$formulaireModifEvent->submit("Validation", "Valider", "col s12 bottum_validation_log margin-auto bottum_validation_inscription", "requestSendModifImgEvent(readDataSendModifImgEvent,{$_GET["idevent"]})");
 			$formulaireModifEvent->closeDiv();
 			
 			$modif .= $formulaireModifEvent->render();
+			$modif .= "<img id='blah' class='margin-auto' style='display: block;' src='#' alt='' />";
 			
 			echo $modif;
 		}

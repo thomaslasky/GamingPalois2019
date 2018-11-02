@@ -83,9 +83,9 @@
 			$this->rendu .= "<label class='$labelClass' for='$nomChamp'>$label</label>";
 		}
 		
-		public function inputFile($id, $nomChamp, $label, $inputClass = '', $iClass = "", $icone = "", $labelClass = "") {
+		public function inputFile($id, $nomChamp, $label, $inputClass = '', $iClass = "", $icone = "", $labelClass = "", $more = "") {
 			$this->rendu .= "<i class='$iClass'>$icone</i>";
-			$this->rendu .= "<input id='$id' class='$inputClass' type='file' name='$nomChamp'/>";
+			$this->rendu .= "<input id='$id' class='$inputClass' type='file' name='$nomChamp' $more/>";
 			$this->rendu .= "<label class='$labelClass' for='$nomChamp'>$label</label>";
 		}
 		

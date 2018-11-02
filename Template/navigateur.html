@@ -31,28 +31,32 @@
 
 <!-- NAVIGATEUR -->
 
-<nav id = 'mySidenav' class = 'sidenav_menu col s12 m12 l3 xl2'>
-	<div class = 'sidenav_menu_content column space-between col s9 m9 l12 xl12'>
-		<div class = 'col s12 margin-auto'>
+<nav id = 'mySidenav' class = 'sidenav_menu mySidenav col s12 m12 l3 xl2'>
+	<div class = 'sidenav_menu_content column col s9 m9 l12 xl12'>
+		<div class = 'col s12'>
 			<a href = ''><img src = './Img/Logo/logoGP.png'
 			                  class = 'responsive-img logo_menu'>
 			</a>
 			<ul class = 'column margin-auto color_a'>
-				<li class = 'navigate_link cursor-pointer' onclick='requestEvenements(readData)'>Événements</li>
-				<li class = 'navigate_link cursor-pointer' onclick='requestPresentation(readData)'>Présentation</li>
-				<li class = 'navigate_link cursor-pointer' onclick='requestPartenaires(readData)'>Partenaires</li>
-				<li class = 'navigate_link cursor-pointer hide-on-med-and-down' onclick='requestWebTV(readData) ; closeNavigateur()'>WebTV</li>
-				<li class = 'navigate_link cursor-pointer' onclick='requestContact(readData)'>Contact</li>
+				<li class = 'navigate_link cursor-pointer' onclick = 'requestEvenements(readData)'>Événements</li>
+				<li class = 'navigate_link cursor-pointer' onclick = 'requestPresentation(readData)'>Présentation</li>
+				<li class = 'navigate_link cursor-pointer' onclick = 'requestPartenaires(readData)'>Partenaires</li>
+				<li class = 'navigate_link cursor-pointer hide-on-med-and-down'
+				    onclick = 'requestWebTV(readData) ; closeNavigateur()'>WebTV
+				</li>
+				<li class = 'navigate_link cursor-pointer' onclick = 'requestContact(readData)'>Contact</li>
 			</ul>
 			<div id = 'is_connect'>
 				{{usertool}}
 			</div>
-			<p id = 'myBtn' class = 'cursor-pointer' onclick = "modal('version')">
-				version 2.0</p>
-			
-			<p class = 'developped_by'>Developpé par : <span class = 'cursor-pointer'
-			                                                            onclick = "window.open('http://thomastartas.tk/','_blank')">Thomas Tartas</span>
-			</p>
+			<div class='col s12'>
+				<p id = 'myBtn' class = 'cursor-pointer' onclick = "modal('version')">
+					version 2.0</p>
+				
+				<p class = 'developped_by'>Developpé par : <span class = 'cursor-pointer'
+				                                                 onclick = "window.open('http://thomastartas.tk/','_blank')">Thomas Tartas</span>
+				</p>
+			</div>
 		</div>
 	</div>
 </nav>
@@ -63,12 +67,3 @@
       onclick = 'navigateur()'>&#9776;</span>
 
 <!-- END NAVIGATEUR -->
-
-<script>
-	$(document).ready(function () {
-		$(".sidenav_menu_content").niceScroll({
-			cursorcolor: "#713B75",
-			cursorwidth: "8px"
-		});
-	});
-</script>
