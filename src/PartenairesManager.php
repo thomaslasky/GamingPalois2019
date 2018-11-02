@@ -8,7 +8,6 @@
 	 * Date: 15/05/2018
 	 * Time: 16:33
 	 */
-	
 	class PartenairesManager extends Manager {
 		
 		public function __construct() {
@@ -16,7 +15,7 @@
 			$this->table = "partenaires";
 		}
 		
-		public function readPartenaires($idEvent) {
+		public function readPartenairesByEvent($idEvent) {
 			$sql = "SELECT * FROM " . $this->table . " WHERE IDevenement = :id";
 			$req = $this->db->prepare($sql);
 			$req->bindValue('id', $idEvent, \PDO::PARAM_INT);
@@ -24,38 +23,41 @@
 			$result = $req->fetchAll();
 			
 			if (!empty($result)) {
-				foreach ($result as $value) {
+				foreach($result as $value) {
 					$partenaire[] = new Partenaires($value);
 				}
 				return $partenaire;
 			}
 		}
 		
+		public function readPartenaire($idPartenaire) {
+			$sql = "SELECT * FROM " . $this->table . " WHERE IDpartenaire = :id";
+			$req = $this->db->prepare($sql);
+			$req->bindValue('id', $idPartenaire, \PDO::PARAM_INT);
+			$req->execute();
+			$result = $req->fetch();
+			
+			return new Partenaires($result);
+		}
+		
 		public function addPartenaire(Partenaires &$partenaires) {
 			$sql = "INSERT INTO {$this->table} (Nom,Description,Site,Urlimg,IDevenement) VALUES (:nom,:description,:site,:url,:id)";
 			$req = $this->db->prepare($sql);
 			
-			$req->bindValue('nom',$partenaires->getNom(),\PDO::PARAM_STR);
-			$req->bindValue('description',$partenaires->getDescription(),\PDO::PARAM_STR);
-			$req->bindValue('site',$partenaires->getSite(),\PDO::PARAM_STR);
-			$req->bindValue('url',$partenaires->getUrlimg(),\PDO::PARAM_STR);
-			$req->bindValue('id',$partenaires->getIdEvenement(),\PDO::PARAM_STR);
+			$req->bindValue('nom', $partenaires->getNom(), \PDO::PARAM_STR);
+			$req->bindValue('description', $partenaires->getDescription(), \PDO::PARAM_STR);
+			$req->bindValue('site', $partenaires->getSite(), \PDO::PARAM_STR);
+			$req->bindValue('url', $partenaires->getUrlimg(), \PDO::PARAM_STR);
+			$req->bindValue('id', $partenaires->getIdEvenement(), \PDO::PARAM_STR);
 			
 			$req->execute();
 		}
 		
 		public function deletePartenaire($idEvent) {
 			
-			$partenaires = $this->readPartenaires($idEvent);
+			$partenaires = $this->readPartenairesByEvent($idEvent);
 			
-			if (!empty($partenaires)) {
-				foreach ($partenaires as $value) {
-					$url = $value['Urlimg'];
-					unlink("../Img/Partenaires/Event/{$url}");
-				}
-			}
-			
-			$sql = "DELETE FROM {$this->table} WHERE IDevenement = :id";
+			$sql = "DELETE FROM {$this->table} WHERE IDpartenaire = :id";
 			$req = $this->db->prepare($sql);
 			
 			$req->bindValue('id', $idEvent, \PDO::PARAM_INT);
@@ -69,11 +71,15 @@
 			$description = $partenaires->getDescription();
 			$site = $partenaires->getSite();
 			$url = $partenaires->getUrlimg();
+			$id = $partenaires->getIdPartenaire();
 			
-			$arrReplace = ['{{nom}}' => htmlspecialchars($nom),
-				'{{description}}' => htmlspecialchars($description),
-				'{{lien}}' => htmlspecialchars($site),
-				'{{url}}' => htmlspecialchars($url)];
+			$arrReplace = [
+				'{{nompartenaire}}'         => htmlspecialchars($nom),
+				'{{descriptionpartenaire}}' => htmlspecialchars($description),
+				'{{site}}'                  => htmlspecialchars($site),
+				'{{url}}'                   => htmlspecialchars($url),
+				'{{id}}'                    => htmlspecialchars($id),
+			];
 			
 			return strtr($modelePartenaire, $arrReplace);
 		}

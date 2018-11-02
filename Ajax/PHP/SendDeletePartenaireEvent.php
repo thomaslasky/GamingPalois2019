@@ -8,22 +8,22 @@
 	
 	$usersManager = new App\MembresManager();
 	$evenementManager = new App\EvenementManager();
-	$partenaireManager = new App\PartenairesgpManager();
+	$partenaireManager = new App\PartenairesManager();
 	
 	if (isset($_SESSION['id'])) {
 		$user = $usersManager->readMembre($_SESSION["id"]);
 		if ($user->getStatus() === "Administrateur") {
 			
-			$partenaire = $partenaireManager->readPartenaireGp($_POST["IDpartenaire"]);
+			$partenaire = $partenaireManager->readPartenaire($_POST["IDpartenaire"]);
 			
 			if (file_exists("../../Img/Partenaires/" . $partenaire->getUrlimg())) {
 				unlink("../../Img/Partenaires/" . $partenaire->getUrlimg());
 			}
 			
-			$partenaireManager->deletePartenaireGP($_POST["IDpartenaire"]);
+			$partenaireManager->deletePartenaire($_POST["IDpartenaire"]);
 			
 			echo json_encode([
-				"text" => "Partenaire Supprimé",
+				"text" => "Partenaire Supprimé !",
 			]);
 		} else {
 			echo json_encode([

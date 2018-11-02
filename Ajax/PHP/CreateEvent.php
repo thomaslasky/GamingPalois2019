@@ -15,45 +15,45 @@
 			
 			$typeEvent = [
 				"Vide Grenier",
-				"LAN",
+				"LAN"
 			];
 			
 			$addEvent = "<div class='col s10 container_form_createvent'>";
 			$addEvent .= "<h1 class='center-align'>Créer un événement</h1>";
 			
-			$formulaireNewEvent = new App\Formulaire("post", "container_addevent margin-auto", "form_create_event");
+			$formulaireNewEvent = new App\Formulaire("post", "container_addevent margin-auto","form_create_event");
 			$csrf->generateInput("csrf", $formulaireNewEvent);
-			$formulaireNewEvent->openDiv("", "col s12");
+			$formulaireNewEvent->openDiv("","col s12");
 			$formulaireNewEvent->select("Type", $typeEvent, "Type d'évènement", "");
 			$formulaireNewEvent->closeDiv();
-			$formulaireNewEvent->openDiv("", "input-field col s12");
-			$formulaireNewEvent->inputFile("File", "File", "Logo de l'événement", "", "material-icons prefix", "add_photo_alternate", "active", "onchange='showPicture(this);'");
+			$formulaireNewEvent->openDiv("","input-field col s12");
+			$formulaireNewEvent->inputFile("File","File","Logo de l'événement","","material-icons prefix","add_photo_alternate","active","onchange='showPicture(this);'");
 			$formulaireNewEvent->closeDiv();
-			$formulaireNewEvent->openDiv("", "input-field col s12");
-			$formulaireNewEvent->inputText("Name", "Nom", "Nom de l'événement", "", "", "material-icons prefix", "label");
+			$formulaireNewEvent->openDiv("","input-field col s12");
+			$formulaireNewEvent->inputText("Name", "Nom", "Nom de l'événement", "", "", "material-icons prefix","label");
 			$formulaireNewEvent->closeDiv();
-			$formulaireNewEvent->openDiv("", "input-field col s12");
-			$formulaireNewEvent->inputDate("Date", "Date", "Date de l'événement", "", "", "material-icons prefix", "date_range", "active");
+			$formulaireNewEvent->openDiv("","input-field col s12");
+			$formulaireNewEvent->inputDate("Date","Date","Date de l'événement","","","material-icons prefix","date_range","active");
 			$formulaireNewEvent->closeDiv();
-			$formulaireNewEvent->openDiv("", "input-field col s12");
-			$formulaireNewEvent->openDiv("", "input-field col s7");
-			$formulaireNewEvent->inputText("Adresse", "Adresse", "Adresse", "", "", "material-icons prefix", "map");
+			$formulaireNewEvent->openDiv("","input-field col s12");
+			$formulaireNewEvent->openDiv("","input-field col s7");
+			$formulaireNewEvent->inputText("Adresse", "Adresse", "Adresse", "", "", "material-icons prefix","map");
 			$formulaireNewEvent->closeDiv();
-			$formulaireNewEvent->openDiv("", "input-field col s3");
-			$formulaireNewEvent->inputNumber("Place", "Place", "Place/Table", "", "", "material-icons prefix", "confirmation_number");
+			$formulaireNewEvent->openDiv("","input-field col s3");
+			$formulaireNewEvent->inputNumber("Place", "Place", "Place/Table", "", "", "material-icons prefix","confirmation_number");
 			$formulaireNewEvent->closeDiv();
-			$formulaireNewEvent->openDiv("", "input-field col s2");
-			$formulaireNewEvent->inputNumber("Prix", "Prix", "Tarif", "", "", "material-icons prefix", "euro_symbol");
+			$formulaireNewEvent->openDiv("","input-field col s2");
+			$formulaireNewEvent->inputNumber("Prix", "Prix", "Tarif", "", "", "material-icons prefix","euro_symbol");
 			$formulaireNewEvent->closeDiv(2);
-			$formulaireNewEvent->openDiv("", "input-field col s12");
-			$formulaireNewEvent->inputText("Description", "Description", "Description", "", "", "material-icons prefix", "description");
+			$formulaireNewEvent->openDiv("","input-field col s12");
+			$formulaireNewEvent->inputText("Description", "Description", "Description", "", "", "material-icons prefix","description");
 			$formulaireNewEvent->closeDiv();
-			$formulaireNewEvent->openDiv("", "margin-auto");
-			$formulaireNewEvent->submit("Envoyer", "Créer", "valide_form", "requestSendCreateEvent(readDataSendCreateEvent)");
+			$formulaireNewEvent->openDiv("","margin-auto");
+			$formulaireNewEvent->submit("Envoyer", "Créer", "valide_form","requestSendCreateEvent(readDataSendCreateEvent)");
 			$formulaireNewEvent->closeDiv();
 			
 			$addEvent .= $formulaireNewEvent->render();
-			$addEvent .= "<img id='blah' class='margin-auto' style='display: block;' src='#' alt='' />";
+			$addEvent .= "";
 			$addEvent .= "</div>";
 			
 			echo $addEvent;

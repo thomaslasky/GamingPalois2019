@@ -179,7 +179,7 @@
 			$formulaireAddPartenaire->inputLink("Lien", "Lien", 'Lien', '', "", "material-icons prefix", "contact_mail", "required");
 			$formulaireAddPartenaire->closeDiv();
 			$formulaireAddPartenaire->openDiv("", "input-field col s12");
-			$formulaireAddPartenaire->inputFile("Logo", "Logo", "Logo", "", "material-icons prefix", "contact_mail", "active","onchange='showPicture(this);'");
+			$formulaireAddPartenaire->inputFile("Logo", "Logo", "Logo", "", "material-icons prefix", "contact_mail", "active", "onchange='showPicture(this);'");
 			$formulaireAddPartenaire->closeDiv();
 			$formulaireAddPartenaire->openDiv("", "input-field col s12 m8 l4 xl4 margin-auto");
 			$formulaireAddPartenaire->submit("Validation", "Valider", "col s12 bottum_validation_log margin-auto bottum_validation_inscription", "requestSendNewPartenaire(readDataSendNewPartenaire)");
@@ -229,7 +229,7 @@
 			$formulaireModifPartenaire = new \App\Formulaire("post", "", "form_modif_partenaire");
 			$csrf->generateInput("csrf", $formulaireModifPartenaire);
 			$formulaireModifPartenaire->openDiv("", "input-field col s12");
-			$formulaireModifPartenaire->inputFile("Logo", "Logo", "Logo", "", "", "", "active","onchange='showPicture(this);'");
+			$formulaireModifPartenaire->inputFile("Logo", "Logo", "Logo", "", "", "", "active", "onchange='showPicture(this);'");
 			$formulaireModifPartenaire->closeDiv();
 			$formulaireModifPartenaire->openDiv("", "input-field col s12 m8 l4 xl4 margin-auto");
 			$formulaireModifPartenaire->submit("Validation", "Valider", "col s12 bottum_validation_log margin-auto bottum_validation_inscription", "requestSendModifImgPartenaire(readDataSendModifImgPartenaire,{$_GET["idpartenaire"]})");
@@ -324,5 +324,36 @@
 			$sendEmailAll .= $formulaireSendMailAllParticipant->render();
 			
 			echo $sendEmailAll;
+		}
+		
+		//Création formulaire d'ajout de partenaire à l'événement
+		
+		if ($_GET["type"] === "AddPartenaireEvent" && isset($_GET["idevent"])) {
+			
+			$add = "";
+			$add .= "<div><h1 style='text-align: center;font-size: 3.2em'>Ajouter un Partenaire à l'événement</h1></div>";
+			
+			$formulaireAddPartenaire = new \App\Formulaire("post", "", "form_add_partenaire_event");
+			$csrf->generateInput("csrf", $formulaireAddPartenaire);
+			$formulaireAddPartenaire->openDiv("", "input-field col s12");
+			$formulaireAddPartenaire->inputText("Nom", "Nom", "Nom", "", "", "material-icons prefix", "contact_mail", "required");
+			$formulaireAddPartenaire->closeDiv();
+			$formulaireAddPartenaire->openDiv("", "input-field col s12");
+			$formulaireAddPartenaire->inputText("Description", "Description", "Description", "", "", "material-icons prefix", "contact_mail", "required");
+			$formulaireAddPartenaire->closeDiv();
+			$formulaireAddPartenaire->openDiv("", "input-field col s12");
+			$formulaireAddPartenaire->inputLink("Lien", "Lien", 'Lien', '', "", "material-icons prefix", "contact_mail", "required");
+			$formulaireAddPartenaire->closeDiv();
+			$formulaireAddPartenaire->openDiv("", "input-field col s12");
+			$formulaireAddPartenaire->inputFile("Logo", "Logo", "Logo", "", "material-icons prefix", "contact_mail", "active", "onchange='showPicture(this);'");
+			$formulaireAddPartenaire->closeDiv();
+			$formulaireAddPartenaire->openDiv("", "input-field col s12 m8 l4 xl4 margin-auto");
+			$formulaireAddPartenaire->submit("Validation", "Valider", "col s12 bottum_validation_log margin-auto bottum_validation_inscription", "requestSendNewPartenaireEvent(readDataSendNewPartenaireEvent,{$_GET["idevent"]})");
+			$formulaireAddPartenaire->closeDiv();
+			
+			$add .= $formulaireAddPartenaire->render();
+			$add .= "<img id='blah' class='margin-auto' style='display: block;' src='#' alt='' />";
+			
+			echo $add;
 		}
 	}

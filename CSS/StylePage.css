@@ -125,6 +125,10 @@
 	content: "-";
 }
 
+.container_presentation_contenu > div > p, .container_presentation_contenu > div > ul > li {
+	margin-left: 15px;
+}
+
 .devise {
 	font-style: italic;
 }
@@ -149,7 +153,11 @@
 
 /*PROFIL*/
 
-/*Administration*/
+/*ADMINISTRATION*/
+
+.container_administration div:first-child {
+	margin-left: 0 !important;
+}
 
 /*ACCUEIL*/
 
@@ -157,11 +165,15 @@
 	margin-top: 15px;
 }
 
-/*CREATE EVENR*/
+/*CREATE EVENt*/
 
 .valide_form {
 	display: block;
 	margin: auto;
+}
+
+.container_form_createvent {
+	float: none !important;
 }
 
 /*GESTION PARTENAIRES*/

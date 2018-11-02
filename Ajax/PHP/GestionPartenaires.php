@@ -17,7 +17,7 @@
 			$modeleHtml = file_get_contents("../HTML/cardpartenairesadmin.html");
 			
 			$allPartenairesGP = "<div class='container_partenaires col s10 margin-auto'>";
-			$allPartenairesGP .= "<h1 class='center-align'>Partenaires</h1><hr>";
+			$allPartenairesGP .= "<h1 class='center-align'>Partenaires</h1>";
 			$allPartenairesGP .= "<div class='space-between'>";
 			
 			if (!empty($allPartenaires)) {

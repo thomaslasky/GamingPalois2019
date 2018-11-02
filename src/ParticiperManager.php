@@ -71,13 +71,21 @@
 			
 		}
 		
-		public function listeParticipants(Evenement &$event, $modeleHTMLstructure, $modeleHTMLinfo) {
+		public function listeParticipants(Evenement &$event, $modeleHTMLstructure, $modeleHTMLinfo, $modeleHTMLinfoPartenaires) {
+			
+			setlocale(LC_TIME, 'fr', 'fr_FR', 'fr_FR.ISO8859-1');
+			
+			$partenairesManager = new PartenairesManager();
 			
 			$participantsListe = "";
+			$partenairesListe = "";
 			
+			$allPartenaire = $partenairesManager->readPartenairesByEvent($event->getIdEvenement());
 			$idEvent = $event->getIdEvenement();
 			
 			$allParticipants = $this->selectParticipants($event->getIdEvenement());
+			
+			$date = strftime('%A  %d  %B  %Y', strtotime($event->getDates()));
 			
 			if ($event->getType() === "Vide Grenier") {
 				$moreHead = "<th>Vend</th><th>Table</th><th>Paiement</th>";
@@ -91,18 +99,25 @@
 				}
 			}
 			
+			if (!empty($allPartenaire)) {
+				foreach($allPartenaire as $value) {
+					$partenairesListe .= $partenairesManager->fichePartenaire($value, $modeleHTMLinfoPartenaires);
+				}
+			}
+			
 			$arrReplace = [
 				'{{url}}'         => $event->getUrlimg(),
 				'{{nom}}'         => $event->getNom(),
 				'{{description}}' => $event->getDescription(),
-				'{{date}}'        => $event->getDates(),
+				'{{date}}'        => $date,
 				'{{adresse}}'     => $event->getAdresse(),
 				'{{place}}'       => $event->getPlace(),
-				'{{prix}}'        => $event->getPrix(),
+				'{{prix}}'        => $event->getPrix() . "€",
 				'{{type}}'        => $event->getType(),
 				'{{id}}'          => $event->getIdEvenement(),
 				'{{morehead}}'    => $moreHead,
 				'{{user}}'        => $participantsListe,
+				'{{partenaires}}' => $partenairesListe,
 			];
 			
 			return strtr($modeleHTMLstructure, $arrReplace);

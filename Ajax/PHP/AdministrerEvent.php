@@ -19,14 +19,15 @@
 			
 			$modeleHtml = file_get_contents("../HTML/listeadminevent.html");
 			$modeleHtmlInfo = file_get_contents("../HTML/listeparticipant.html");
+			$modeleHtmlInfoPartenaires = file_get_contents("../HTML/listepartenaire.html");
 			
 			$showAllEvent = "<div class='container_event_admin col s10 margin-auto'>";
-			$showAllEvent .= "<h1 class='center-align'>Administrer événements</h1><hr>";
+			$showAllEvent .= "<h1 class='center-align'>Administrer événements</h1>";
 			$showAllEvent .= "<div class='space-between'>";
 			
 			if (!empty($allEvent)) {
 				foreach($allEvent as $valueEvent) {
-					$showAllEvent .= $participerManager->listeParticipants($valueEvent, $modeleHtml, $modeleHtmlInfo);
+					$showAllEvent .= $participerManager->listeParticipants($valueEvent, $modeleHtml, $modeleHtmlInfo,$modeleHtmlInfoPartenaires);
 				}
 			} else {
 				$showAllEvent .= "Aucun Evenements";

@@ -957,7 +957,7 @@ Confirmation DELETE
 
 function requestDeleteEventConfirm(id) {
 	let idEvent = parseInt(id);
-	let $toastContent = $("<span>Souhaitez vous supprimer l'événement ?</span>")
+	let $toastContent = $("<span>Confirmez ?</span>")
 		.add($("<button class='btn-flat toast-action' onclick='requestDeleteEvenement(readDataDeleteEvenement," + idEvent + ") ; removeToast()'>Oui</button>"))
 		.add($("<button class='btn-flat toast-action' onclick='removeToast()'>Non</button>"));
 	Materialize.toast($toastContent, 7000);
@@ -1009,5 +1009,73 @@ function readDataSendMailAllParticipants(oData) {
 		Materialize.toast(json["text"], 2000);
 		let input = document.getElementById("csrf");
 		input.value = json['token'];
+	}
+}
+
+/*
+Send add partenaires event
+ */
+
+function requestSendNewPartenaireEvent(callback, id) {
+	xhr.onreadystatechange = function () {
+		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
+			callback(xhr.responseText);
+		}
+	};
+	
+	let formData = new FormData(document.getElementById("form_add_partenaire_event"));
+	formData.append("IDevent", id);
+	
+	xhr.open("POST", "Ajax/PHP/SendAddPartenaireEvent.php", true);
+	xhr.send(formData);
+}
+
+function readDataSendNewPartenaireEvent(oData) {
+	
+	let json = JSON.parse(oData);
+	
+	if (json["token"] !== undefined) {
+		let input = document.getElementById("csrf");
+		input.value = json['token'];
+	}
+	
+	if (json["text"] === "Partenaire Ajouté !") {
+		Materialize.toast(json["text"], 1500);
+		closeModal("page");
+		requestAdminEvent(readData);
+	} else {
+		Materialize.toast(json["text"], 2500);
+		let input = document.getElementById("csrf");
+		input.value = json['token'];
+	}
+}
+
+/*
+Send delete partenaire event
+ */
+
+function requestDeletePartenaireEvent(callback, id) {
+	xhr.onreadystatechange = function () {
+		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
+			callback(xhr.responseText, id);
+		}
+	};
+	
+	let formData = new FormData();
+	formData.append("IDpartenaire", id);
+	
+	xhr.open("POST", "Ajax/PHP/SendDeletePartenaireEvent.php", true);
+	xhr.send(formData);
+}
+
+function readDataDeletePartenaireEvent(oData, id) {
+	
+	let json = JSON.parse(oData);
+	
+	if (json["text"] === "Partenaire Supprimé !") {
+		Materialize.toast(json["text"], 3000);
+		requestAdminEvent(readData);
+	} else {
+		Materialize.toast(json["text"], 2500);
 	}
 }
