@@ -44,6 +44,30 @@ function reload(docTitle) {
 					resolve();
 				});
 				break;
+			case "Administration":
+				requestEvenements((oData, id) => {
+					readData(oData, id);
+					resolve();
+				});
+				break;
+			case "Admin-Create Event":
+				requestCreateEvent((oData, id) => {
+					readData(oData, id);
+					resolve();
+				});
+				break;
+			case "Admin-Evenement":
+				requestAdminEvent((oData, id) => {
+					readData(oData, id);
+					resolve();
+				});
+				break;
+			case "Admin-Partenaires":
+				requestAdminPartenaires((oData, id) => {
+					readData(oData, id);
+					resolve();
+				});
+				break;
 		}
 	})
 	

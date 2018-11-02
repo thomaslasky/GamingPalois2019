@@ -2,20 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e06163c1-5936-4daf-bec3-e12c1b184b5f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ajax/HTML/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/HTML/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ajax/Ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/Ajax.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ajax/HTML/evenements.html" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/HTML/evenements.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ajax/HTML/presentation.html" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/HTML/presentation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ajax/HTML/profil.html" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/HTML/profil.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ajax/PHP/CreateEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/PHP/CreateEvent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ajax/PHP/Formulaire.php" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/PHP/Formulaire.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ajax/PHP/Partenaires.php" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/PHP/Partenaires.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ajax/PHP/SendModificationProfil.php" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/PHP/SendModificationProfil.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/FrameWork.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/FrameWork.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/StyleNavigateur.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/StyleNavigateur.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/StylePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/StylePage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Functions/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Functions/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS/Functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS/Functions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ajax/PHP/AdministrerEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/PHP/AdministrerEvent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ajax/PHP/GestionPartenaires.php" beforeDir="false" afterPath="$PROJECT_DIR$/Ajax/PHP/GestionPartenaires.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -105,15 +95,15 @@
           <entry key="gitignore" value="15" />
           <entry key="htaccess" value="21" />
           <entry key="htm" value="1" />
-          <entry key="html" value="231" />
+          <entry key="html" value="232" />
           <entry key="jpg" value="13" />
-          <entry key="js" value="162" />
+          <entry key="js" value="163" />
           <entry key="json" value="15" />
           <entry key="map" value="1" />
           <entry key="mcd" value="1" />
           <entry key="md" value="2" />
           <entry key="membres" value="2" />
-          <entry key="php" value="848" />
+          <entry key="php" value="853" />
           <entry key="png" value="2" />
           <entry key="scss" value="1" />
           <entry key="sql" value="1" />
@@ -125,12 +115,12 @@
         <counts>
           <entry key="CSS" value="131" />
           <entry key="Database Element" value="3" />
-          <entry key="HTML" value="232" />
+          <entry key="HTML" value="233" />
           <entry key="Image" value="15" />
           <entry key="JSON" value="15" />
-          <entry key="JavaScript" value="162" />
+          <entry key="JavaScript" value="163" />
           <entry key="Markdown" value="2" />
-          <entry key="PHP" value="848" />
+          <entry key="PHP" value="853" />
           <entry key="PLAIN_TEXT" value="18" />
           <entry key="SCSS" value="1" />
           <entry key="Scratch" value="1" />
@@ -154,10 +144,10 @@
           <entry key="htaccess" value="29" />
           <entry key="htm" value="2" />
           <entry key="html" value="6460" />
-          <entry key="js" value="9838" />
+          <entry key="js" value="9970" />
           <entry key="json" value="47" />
           <entry key="md" value="94" />
-          <entry key="php" value="29852" />
+          <entry key="php" value="29881" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -165,9 +155,9 @@
           <entry key="CSS" value="3147" />
           <entry key="HTML" value="6467" />
           <entry key="JSON" value="47" />
-          <entry key="JavaScript" value="9838" />
+          <entry key="JavaScript" value="9970" />
           <entry key="Markdown" value="94" />
-          <entry key="PHP" value="29847" />
+          <entry key="PHP" value="29876" />
           <entry key="PLAIN_TEXT" value="146" />
           <entry key="htaccess" value="29" />
         </counts>
@@ -185,65 +175,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Ajax/HTML/profil.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="23" column="54" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#form#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JS/Functions.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="118" column="47" selection-start-line="118" selection-start-column="47" selection-end-line="118" selection-end-column="47" />
-              <folding>
-                <element signature="n#!!block;n#navigateur#0" />
-                <element signature="e#122#263#0" />
-                <element signature="e#167#211#0" />
-                <element signature="e#217#260#0" />
-                <element signature="e#269#311#0" />
-                <element signature="e#417#500#0" />
-                <element signature="e#454#497#0" />
-                <element signature="n#!!block;n#closeNavigateur#0" />
-                <element signature="e#634#675#0" />
-                <element signature="n#!!block;n#collapsible#0" />
-                <element signature="e#862#985#0" />
-                <element signature="e#901#939#0" />
-                <element signature="e#945#982#0" />
-                <element signature="e#991#1027#0" />
-                <element signature="e#1140#1230#0" />
-                <element signature="e#1190#1227#0" />
-                <element signature="n#!!block;n#modal#0" />
-                <element signature="e#1463#1589#0" />
-                <element signature="e#1503#1542#0" />
-                <element signature="e#1548#1586#0" />
-                <element signature="e#1595#1632#0" />
-                <element signature="e#1733#1806#0" />
-                <element signature="e#1765#1803#0" />
-                <element signature="n#!!block;n#closeModal#0" />
-                <element signature="e#1958#1994#0" />
-                <element signature="n#!!block;n#selectedCategorie#0" />
-                <element signature="e#2423#2569#0" />
-                <element signature="e#2486#2566#0" />
-                <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
-                <element signature="n#!!block;n#initLoader#0" />
-                <element signature="n#!!block;n#modifNavAdmin#0" />
-                <element signature="n#!!block;n#removeToast#0" />
-                <element signature="n#!!block;n#showPicture#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -267,13 +199,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/PartenairesgpManager.php" />
         <option value="$PROJECT_DIR$/Ajax/PHP/SendAddPartenaire.php" />
         <option value="$PROJECT_DIR$/Ajax/PHP/SendModificationImgPartenaire.php" />
         <option value="$PROJECT_DIR$/Ajax/PHP/SendDeletePartenaire.php" />
         <option value="$PROJECT_DIR$/Ajax/HTML/administration.html" />
         <option value="$PROJECT_DIR$/Ajax/HTML/listeparticipant.html" />
-        <option value="$PROJECT_DIR$/Ajax/PHP/AdministrerEvent.php" />
         <option value="$PROJECT_DIR$/Ajax/PHP/SendModificationEvent.php" />
         <option value="$PROJECT_DIR$/Ajax/PHP/SendDeleteEvent.php" />
         <option value="$PROJECT_DIR$/Ajax/PHP/SendModificationImgEvent.php" />
@@ -296,7 +226,6 @@
         <option value="$PROJECT_DIR$/src/Manager.php" />
         <option value="$PROJECT_DIR$/Config/settings.php" />
         <option value="$PROJECT_DIR$/src/MembresManager.php" />
-        <option value="$PROJECT_DIR$/Ajax/Ajax.js" />
         <option value="$PROJECT_DIR$/Ajax/PHP/SendMailAllParticipants.php" />
         <option value="$PROJECT_DIR$/Template/navigateur.html" />
         <option value="$PROJECT_DIR$/node_modules/jquery.nicescroll/jquery.nicescroll.js" />
@@ -309,7 +238,6 @@
         <option value="$PROJECT_DIR$/Ajax/PHP/CreateEvent.php" />
         <option value="$PROJECT_DIR$/CSS/FrameWork.css" />
         <option value="$PROJECT_DIR$/CSS/StyleNavigateur.css" />
-        <option value="$PROJECT_DIR$/Ajax/HTML/evenements.html" />
         <option value="$PROJECT_DIR$/CSS/StylePage.css" />
         <option value="$PROJECT_DIR$/Ajax/HTML/presentation.html" />
         <option value="$PROJECT_DIR$/Ajax/HTML/contact.html" />
@@ -318,6 +246,10 @@
         <option value="$PROJECT_DIR$/Functions/functions.php" />
         <option value="$PROJECT_DIR$/JS/Functions.js" />
         <option value="$PROJECT_DIR$/Ajax/HTML/profil.html" />
+        <option value="$PROJECT_DIR$/Ajax/HTML/evenements.html" />
+        <option value="$PROJECT_DIR$/Ajax/Ajax.js" />
+        <option value="$PROJECT_DIR$/Ajax/PHP/AdministrerEvent.php" />
+        <option value="$PROJECT_DIR$/Ajax/PHP/GestionPartenaires.php" />
       </list>
     </option>
   </component>
@@ -397,11 +329,6 @@
               <item name="GamingPalois2019" type="462c0819:PsiDirectoryNode" />
               <item name="Ajax" type="462c0819:PsiDirectoryNode" />
               <item name="PHP" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GamingPalois2019" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GamingPalois2019" type="462c0819:PsiDirectoryNode" />
-              <item name="JS" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -527,16 +454,15 @@
       <workItem from="1540977485561" duration="12303000" />
       <workItem from="1540998264238" duration="4511000" />
       <workItem from="1541080667833" duration="6764000" />
-      <workItem from="1541171991825" duration="14234000" />
+      <workItem from="1541171991825" duration="15345000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="407568000" />
+    <option name="totallyTimeSpent" value="408679000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17114094" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -567,16 +493,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Membres.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/materialize-css/dist/js/materialize.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="1658" column="46" lean-forward="true" selection-start-line="1658" selection-start-column="46" selection-end-line="1658" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Ajax/HTML/listeparticipant.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -699,16 +615,386 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/Ajax.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/jquery.nicescroll/jquery.nicescroll.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="3713" lean-forward="true" selection-start-line="3713" selection-end-line="3713" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Template/navigateur.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/PHP/SendModificationImgEvent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-378" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Formulaire.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="87" column="99" selection-start-line="87" selection-start-column="99" selection-end-line="87" selection-end-column="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/jquery/dist/jquery.slim.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6555" selection-start-line="6555" selection-end-line="6555" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/jquery/src/css.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="428" column="4" selection-start-line="428" selection-start-column="4" selection-end-line="428" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/PHP/SendMailAllParticipants.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="35" column="58" selection-start-line="35" selection-start-column="58" selection-end-line="35" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/HTML/listeadminevent.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="83" column="10" lean-forward="true" selection-start-line="83" selection-start-column="10" selection-end-line="83" selection-end-column="10" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#1;n#div#1;n#div#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS/FrameWork.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="81" column="19" selection-start-line="81" selection-start-column="19" selection-end-line="81" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS/StyleGeneral.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS/StyleNavigateur.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
+          <folding>
+            <element signature="e#14#215#0" />
+            <element signature="e#217#306#0" />
+            <element signature="e#271#304#0" />
+            <element signature="e#330#432#0" />
+            <element signature="e#449#491#0" />
+            <element signature="e#508#633#0" />
+            <element signature="e#660#736#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS/StylePage.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="28" column="234" selection-start-line="28" selection-start-column="234" selection-end-line="28" selection-end-column="234" />
+          <folding>
+            <element signature="e#21#148#0" />
+            <element signature="e#166#251#0" />
+            <element signature="e#442#587#0" />
+            <element signature="e#796#898#0" />
+            <element signature="e#938#1000#0" />
+            <element signature="e#1030#1120#0" />
+            <element signature="e#1135#1205#0" />
+            <element signature="e#1231#1252#0" />
+            <element signature="e#1277#1406#0" />
+            <element signature="e#1434#1467#0" />
+            <element signature="e#1491#1507#0" />
+            <element signature="e#1535#1590#0" />
+            <element signature="e#1643#1697#0" />
+            <element signature="e#1733#1757#0" />
+            <element signature="e#1781#1847#0" />
+            <element signature="e#1849#1942#0" />
+            <element signature="e#1911#1940#0" />
+            <element signature="e#1979#2014#0" />
+            <element signature="e#2040#2070#0" />
+            <element signature="e#2109#2128#0" />
+            <element signature="e#2182#2200#0" />
+            <element signature="e#2210#2234#0" />
+            <element signature="e#2251#2286#0" />
+            <element signature="e#2304#2407#0" />
+            <element signature="e#2453#2482#0" />
+            <element signature="e#2553#2575#0" />
+            <element signature="e#2608#2643#0" />
+            <element signature="e#2703#2757#0" />
+            <element signature="e#2788#2924#0" />
+            <element signature="e#2950#2981#0" />
+            <element signature="e#3002#3073#0" />
+            <element signature="e#3098#3127#0" />
+            <element signature="e#3148#3200#0" />
+            <element signature="e#3223#3247#0" />
+            <element signature="e#3294#3325#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/HTML/webtv.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="62" lean-forward="true" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/HTML/contact.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/HTML/administration.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/PHP/Partenaires.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="67" selection-start-line="15" selection-start-column="67" selection-end-line="15" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/PHP/Formulaire.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="284" selection-start-line="284" selection-end-line="284" />
+          <folding>
+            <element signature="e#400#1561#0#PHP" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#1611#3998#0#PHP" />
+            <element signature="e#1671#1717#0#PHP" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#4054#6658#0#PHP" />
+            <element signature="e#4101#4506#0#PHP" />
+            <element signature="e#4387#4506#0#PHP" />
+            <element signature="e#6708#7898#0#PHP" />
+            <element signature="e#7558#7773#0#PHP" />
+            <element signature="e#7949#9709#0#PHP" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+            <element signature="e#9779#11489#0#PHP" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#11552#12680#0#PHP" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+            <element signature="e#12748#15058#0#PHP" />
+            <element signature="e#15116#16175#0#PHP" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+            <element signature="e#16259#17641#0#PHP" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/PHP/SendCreateEvent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="573">
+          <caret line="55" column="66" lean-forward="true" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/PHP/SendBecomeMember.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/PHP/SendContact.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/PHP/SendAddPartenaire.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/PHP/Profil.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="45" lean-forward="true" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="46" column="34" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
+          <folding>
+            <element signature="n#debug#0;n#!!top" />
+            <element signature="e#38#120#0#PHP" />
+            <element signature="n#checkPassword#0;n#!!top" />
+            <element signature="e#174#250#0#PHP" />
+            <element signature="e#223#250#0#PHP" />
+            <element signature="n#verifyStatus#0;n#!!top" />
+            <element signature="e#303#405#0#PHP" />
+            <element signature="e#378#405#0#PHP" />
+            <element signature="n#verifyAge#0;n#!!top" />
+            <element signature="e#441#536#0#PHP" />
+            <element signature="e#509#536#0#PHP" />
+            <element signature="n#verifyTelephone#0;n#!!top" />
+            <element signature="e#667#810#0#PHP" />
+            <element signature="e#783#810#0#PHP" />
+            <element signature="n#verifyEmail#0;n#!!top" />
+            <element signature="e#846#960#0#PHP" />
+            <element signature="e#933#960#0#PHP" />
+            <element signature="n#verifyUrl#0;n#!!top" />
+            <element signature="e#996#1104#0#PHP" />
+            <element signature="e#1077#1104#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/HTML/presentation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="39" lean-forward="true" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/PHP/SendModificationProfil.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="14" column="47" lean-forward="true" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS/StyleUserLogs.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/HTML/profil.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="23" column="54" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#form#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/HTML/evenements.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="13" column="80" selection-start-line="13" selection-start-column="80" selection-end-line="13" selection-end-column="80" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS/Functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="118" column="47" selection-start-line="118" selection-start-column="47" selection-end-line="118" selection-end-column="47" />
+          <folding>
+            <element signature="n#!!block;n#navigateur#0" />
+            <element signature="e#122#263#0" />
+            <element signature="e#167#211#0" />
+            <element signature="e#217#260#0" />
+            <element signature="e#269#311#0" />
+            <element signature="e#417#500#0" />
+            <element signature="e#454#497#0" />
+            <element signature="n#!!block;n#closeNavigateur#0" />
+            <element signature="e#634#675#0" />
+            <element signature="n#!!block;n#collapsible#0" />
+            <element signature="e#862#985#0" />
+            <element signature="e#901#939#0" />
+            <element signature="e#945#982#0" />
+            <element signature="e#991#1027#0" />
+            <element signature="e#1140#1230#0" />
+            <element signature="e#1190#1227#0" />
+            <element signature="n#!!block;n#modal#0" />
+            <element signature="e#1463#1589#0" />
+            <element signature="e#1503#1542#0" />
+            <element signature="e#1548#1586#0" />
+            <element signature="e#1595#1632#0" />
+            <element signature="e#1733#1806#0" />
+            <element signature="e#1765#1803#0" />
+            <element signature="n#!!block;n#closeModal#0" />
+            <element signature="e#1958#1994#0" />
+            <element signature="n#!!block;n#selectedCategorie#0" />
+            <element signature="e#2423#2569#0" />
+            <element signature="e#2486#2566#0" />
+            <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
+            <element signature="n#!!block;n#initLoader#0" />
+            <element signature="n#!!block;n#modifNavAdmin#0" />
+            <element signature="n#!!block;n#removeToast#0" />
+            <element signature="n#!!block;n#showPicture#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/PHP/CreateEvent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="60" column="72" lean-forward="true" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="72" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/PHP/AdministrerEvent.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="571">
-          <caret line="971" column="48" selection-start-line="971" selection-start-column="48" selection-end-line="971" selection-end-column="48" />
+          <caret line="38" column="72" lean-forward="true" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/PHP/GestionPartenaires.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="571">
+          <caret line="35" column="72" selection-start-line="35" selection-start-column="72" selection-end-line="35" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ajax/Ajax.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
           <folding>
             <element signature="e#32#44#0" />
             <element signature="e#75#126#0" />
-            <element signature="e#154#870#0" />
-            <element signature="e#189#865#0" />
-            <element signature="e#193#862#0" />
             <element signature="e#216#334#0" />
             <element signature="e#272#321#0" />
             <element signature="e#338#460#0" />
@@ -720,6 +1006,11 @@
             <element signature="e#682#731#0" />
             <element signature="e#748#858#0" />
             <element signature="e#796#845#0" />
+            <element signature="e#862#988#0" />
+            <element signature="e#926#939#0" />
+            <element signature="e#992#1119#0" />
+            <element signature="e#1119#1246#0" />
+            <element signature="e#1246#1369#0" />
             <element signature="e#872#908#0" />
             <element signature="e#947#1188#0" />
             <element signature="e#989#1102#0" />
@@ -927,369 +1218,10 @@
             <element signature="e#22186#22547#0" />
             <element signature="e#22226#22339#0" />
             <element signature="e#22300#22336#0" />
-            <element signature="e#22597#23012#0" />
+            <element signature="e#22597#23003#0" />
             <element signature="e#22668#22750#0" />
-            <element signature="e#22805#22881#0" />
-            <element signature="e#22887#23010#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/jquery.nicescroll/jquery.nicescroll.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="3713" lean-forward="true" selection-start-line="3713" selection-end-line="3713" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Template/navigateur.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/PHP/SendModificationImgEvent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-378" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Formulaire.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="87" column="99" selection-start-line="87" selection-start-column="99" selection-end-line="87" selection-end-column="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/jquery/dist/jquery.slim.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6555" selection-start-line="6555" selection-end-line="6555" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/jquery/src/css.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="428" column="4" selection-start-line="428" selection-start-column="4" selection-end-line="428" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/PHP/SendMailAllParticipants.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="35" column="58" selection-start-line="35" selection-start-column="58" selection-end-line="35" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/HTML/listeadminevent.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="83" column="10" lean-forward="true" selection-start-line="83" selection-start-column="10" selection-end-line="83" selection-end-column="10" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#!!top" />
-            <element signature="n#div#1;n#div#1;n#div#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/PHP/CreateEvent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="55" column="104" selection-start-line="55" selection-start-column="104" selection-end-line="55" selection-end-column="104" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CSS/FrameWork.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="81" column="19" selection-start-line="81" selection-start-column="19" selection-end-line="81" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CSS/StyleGeneral.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CSS/StyleNavigateur.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
-          <folding>
-            <element signature="e#14#215#0" />
-            <element signature="e#217#306#0" />
-            <element signature="e#271#304#0" />
-            <element signature="e#330#432#0" />
-            <element signature="e#449#491#0" />
-            <element signature="e#508#633#0" />
-            <element signature="e#660#736#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CSS/StylePage.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="28" column="234" selection-start-line="28" selection-start-column="234" selection-end-line="28" selection-end-column="234" />
-          <folding>
-            <element signature="e#21#148#0" />
-            <element signature="e#166#251#0" />
-            <element signature="e#442#587#0" />
-            <element signature="e#796#898#0" />
-            <element signature="e#938#1000#0" />
-            <element signature="e#1030#1120#0" />
-            <element signature="e#1135#1205#0" />
-            <element signature="e#1231#1252#0" />
-            <element signature="e#1277#1406#0" />
-            <element signature="e#1434#1467#0" />
-            <element signature="e#1491#1507#0" />
-            <element signature="e#1535#1590#0" />
-            <element signature="e#1643#1697#0" />
-            <element signature="e#1733#1757#0" />
-            <element signature="e#1781#1847#0" />
-            <element signature="e#1849#1942#0" />
-            <element signature="e#1911#1940#0" />
-            <element signature="e#1979#2014#0" />
-            <element signature="e#2040#2070#0" />
-            <element signature="e#2109#2128#0" />
-            <element signature="e#2182#2200#0" />
-            <element signature="e#2210#2234#0" />
-            <element signature="e#2251#2286#0" />
-            <element signature="e#2304#2407#0" />
-            <element signature="e#2453#2482#0" />
-            <element signature="e#2553#2575#0" />
-            <element signature="e#2608#2643#0" />
-            <element signature="e#2703#2757#0" />
-            <element signature="e#2788#2924#0" />
-            <element signature="e#2950#2981#0" />
-            <element signature="e#3002#3073#0" />
-            <element signature="e#3098#3127#0" />
-            <element signature="e#3148#3200#0" />
-            <element signature="e#3223#3247#0" />
-            <element signature="e#3294#3325#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/HTML/webtv.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="62" lean-forward="true" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/HTML/evenements.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="36" lean-forward="true" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/HTML/contact.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/HTML/administration.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/PHP/Partenaires.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="67" selection-start-line="15" selection-start-column="67" selection-end-line="15" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/PHP/Formulaire.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="284" selection-start-line="284" selection-end-line="284" />
-          <folding>
-            <element signature="e#400#1561#0#PHP" />
-            <element signature="n#style#0;n#h1#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#1611#3998#0#PHP" />
-            <element signature="e#1671#1717#0#PHP" />
-            <element signature="n#style#0;n#h1#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#4054#6658#0#PHP" />
-            <element signature="e#4101#4506#0#PHP" />
-            <element signature="e#4387#4506#0#PHP" />
-            <element signature="e#6708#7898#0#PHP" />
-            <element signature="e#7558#7773#0#PHP" />
-            <element signature="e#7949#9709#0#PHP" />
-            <element signature="n#style#0;n#h1#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-            <element signature="e#9779#11489#0#PHP" />
-            <element signature="n#style#0;n#h1#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#11552#12680#0#PHP" />
-            <element signature="n#style#0;n#h1#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-            <element signature="e#12748#15058#0#PHP" />
-            <element signature="e#15116#16175#0#PHP" />
-            <element signature="n#style#0;n#h1#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-            <element signature="e#16259#17641#0#PHP" />
-            <element signature="n#style#0;n#h1#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/PHP/SendCreateEvent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="55" column="66" lean-forward="true" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/PHP/SendBecomeMember.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/PHP/SendContact.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/PHP/SendAddPartenaire.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/PHP/Profil.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="45" lean-forward="true" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Functions/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="46" column="34" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
-          <folding>
-            <element signature="n#debug#0;n#!!top" />
-            <element signature="e#38#120#0#PHP" />
-            <element signature="n#checkPassword#0;n#!!top" />
-            <element signature="e#174#250#0#PHP" />
-            <element signature="e#223#250#0#PHP" />
-            <element signature="n#verifyStatus#0;n#!!top" />
-            <element signature="e#303#405#0#PHP" />
-            <element signature="e#378#405#0#PHP" />
-            <element signature="n#verifyAge#0;n#!!top" />
-            <element signature="e#441#536#0#PHP" />
-            <element signature="e#509#536#0#PHP" />
-            <element signature="n#verifyTelephone#0;n#!!top" />
-            <element signature="e#667#810#0#PHP" />
-            <element signature="e#783#810#0#PHP" />
-            <element signature="n#verifyEmail#0;n#!!top" />
-            <element signature="e#846#960#0#PHP" />
-            <element signature="e#933#960#0#PHP" />
-            <element signature="n#verifyUrl#0;n#!!top" />
-            <element signature="e#996#1104#0#PHP" />
-            <element signature="e#1077#1104#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/HTML/presentation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="39" lean-forward="true" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/PHP/SendModificationProfil.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="14" column="47" lean-forward="true" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CSS/StyleUserLogs.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JS/Functions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="118" column="47" selection-start-line="118" selection-start-column="47" selection-end-line="118" selection-end-column="47" />
-          <folding>
-            <element signature="n#!!block;n#navigateur#0" />
-            <element signature="e#122#263#0" />
-            <element signature="e#167#211#0" />
-            <element signature="e#217#260#0" />
-            <element signature="e#269#311#0" />
-            <element signature="e#417#500#0" />
-            <element signature="e#454#497#0" />
-            <element signature="n#!!block;n#closeNavigateur#0" />
-            <element signature="e#634#675#0" />
-            <element signature="n#!!block;n#collapsible#0" />
-            <element signature="e#862#985#0" />
-            <element signature="e#901#939#0" />
-            <element signature="e#945#982#0" />
-            <element signature="e#991#1027#0" />
-            <element signature="e#1140#1230#0" />
-            <element signature="e#1190#1227#0" />
-            <element signature="n#!!block;n#modal#0" />
-            <element signature="e#1463#1589#0" />
-            <element signature="e#1503#1542#0" />
-            <element signature="e#1548#1586#0" />
-            <element signature="e#1595#1632#0" />
-            <element signature="e#1733#1806#0" />
-            <element signature="e#1765#1803#0" />
-            <element signature="n#!!block;n#closeModal#0" />
-            <element signature="e#1958#1994#0" />
-            <element signature="n#!!block;n#selectedCategorie#0" />
-            <element signature="e#2423#2569#0" />
-            <element signature="e#2486#2566#0" />
-            <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
-            <element signature="n#!!block;n#initLoader#0" />
-            <element signature="n#!!block;n#modifNavAdmin#0" />
-            <element signature="n#!!block;n#removeToast#0" />
-            <element signature="n#!!block;n#showPicture#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ajax/HTML/profil.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="23" column="54" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#22805#22872#0" />
+            <element signature="e#22878#23001#0" />
           </folding>
         </state>
       </provider>

@@ -35,5 +35,9 @@
 			$showAllEvent .= "</div></div>";
 			
 			echo $showAllEvent;
+		} else {
+			echo "Vous n'avez pas les permissions d'accès à cette page";
 		}
+	} else {
+		echo "Vous devez êtres connecté et administrateur pour accéder à cette page !";
 	}

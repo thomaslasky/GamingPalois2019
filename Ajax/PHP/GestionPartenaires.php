@@ -32,5 +32,9 @@
 			$allPartenairesGP .= "<div class='bottom-add-result-icon'><div class='container-bottom-add-result'><div class = 'bottom-add-result'><img class = 'un-surlign cursor-pointer' src = '././Img/Icone/Add.png' onclick = 'requestForm(readDataForm,\"AddPartenaires\")'></div></div></div>";
 			
 			echo $allPartenairesGP;
+		} else {
+			echo "Vous n'avez pas les permissions d'accès à cette page";
 		}
+	} else {
+		echo "Vous devez êtres connecté et administrateur pour accéder à cette page !";
 	}
