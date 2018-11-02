@@ -179,13 +179,14 @@
 			$formulaireAddPartenaire->inputLink("Lien", "Lien", 'Lien', '', "", "material-icons prefix", "contact_mail", "required");
 			$formulaireAddPartenaire->closeDiv();
 			$formulaireAddPartenaire->openDiv("", "input-field col s12");
-			$formulaireAddPartenaire->inputFile("Logo", "Logo", "Logo", "", "material-icons prefix", "contact_mail", "active");
+			$formulaireAddPartenaire->inputFile("Logo", "Logo", "Logo", "", "material-icons prefix", "contact_mail", "active","onchange='showPicture(this);'");
 			$formulaireAddPartenaire->closeDiv();
 			$formulaireAddPartenaire->openDiv("", "input-field col s12 m8 l4 xl4 margin-auto");
 			$formulaireAddPartenaire->submit("Validation", "Valider", "col s12 bottum_validation_log margin-auto bottum_validation_inscription", "requestSendNewPartenaire(readDataSendNewPartenaire)");
 			$formulaireAddPartenaire->closeDiv();
 			
 			$add .= $formulaireAddPartenaire->render();
+			$add .= "<img id='blah' class='margin-auto' style='display: block;' src='#' alt='' />";
 			
 			echo $add;
 		}
@@ -228,13 +229,14 @@
 			$formulaireModifPartenaire = new \App\Formulaire("post", "", "form_modif_partenaire");
 			$csrf->generateInput("csrf", $formulaireModifPartenaire);
 			$formulaireModifPartenaire->openDiv("", "input-field col s12");
-			$formulaireModifPartenaire->inputFile("Logo", "Logo", "Logo", "", "", "", "active");
+			$formulaireModifPartenaire->inputFile("Logo", "Logo", "Logo", "", "", "", "active","onchange='showPicture(this);'");
 			$formulaireModifPartenaire->closeDiv();
 			$formulaireModifPartenaire->openDiv("", "input-field col s12 m8 l4 xl4 margin-auto");
 			$formulaireModifPartenaire->submit("Validation", "Valider", "col s12 bottum_validation_log margin-auto bottum_validation_inscription", "requestSendModifImgPartenaire(readDataSendModifImgPartenaire,{$_GET["idpartenaire"]})");
 			$formulaireModifPartenaire->closeDiv();
 			
 			$modif .= $formulaireModifPartenaire->render();
+			$modif .= "<img id='blah' class='margin-auto' style='display: block;' src='#' alt='' />";
 			
 			echo $modif;
 		}

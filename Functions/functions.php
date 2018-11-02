@@ -16,8 +16,8 @@
 		}
 	}
 	
-	function verifyStatus($status,$arrayType) {
-		if (!empty($status) && in_array($status,$arrayType)) {
+	function verifyStatus($status, $arrayType) {
+		if (!empty($status) && in_array($status, $arrayType)) {
 			return TRUE;
 		} else {
 			return FALSE;
@@ -37,7 +37,7 @@
 		$taille = strlen($telephone);
 		$phonePrefix = substr($telephone, 0, 2);
 		
-		if (!empty($telephone) && $taille === 10 && $phonePrefix === "06" || $phonePrefix === "07") {
+		if (!empty($telephone) && $taille === 10 && ($phonePrefix === "06" || $phonePrefix === "07")) {
 			return TRUE;
 		} else {
 			return FALSE;

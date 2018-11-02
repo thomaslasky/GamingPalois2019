@@ -110,11 +110,13 @@ function selectedCategorie(categorie, id) {
 
 //Fonction permettant la modification d'un input
 
-function modifyInput(id) {
-	document.getElementById(id).readOnly = false;
+function modifyInput(id, idInput1, idInput2) {
 	
-	let inputValide = "<input class='col s5 bottum_validation_log bottum_validation_inscription cursor-pointer' name='Validation' value=\"Valider\" onclick='requestSendModificationProfil(readDataSendModificationProfil)' type='button'>";
-	let inputAnnulation = "<input class='col s5 bottum_validation_log bottum_validation_inscription cursor-pointer' name='Annuler' value=\"Annuler\" onclick='requestProfil(readData)' type='button'>";
+	document.getElementById("modify_" + idInput1).readOnly = false;
+	document.getElementById("modify_" + idInput2).readOnly = false;
+	
+	let inputValide = "<input class='col s4 bottum_validation_log bottum_validation_inscription cursor-pointer' style='margin: 0;' name='Validation' value=\"Valider\" onclick='requestSendModificationProfil(readDataSendModificationProfil)' type='button'>";
+	let inputAnnulation = "<input class='col s4 bottum_validation_log bottum_validation_inscription cursor-pointer' style='margin: 0;' name='Annuler' value=\"Annuler\" onclick='requestProfil(readData)' type='button'>";
 	
 	document.getElementById("modify_" + id).innerHTML = inputValide + inputAnnulation;
 }

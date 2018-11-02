@@ -7,31 +7,36 @@
 	padding: 0 !important;
 }
 
-/*ACCUEIL*/
-
 .page_container {
 	display: flex;
-	position: fixed; /* Stay in place */
-	left: 0;
-	top: 0;
+	position: fixed;
 	height: 100%;
 	overflow: hidden;
-	padding: 0 !important;
 	width: 100%;
 }
 
-.page_content {
-	height: 100%;
-	width: 100%;
+/*DESIGN BLOCK GENERAL*/
+
+.container_webtv, .container_presentation, .container_partenaires, .container_event_admin, .container_form_createvent, .container_informations, .container_contact {
+	margin: 15px auto !important;
+	border: 1px solid green;
+	border-radius: 10px;
 	overflow: hidden;
-	padding: 15px;
+	background-color: white;
+	padding: 0 !important;
+}
+
+.container_type_event h1, .container_event_admin h1, .container_form_createvent h1, .container_partenaires h1, .container_presentation h1, .container_webtv h1, .container_contact h1, .container_allevents h1, .container_informations h1 {
+	text-align: center;
+	border-top: #00b0ff solid 15px;
+	margin-top: 0;
+	border-bottom: 1px solid black;
 }
 
 /*EVENEMENTS*/
 
 .container_type_event {
 	display: flex;
-	justify-content: space-between;
 	margin-top: 15px;
 	padding: 0 !important;
 }
@@ -41,13 +46,6 @@
 	border: 1px solid green;
 	border-radius: 10px;
 	background-color: white;
-}
-
-.container_type_event h1 {
-	text-align: center;
-	margin: 0;
-	border-top: #00b0ff solid 15px;
-	border-bottom: 1px solid black;
 }
 
 .block_event {
@@ -93,10 +91,6 @@
 	padding-left: 10px;
 }
 
-.container_allevents h1 {
-	border-top: #00b0ff solid 15px;
-}
-
 .container_card_event {
 	margin-top: 10px !important;
 	margin-bottom: 10px !important;
@@ -110,19 +104,6 @@
 
 /*WEB TV*/
 
-.container_webtv {
-	margin-top: 15px !important;
-	border: 1px solid green;
-	border-radius: 10px;
-	overflow: hidden;
-	background-color: white;
-	padding: 0 !important;
-}
-
-.container_webtv h1 {
-	border-top: #00b0ff solid 15px;
-}
-
 .container_webtv_stuff {
 	display: flex;
 	padding: 15px;
@@ -134,39 +115,11 @@
 
 /*CONTACT*/
 
-.container_contact {
-	margin-top: 15px !important;
-	border: 1px solid green;
-	border-radius: 10px;
-	overflow: hidden;
-	background-color: white;
-	padding: 0 !important;
-}
-
-.container_contact h1 {
-	border-top: #00b0ff solid 15px;
-	margin-top: 0;
-}
-
 .container_type_contact {
 	display: flex;
 }
 
 /*PRESENTATION*/
-
-.container_presentation {
-	margin: 15px auto !important;
-	border: 1px solid green;
-	border-radius: 10px;
-	overflow: hidden;
-	background-color: white;
-	padding: 0 !important;
-}
-
-.container_presentation h1 {
-	border-top: #00b0ff solid 15px;
-	margin-top: 0;
-}
 
 .container_presentation li:before {
 	content: "-";
@@ -190,35 +143,11 @@
 
 /*PARTENAIRES*/
 
-.container_partenaires {
-	margin: 15px auto !important;
-	border: 1px solid green;
-	border-radius: 10px;
-	overflow: hidden;
-	background-color: white;
-	padding: 0 !important;
-}
-
-.container_partenaires h1 {
-	border-top: #00b0ff solid 15px;
-	margin-top: 0;
-}
-
 .container_card_partenaire {
 	margin: 10px !important;
 }
 
 /*PROFIL*/
-
-.container_informations {
-	display: flex;
-	margin: 15px auto !important;
-	border: 1px solid green;
-	border-radius: 10px;
-	overflow: hidden;
-	background-color: white;
-	padding: 0 !important;
-}
 
 /*Administration*/
 
@@ -229,21 +158,6 @@
 }
 
 /*CREATE EVENR*/
-
-.container_form_createvent {
-	margin: auto !important;
-	float: none !important;
-	border: 1px solid green;
-	border-radius: 10px;
-	overflow: hidden;
-	background-color: white;
-	padding: 0 !important;
-}
-
-.container_form_createvent h1 {
-	border-top: #00b0ff solid 15px;
-	margin-top: 0;
-}
 
 .valide_form {
 	display: block;
@@ -289,25 +203,11 @@
 	left: 70%;
 }
 
-.option_card_admin i{
+.option_card_admin i {
 	border-radius: 50%;
 }
 
 /*GESTION EVENT*/
-
-.container_event_admin {
-	margin: 15px auto !important;
-	border: 1px solid green;
-	border-radius: 10px;
-	overflow: hidden;
-	background-color: white;
-	padding: 0 !important;
-}
-
-.container_event_admin h1 {
-	border-top: #00b0ff solid 15px;
-	margin-top: 0;
-}
 
 .option_modif_event_admin {
 	bottom: -13px;

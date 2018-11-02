@@ -11,8 +11,8 @@
 	$membreManager = new App\MembresManager();
 	
 	if (isset($_POST)) {
-		if (verifyTelephone($_POST["Telephone"]) === TRUE) {
-			if (verifyEmail($_POST["Email"]) === TRUE) {
+		if (verifyTelephone($_POST["Telephone"])) {
+			if (verifyEmail($_POST["Email"])) {
 				
 				$user = new App\Membres([
 					'IDmembre'  => $_SESSION["id"],
@@ -27,17 +27,20 @@
 				]);
 			} else {
 				echo json_encode([
-					"text" => "Merci de renseigner un Email correct",
+					"text"  => "Merci de renseigner un Email correct",
+					"token" => $csrf->generateToken(),
 				]);
 			}
 		} else {
 			echo json_encode([
-				"text" => "Merci de renseigner un Telephone correct",
+				"text"  => "Merci de renseigner un Telephone correct",
+				"token" => $csrf->generateToken(),
 			]);
 		}
 	} else {
 		echo json_encode([
-			"text" => "Merci de remplir tout les champs",
+			"text"  => "Merci de remplir tout les champs",
+			"token" => $csrf->generateToken(),
 		]);
 	}
 	
