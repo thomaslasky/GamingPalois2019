@@ -8,7 +8,8 @@
 	
 	$csrf = new App\Csrf();
 	$usersManager = new App\MembresManager();
-	$partenaireManager = new \App\PartenairesgpManager();
+	$partenaireGpManager = new \App\PartenairesgpManager();
+	$partenaireManager = new \App\PartenairesManager();
 	$eventManager = new \App\EvenementManager();
 	
 	if (isset($_GET['type'])) {
@@ -195,7 +196,7 @@
 		
 		if ($_GET["type"] === "ModifPartenaire" && isset($_GET["idpartenaire"])) {
 			
-			$partenaire = $partenaireManager->readPartenaireGp($_GET["idpartenaire"]);
+			$partenaire = $partenaireGpManager->readPartenaireGp($_GET["idpartenaire"]);
 			
 			$modif = "";
 			$modif .= "<div><h1 style='text-align: center;font-size: 3.2em'>Modifier un Partenaire</h1></div>";
@@ -355,5 +356,56 @@
 			$add .= "<img id='blah' class='margin-auto' style='display: block;' src='#' alt='' />";
 			
 			echo $add;
+		}
+		
+		//Création formulaire de modification de partenaire d'événement
+		
+		if ($_GET["type"] === "ModifPartenaireEvent" && isset($_GET["idpartenaire"])) {
+			
+			$partenaire = $partenaireManager->readPartenaire($_GET["idpartenaire"]);
+			
+			$modif = "";
+			$modif .= "<div><h1 style='text-align: center;font-size: 3.2em'>Modifier le partenaire</h1></div>";
+			
+			$formulaireAddPartenaire = new \App\Formulaire("post", "", "form_modif_partenaire_event");
+			$csrf->generateInput("csrf", $formulaireAddPartenaire);
+			$formulaireAddPartenaire->openDiv("", "input-field col s12");
+			$formulaireAddPartenaire->inputText("Nom", "Nom", "Nom", "", $partenaire->getNom() ?: "", "material-icons prefix", "contact_mail", "required", "active");
+			$formulaireAddPartenaire->closeDiv();
+			$formulaireAddPartenaire->openDiv("", "input-field col s12");
+			$formulaireAddPartenaire->inputText("Description", "Description", "Description", "", $partenaire->getDescription() ?: "", "material-icons prefix", "contact_mail", "required", "active");
+			$formulaireAddPartenaire->closeDiv();
+			$formulaireAddPartenaire->openDiv("", "input-field col s12");
+			$formulaireAddPartenaire->inputLink("Lien", "Lien", 'Lien', '', $partenaire->getSite() ?: "", "material-icons prefix", "contact_mail", "required", "active");
+			$formulaireAddPartenaire->closeDiv();
+			$formulaireAddPartenaire->openDiv("", "input-field col s12 m8 l4 xl4 margin-auto");
+			$formulaireAddPartenaire->submit("Validation", "Valider", "col s12 bottum_validation_log margin-auto bottum_validation_inscription", "requestSendModifPartenaireEvent(readDataSendModifPartenaireEvent,{$_GET["idpartenaire"]})");
+			$formulaireAddPartenaire->closeDiv();
+			
+			$modif .= $formulaireAddPartenaire->render();
+			
+			echo $modif;
+		}
+		
+		//Création formulaire modification event image
+		
+		if ($_GET["type"] === "ModificationImgPartenaireEvent" && isset($_GET["idpartenaire"])) {
+			
+			$modif = "";
+			$modif .= "<div><h1 style='text-align: center;font-size: 3.2em'>Modifier le logo du partenaire</h1></div>";
+			
+			$formulaireModifPartenaireEvent = new \App\Formulaire("post", "", "form_modif_partenaire_event");
+			$csrf->generateInput("csrf", $formulaireModifPartenaireEvent);
+			$formulaireModifPartenaireEvent->openDiv("", "input-field col s12");
+			$formulaireModifPartenaireEvent->inputFile("Logo", "Logo", "Logo", "", "", "", "active", "onchange='showPicture(this);'");
+			$formulaireModifPartenaireEvent->closeDiv();
+			$formulaireModifPartenaireEvent->openDiv("", "input-field col s12 m8 l4 xl4 margin-auto");
+			$formulaireModifPartenaireEvent->submit("Validation", "Valider", "col s12 bottum_validation_log margin-auto bottum_validation_inscription", "requestSendModifImgPartenaireEvent(readDataSendModifImgPartenaireEvent,{$_GET["idpartenaire"]})");
+			$formulaireModifPartenaireEvent->closeDiv();
+			
+			$modif .= $formulaireModifPartenaireEvent->render();
+			$modif .= "<img id='blah' class='margin-auto' style='display: block;' src='#' alt='' />";
+			
+			echo $modif;
 		}
 	}

@@ -111,6 +111,22 @@ function requestFormEvent(callback, type, id) {
 }
 
 /*
+Affichage formulaire modif partenaire event
+ */
+
+function requestFormPartenaire(callback, type, id) {
+	
+	xhr.onreadystatechange = function () {
+		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
+			callback(xhr.responseText);
+		}
+	};
+	
+	xhr.open("GET", "Ajax/PHP/Formulaire.php?type=" + type + "&idpartenaire=" + id, true);
+	xhr.send(null);
+}
+
+/*
 Affichage formulaire modification partenaire
  */
 
@@ -1077,5 +1093,96 @@ function readDataDeletePartenaireEvent(oData, id) {
 		requestAdminEvent(readData);
 	} else {
 		Materialize.toast(json["text"], 2500);
+	}
+}
+
+/*
+Confirmation DELETE Partenaire Event
+ */
+
+function requestDeletePartenaireEventConfirm(id) {
+	
+	let idEvent = parseInt(id);
+	
+	let $toastContent = $("<span>Confirmez la suppression ?</span>")
+		.add($("<button class='btn-flat toast-action' onclick='requestDeletePartenaireEvent(readDataDeletePartenaireEvent," + idEvent + ") ; removeToast()'>Oui</button>"))
+		.add($("<button class='btn-flat toast-action' onclick='removeToast()'>Non</button>"));
+	
+	Materialize.toast($toastContent, 7000);
+}
+
+/*
+Send modification partenaires event
+ */
+
+function requestSendModifPartenaireEvent(callback, id) {
+	xhr.onreadystatechange = function () {
+		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
+			callback(xhr.responseText);
+		}
+	};
+	
+	let formData = new FormData(document.getElementById("form_modif_partenaire_event"));
+	formData.append("idpartenaire", id);
+	
+	xhr.open("POST", "Ajax/PHP/SendModificationPartenaireEvent.php", true);
+	xhr.send(formData);
+}
+
+function readDataSendModifPartenaireEvent(oData) {
+	
+	let json = JSON.parse(oData);
+	
+	if (json["token"] !== undefined) {
+		let input = document.getElementById("csrf");
+		input.value = json['token'];
+	}
+	
+	if (json["text"] === "Partenaire Modifié !") {
+		Materialize.toast(json["text"], 1500);
+		closeModal("page");
+		requestAdminEvent(readData);
+	} else {
+		Materialize.toast(json["text"], 2500);
+		let input = document.getElementById("csrf");
+		input.value = json['token'];
+	}
+}
+
+/*
+Send modification partenaire img
+ */
+
+function requestSendModifImgPartenaireEvent(callback, id) {
+	xhr.onreadystatechange = function () {
+		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
+			callback(xhr.responseText);
+		}
+	};
+	
+	let formData = new FormData(document.getElementById("form_modif_partenaire_event"));
+	formData.append("idpartenaire", id);
+	
+	xhr.open("POST", "Ajax/PHP/SendModificationImgPartenaireEvent.php", true);
+	xhr.send(formData);
+}
+
+function readDataSendModifImgPartenaireEvent(oData) {
+	
+	let json = JSON.parse(oData);
+	
+	if (json["token"] !== undefined) {
+		let input = document.getElementById("csrf");
+		input.value = json['token'];
+	}
+	
+	if (json["text"] === "Image Modifié !") {
+		Materialize.toast(json["text"], 1500);
+		closeModal("page");
+		requestAdminEvent(readData);
+	} else {
+		Materialize.toast(json["text"], 2500);
+		let input = document.getElementById("csrf");
+		input.value = json['token'];
 	}
 }

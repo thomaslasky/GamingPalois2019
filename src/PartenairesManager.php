@@ -53,6 +53,30 @@
 			$req->execute();
 		}
 		
+		public function updatePartenaire(Partenaires &$partenaires) {
+			$sql = "UPDATE {$this->table} SET Nom = :nom, Description = :descr, Site = :site WHERE IDpartenaire = :id";
+			
+			$req = $this->db->prepare($sql);
+			
+			$req->bindValue('nom', $partenaires->getNom(), \PDO::PARAM_STR);
+			$req->bindValue('descr', $partenaires->getDescription(), \PDO::PARAM_STR);
+			$req->bindValue('site', $partenaires->getSite(), \PDO::PARAM_STR);
+			$req->bindValue('id', $partenaires->getIdPartenaire(), \PDO::PARAM_INT);
+			
+			$req->execute();
+		}
+		
+		public function updateImgPartenaire(Partenaires &$partenaires) {
+			$sql = "UPDATE {$this->table} SET Urlimg = :url WHERE IDpartenaire = :id";
+			
+			$req = $this->db->prepare($sql);
+			
+			$req->bindValue('url', $partenaires->getUrlimg(), \PDO::PARAM_STR);
+			$req->bindValue('id', $partenaires->getIdPartenaire(), \PDO::PARAM_INT);
+			
+			$req->execute();
+		}
+		
 		public function deletePartenaire($idEvent) {
 			
 			$partenaires = $this->readPartenairesByEvent($idEvent);

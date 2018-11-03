@@ -126,15 +126,17 @@
 		
 		//Affichage des évènements
 		
-		public function ficheEvent(Evenement &$event, $modelHTML, $idUser) {
+		public function ficheEvent(Evenement &$event, $modelHTML, $idUser, $modelHTMLpartenaire = "") {
 			
 			setlocale(LC_TIME, 'fr', 'fr_FR', 'fr_FR.ISO8859-1');
 			
 			if (date("Y-m-d") <= $event->getDates()) {
 				
 				$participerManager = new ParticiperManager();
+				$partenaireManager = new PartenairesManager();
 				
 				$action = "";
+				$partenaires = "";
 				
 				$idEvent = $event->getIdevenement();
 				$nom = $event->getNom();
@@ -171,6 +173,16 @@
 					$action = "<p><span class='cursor-pointer blue-text darken-2' onclick='requestForm(readDataForm,\"Login\")'>Connectez vous</span> pour vous inscrire</p>";
 				}
 				
+				$allPartenaire = $partenaireManager->readPartenairesByEvent($event->getIdEvenement());
+				
+				if (!empty($allPartenaire)) {
+					foreach($allPartenaire as $value) {
+						$partenaires .= $partenaireManager->fichePartenaire($value, $modelHTMLpartenaire);
+					}
+				} else {
+					$partenaires = "<p>Aucun partenaire</p>";
+				}
+				
 				$arrReplace = [
 					'{{id}}'              => $idEvent,
 					'{{nomevent}}'        => $nom,
@@ -183,6 +195,7 @@
 					'{{urlimg}}'          => $urlImg,
 					'{{action}}'          => $action,
 					'{{prix}}'            => $prix . "€",
+					'{{partenaire}}'      => $partenaires,
 				];
 				
 				return strtr($modelHTML, $arrReplace);

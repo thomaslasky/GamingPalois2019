@@ -22,6 +22,7 @@
 	
 	$modeleHTML = file_get_contents('../../Template/cardevenements.html');
 	$modeleHTMLAllEvent = file_get_contents('../../Template/allevents.html');
+	$modeleHTMLpartenaire = file_get_contents('../../Template/cardevenementspartenaire.html');
 	
 	/*debug($eventVideGrenier,$eventLAN);
 	die;*/
@@ -36,7 +37,7 @@
 	
 	if (!empty($eventVideGrenier)) {
 		foreach($eventVideGrenier as $value) {
-			$videGrenier .= $eventManager->ficheEvent($value, $modeleHTML, $idUser);
+			$videGrenier .= $eventManager->ficheEvent($value, $modeleHTML, $idUser, $modeleHTMLpartenaire);
 		}
 	} else {
 		$videGrenier = '<p>Aucun Vide Grenier Prévu</p>';
