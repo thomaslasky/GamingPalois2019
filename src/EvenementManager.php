@@ -38,7 +38,7 @@
 			$result = $req->fetchAll();
 			if (!empty($result)) {
 				foreach($result as $value) {
-					if ($value['Dates'] > date("Y-d-m")) {
+					if ($value['Dates'] > date("Y-m-d")) {
 						$event[] = new Evenement($value);
 					}
 				}
@@ -87,6 +87,10 @@
 		//Supprimer un évènement par son ID
 		
 		public function deleteEvent($id) {
+			$partenaireManager = new PartenairesManager();
+			
+			$partenaireManager->deleteAllPartenaire($id);
+			
 			$sql = "DELETE FROM {$this->table} WHERE IDevenement = :id";
 			$req = $this->db->prepare($sql);
 			
@@ -130,76 +134,73 @@
 			
 			setlocale(LC_TIME, 'fr', 'fr_FR', 'fr_FR.ISO8859-1');
 			
-			if (date("Y-m-d") <= $event->getDates()) {
-				
-				$participerManager = new ParticiperManager();
-				$partenaireManager = new PartenairesManager();
-				
-				$action = "";
-				$partenaires = "";
-				
-				$idEvent = $event->getIdevenement();
-				$nom = $event->getNom();
-				$dates = new \DateTime($event->getDates());
-				$date = strftime('%A  %d  %B  %Y', strtotime($event->getDates()));
-				$adresses = $event->getAdresse();
-				$typePlace = $event->getType();
-				$placePrise = $this->countParticipants($idEvent);
-				$placeTotal = $event->getPlace();
-				$urlImg = $event->getUrlimg() ?: "Default.png";
-				$description = $event->getDescription();
-				$prix = $event->getPrix();
-				$placeDisponible = $placeTotal - $placePrise;
-				
-				$verifyRegister = $participerManager->verifyInscription($idUser, $idEvent);
-				
-				if (!empty($idUser)) {
-					if ($placeDisponible <= 0) {
-						$action = "<span class='center-align black-text darken-4'>Inscriptions Complète</span>";
-					} elseif ($verifyRegister === FALSE) {
-						if (date("Y-m-d") < $dates) {
-							if ($event->getType() === "Vide Grenier") {
-								$action = "<span id='loader-register-{$idEvent}' class='cursor-pointer bouton_inscription' onclick='requestFormEvent(readDataForm,\"InscriptionEvent\",{$idEvent}),initLoader(\"register\",{$idEvent})'>Inscription</span>";
-							} else {
-								$action = "<span id='loader-register-{$idEvent}' class='cursor-pointer bouton_inscription' onclick='requestSendLAN(readDataSendLAN,{$idEvent}), initLoader(\"register\",{$idEvent})'>Inscription</span>";
-							}
+			$participerManager = new ParticiperManager();
+			$partenaireManager = new PartenairesManager();
+			
+			$action = "";
+			$partenaires = "";
+			
+			$idEvent = $event->getIdevenement();
+			$nom = $event->getNom();
+			$dates = new \DateTime($event->getDates());
+			$date = strftime('%A  %d  %B  %Y', strtotime($event->getDates()));
+			$adresses = $event->getAdresse();
+			$typePlace = $event->getType();
+			$placePrise = $this->countParticipants($idEvent);
+			$placeTotal = $event->getPlace();
+			$urlImg = $event->getUrlimg() ?: "Default.png";
+			$description = $event->getDescription();
+			$prix = $event->getPrix();
+			$placeDisponible = $placeTotal - $placePrise;
+			
+			$verifyRegister = $participerManager->verifyInscription($idUser, $idEvent);
+			
+			if (!empty($idUser)) {
+				if ($placeDisponible <= 0) {
+					$action = "<span class='center-align black-text darken-4'>Inscriptions Complète</span>";
+				} elseif ($verifyRegister === FALSE) {
+					if (date("Y-m-d") < $dates) {
+						if ($event->getType() === "Vide Grenier") {
+							$action = "<span id='loader-register-{$idEvent}' class='cursor-pointer bouton_inscription' onclick='requestFormEvent(readDataForm,\"InscriptionEvent\",{$idEvent}),initLoader(\"register\",{$idEvent})'>Inscription</span>";
 						} else {
-							$action = "<span class='bouton_inscription'>Inscription Fermé</span>";
+							$action = "<span id='loader-register-{$idEvent}' class='cursor-pointer bouton_inscription' onclick='requestSendLAN(readDataSendLAN,{$idEvent}), initLoader(\"register\",{$idEvent})'>Inscription</span>";
 						}
-					} elseif ($verifyRegister === TRUE) {
-						$action = "<span id='loader-register-{$idEvent}' class='cursor-pointer bouton_inscription' onclick='requestSendDesinscription(readDataSendDesinscriptionEvent,{$idEvent}), initLoader(\"register\",{$idEvent})'>Desinscription</span>";
+					} else {
+						$action = "<span class='bouton_inscription'>Inscription Fermé</span>";
 					}
-				} else {
-					$action = "<p><span class='cursor-pointer blue-text darken-2' onclick='requestForm(readDataForm,\"Login\")'>Connectez vous</span> pour vous inscrire</p>";
+				} elseif ($verifyRegister === TRUE) {
+					$action = "<span id='loader-register-{$idEvent}' class='cursor-pointer bouton_inscription' onclick='requestSendDesinscription(readDataSendDesinscriptionEvent,{$idEvent}), initLoader(\"register\",{$idEvent})'>Desinscription</span>";
 				}
-				
-				$allPartenaire = $partenaireManager->readPartenairesByEvent($event->getIdEvenement());
-				
-				if (!empty($allPartenaire)) {
-					foreach($allPartenaire as $value) {
-						$partenaires .= $partenaireManager->fichePartenaire($value, $modelHTMLpartenaire);
-					}
-				} else {
-					$partenaires = "<p>Aucun partenaire</p>";
-				}
-				
-				$arrReplace = [
-					'{{id}}'              => $idEvent,
-					'{{nomevent}}'        => $nom,
-					'{{description}}'     => $description,
-					'{{dateevents}}'      => $date,
-					'{{adresse}}'         => $adresses,
-					'{{placedisponible}}' => $placeDisponible,
-					'{{typeplace}}'       => $typePlace,
-					'{{idevent}}'         => $idEvent,
-					'{{urlimg}}'          => $urlImg,
-					'{{action}}'          => $action,
-					'{{prix}}'            => $prix . "€",
-					'{{partenaire}}'      => $partenaires,
-				];
-				
-				return strtr($modelHTML, $arrReplace);
+			} else {
+				$action = "<p><span class='cursor-pointer blue-text darken-2' onclick='requestForm(readDataForm,\"Login\")'>Connectez vous</span> pour vous inscrire</p>";
 			}
+			
+			$allPartenaire = $partenaireManager->readPartenairesByEvent($event->getIdEvenement());
+			
+			if (!empty($allPartenaire)) {
+				foreach($allPartenaire as $value) {
+					$partenaires .= $partenaireManager->fichePartenaire($value, $modelHTMLpartenaire);
+				}
+			} else {
+				$partenaires = "<p>Aucun partenaire</p>";
+			}
+			
+			$arrReplace = [
+				'{{id}}'              => $idEvent,
+				'{{nomevent}}'        => $nom,
+				'{{description}}'     => $description,
+				'{{dateevents}}'      => $date,
+				'{{adresse}}'         => $adresses,
+				'{{placedisponible}}' => $placeDisponible,
+				'{{typeplace}}'       => $typePlace,
+				'{{idevent}}'         => $idEvent,
+				'{{urlimg}}'          => $urlImg,
+				'{{action}}'          => $action,
+				'{{prix}}'            => $prix . "€",
+				'{{partenaire}}'      => $partenaires,
+			];
+			
+			return strtr($modelHTML, $arrReplace);
 		}
 		
 		//Affichage de tout les évènements

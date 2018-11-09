@@ -35,11 +35,12 @@
 			<?= $navigateur ?>
 			
 			<div id = "output" class = "col s12 m12 l9 xl10 float_right">
-			
+				<!--Insert New DOM Content-->
 			</div>
 			
 			<div id = 'myModal-page' class = 'modal_css_event'>
 				<div id = "modal" class = 'modal-content col s10 m8 l6 xl6 margin-auto'>
+					<!--Insert New DOM Modal-->
 				</div>
 			</div>
 		</section>
@@ -53,6 +54,8 @@
 		<script type = "text/javascript" src = "Ajax/oXHR.js"></script>
 		<script type = "text/javascript" src = "Ajax/Ajax.js"></script>
 		<script type = "text/javascript" src = "JS/Functions.js"></script>
+		
+		<script src="ckeditor/ckeditor.js"></script>
 		
 		<script>
 			

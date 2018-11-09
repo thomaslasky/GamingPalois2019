@@ -110,10 +110,9 @@
 			$this->rendu .= "</span>";
 		}
 		
-		public function textArea($id, $nomChamp, $label, $iClass = "", $icone = "", $cols = "50") {
+		public function textArea($id, $nomChamp, $iClass = "", $icone = "", $cols = "", $oncharge = "", $value = "") {
 			$this->rendu .= "<i class='$iClass'>$icone</i>";
-			$this->rendu .= "<textarea id ='$id' name='$nomChamp' cols='$cols'></textarea>";
-			$this->rendu .= "<label for='$nomChamp'>$label</label>";
+			$this->rendu .= "<textarea id ='$id' name='$nomChamp' cols='$cols' onclick='$oncharge'>$value</textarea>";
 		}
 		
 		/*public function radio($nomRadio, $valuesArray, $spanClass = '') {

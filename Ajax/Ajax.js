@@ -224,7 +224,7 @@ function requestPresentation(callback) {
 	
 	document.title = "Presentation";
 	
-	xhr.open("GET", "Ajax/HTML/presentation.html", true);
+	xhr.open("GET", "Ajax/PHP/PresentationAssos.php", true);
 	xhr.send(null);
 }
 
@@ -278,23 +278,6 @@ function requestAdministration(callback) {
 }
 
 /*
-Affichage création d'évent
- */
-
-function requestCreateEvent(callback) {
-	xhr.onreadystatechange = function () {
-		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
-			callback(xhr.responseText, "administration");
-		}
-	};
-	
-	document.title = "Admin-Create Event";
-	
-	xhr.open("GET", "Ajax/PHP/CreateEvent.php", true);
-	xhr.send(null);
-}
-
-/*
 Affichage de la gestion des partenaires
  */
 
@@ -308,6 +291,23 @@ function requestAdminPartenaires(callback) {
 	document.title = "Admin-Partenaires";
 	
 	xhr.open("GET", "Ajax/PHP/GestionPartenaires.php", true);
+	xhr.send(null);
+}
+
+/*
+Affichage de la gestion de la présentation du site
+ */
+
+function requestAdminPresentation(callback) {
+	xhr.onreadystatechange = function () {
+		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
+			callback(xhr.responseText, "administration");
+		}
+	};
+	
+	document.title = "Admin-Presentation";
+	
+	xhr.open("GET", "Ajax/PHP/GestionPresentation.php", true);
 	xhr.send(null);
 }
 
@@ -657,6 +657,7 @@ function requestSendCreateEvent(callback) {
 	};
 	
 	let formData = new FormData(document.getElementById("form_create_event"));
+	formData.append("Description", CKEDITOR.instances.editor1.getData());
 	
 	xhr.open("POST", "Ajax/PHP/SendCreateEvent.php", true);
 	xhr.send(formData);
@@ -673,7 +674,8 @@ function readDataSendCreateEvent(oData) {
 	
 	if (json["text"] === "Evenement créé avec succès !") {
 		Materialize.toast(json["text"], 1500);
-		requestEvenements(readData);
+		closeModal("page");
+		requestAdminEvent(readData);
 	} else {
 		Materialize.toast(json["text"], 2500);
 		let input = document.getElementById("csrf");
@@ -723,6 +725,7 @@ function requestSendNewPartenaire(callback) {
 	};
 	
 	let formData = new FormData(document.getElementById("form_add_partenaire"));
+	formData.append("Description", CKEDITOR.instances.editor1.getData());
 	
 	xhr.open("POST", "Ajax/PHP/SendAddPartenaire.php", true);
 	xhr.send(formData);
@@ -761,6 +764,7 @@ function requestSendModifPartenaire(callback, id) {
 	
 	let formData = new FormData(document.getElementById("form_modif_partenaire"));
 	formData.append("idpartenaire", id);
+	formData.append("Description", CKEDITOR.instances.editor1.getData());
 	
 	xhr.open("POST", "Ajax/PHP/SendModificationPartenaire.php", true);
 	xhr.send(formData);
@@ -837,6 +841,7 @@ function requestSendModifEvent(callback, id) {
 	
 	let formData = new FormData(document.getElementById("form_modify_event"));
 	formData.append("IDevenement", id);
+	formData.append("Description", CKEDITOR.instances.editor1.getData());
 	
 	xhr.open("POST", "Ajax/PHP/SendModificationEvent.php", true);
 	xhr.send(formData);
@@ -1041,6 +1046,7 @@ function requestSendNewPartenaireEvent(callback, id) {
 	
 	let formData = new FormData(document.getElementById("form_add_partenaire_event"));
 	formData.append("IDevent", id);
+	formData.append("Description", CKEDITOR.instances.editor1.getData());
 	
 	xhr.open("POST", "Ajax/PHP/SendAddPartenaireEvent.php", true);
 	xhr.send(formData);
@@ -1124,6 +1130,7 @@ function requestSendModifPartenaireEvent(callback, id) {
 	
 	let formData = new FormData(document.getElementById("form_modif_partenaire_event"));
 	formData.append("idpartenaire", id);
+	formData.append("Description", CKEDITOR.instances.editor1.getData());
 	
 	xhr.open("POST", "Ajax/PHP/SendModificationPartenaireEvent.php", true);
 	xhr.send(formData);
@@ -1142,6 +1149,44 @@ function readDataSendModifPartenaireEvent(oData) {
 		Materialize.toast(json["text"], 1500);
 		closeModal("page");
 		requestAdminEvent(readData);
+	} else {
+		Materialize.toast(json["text"], 2500);
+		let input = document.getElementById("csrf");
+		input.value = json['token'];
+	}
+}
+
+/*
+Send modification presentation
+ */
+
+function requestSendModifPresentation(callback) {
+	xhr.onreadystatechange = function () {
+		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
+			callback(xhr.responseText);
+		}
+	};
+	
+	let formData = new FormData(document.getElementById("form_presentation"));
+	formData.append("Presentation", CKEDITOR.instances.editor1.getData());
+	
+	xhr.open("POST", "Ajax/PHP/SendNewPresentation.php", true);
+	xhr.send(formData);
+}
+
+function readDataSendModifPresentation(oData) {
+	
+	let json = JSON.parse(oData);
+	
+	if (json["token"] !== undefined) {
+		let input = document.getElementById("csrf");
+		input.value = json['token'];
+	}
+	
+	if (json["text"] === "Presentation Modifié !") {
+		Materialize.toast(json["text"], 1500);
+		closeModal("page");
+		requestAdminPresentation(readData);
 	} else {
 		Materialize.toast(json["text"], 2500);
 		let input = document.getElementById("csrf");

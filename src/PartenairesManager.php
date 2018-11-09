@@ -77,11 +77,18 @@
 			$req->execute();
 		}
 		
-		public function deletePartenaire($idEvent) {
-			
-			$partenaires = $this->readPartenairesByEvent($idEvent);
+		public function deletePartenaire($idPartenaire) {
 			
 			$sql = "DELETE FROM {$this->table} WHERE IDpartenaire = :id";
+			$req = $this->db->prepare($sql);
+			
+			$req->bindValue('id', $idPartenaire, \PDO::PARAM_INT);
+			
+			$req->execute();
+		}
+		
+		public function deleteAllPartenaire($idEvent) {
+			$sql = "DELETE FROM {$this->table} WHERE IDevenement = :id";
 			$req = $this->db->prepare($sql);
 			
 			$req->bindValue('id', $idEvent, \PDO::PARAM_INT);
@@ -99,7 +106,7 @@
 			
 			$arrReplace = [
 				'{{nompartenaire}}'         => htmlspecialchars($nom),
-				'{{descriptionpartenaire}}' => htmlspecialchars($description),
+				'{{descriptionpartenaire}}' => $description,
 				'{{site}}'                  => htmlspecialchars($site),
 				'{{url}}'                   => htmlspecialchars($url),
 				'{{id}}'                    => htmlspecialchars($id),

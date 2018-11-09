@@ -160,3 +160,9 @@ function showPicture(input) {
 		reader.readAsDataURL(input.files[0]);
 	}
 }
+
+function textEditor() {
+	
+	CKEDITOR.replace('editor1');
+	
+}

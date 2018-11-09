@@ -14,7 +14,7 @@
 	
 	$allPartenairesGP = "<div class='container_partenaires col s10 margin-auto'>";
 	$allPartenairesGP .= "<h1 class='center-align'>Partenaires</h1>";
-	$allPartenairesGP .= "<div class='space-between'>";
+	$allPartenairesGP .= "<div class='space-between go-line'>";
 	
 	if (!empty($allPartenaires)) {
 		foreach ($allPartenaires as $value) {

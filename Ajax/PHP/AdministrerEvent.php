@@ -23,7 +23,7 @@
 			
 			$showAllEvent = "<div class='container_event_admin col s10 margin-auto'>";
 			$showAllEvent .= "<h1 class='center-align'>Administrer événements</h1>";
-			$showAllEvent .= "<div class='space-between'>";
+			$showAllEvent .= "<div class='go-line'>";
 			
 			if (!empty($allEvent)) {
 				foreach($allEvent as $valueEvent) {
@@ -34,6 +34,7 @@
 			}
 			
 			$showAllEvent .= "</div></div>";
+			$showAllEvent .= "<div class='bottom-add-result-icon'><div class='container-bottom-add-result'><div class = 'bottom-add-result'><img class = 'un-surlign cursor-pointer' src = '././Img/Icone/Add.png' onclick = 'requestForm(readDataForm,\"AddEvent\")'></div></div></div>";
 			
 			echo $showAllEvent;
 		} else {

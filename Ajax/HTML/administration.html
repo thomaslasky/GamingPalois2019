@@ -9,27 +9,7 @@
 
 <section id = 'administration' class = 'section_administration col s12'>
 	
-	<div class = 'space-around container_administration'>
-		
-		<!-- Création d'évènements -->
-		
-		<div class = 'col s4'>
-			<div class = 'col s12'>
-				<div class = 'card'>
-					<div class = 'card-image'>
-						<img src = '././Img/Logo/logoGP.png'>
-						<span class = 'card-title'></span>
-					</div>
-					<div class = 'card-content'>
-						<p>Créer des événements</p>
-					</div>
-					<div class = 'card-action'>
-						<span class = 'cursor-pointer center-align'
-						      onclick = 'requestCreateEvent(readData);modifNavAdmin("nav_admin",["name","Créer Evenement"])'>Création Evenements</span>
-					</div>
-				</div>
-			</div>
-		</div>
+	<div class = 'space-around go-line container_administration'>
 		
 		<!-- Administration d'évènements -->
 		
@@ -53,7 +33,7 @@
 		
 		<!-- Gestion des partenaires -->
 		
-		<div class = 'col s4'>
+		<div class = 'col s4' style = 'margin: 0 !important;'>
 			<div class = 'col s12'>
 				<div class = 'card'>
 					<div class = 'card-image'>
@@ -70,6 +50,27 @@
 				</div>
 			</div>
 		</div>
+		
+		<!--Gestion de la présentation du site-->
+		
+		<div class = 'col s4' style = 'margin: 0 !important;'>
+			<div class = 'col s12'>
+				<div class = 'card'>
+					<div class = 'card-image'>
+						<img src = '././Img/Logo/logoGP.png'>
+						<span class = 'card-title'></span>
+					</div>
+					<div class = 'card-content'>
+						<p>Administrer les Partenaires</p>
+					</div>
+					<div class = 'card-action'>
+						<span class = 'cursor-pointer center-align'
+						      onclick = 'requestAdminPresentation(readData);modifNavAdmin("nav_admin",["name","Administrer Partenaires"])'>Gestion Presentation</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	
 	</div>
 
 </section>

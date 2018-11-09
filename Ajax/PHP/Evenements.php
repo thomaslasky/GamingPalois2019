@@ -24,9 +24,6 @@
 	$modeleHTMLAllEvent = file_get_contents('../../Template/allevents.html');
 	$modeleHTMLpartenaire = file_get_contents('../../Template/cardevenementspartenaire.html');
 	
-	/*debug($eventVideGrenier,$eventLAN);
-	die;*/
-	
 	//Gestion Vide Grenier
 	
 	if (isset($_SESSION["id"])) {

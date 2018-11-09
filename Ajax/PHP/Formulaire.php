@@ -29,8 +29,8 @@
 			$formulaireLogin->closeDiv();
 			$formulaireLogin->openDiv("", "input-field col s12");
 			$formulaireLogin->inputPassword("Password", "Password", "Password", "", "", "material-icons prefix", "lock_outline");
-			$formulaireLogin->openDiv("", "input-field col s12 m8 l4 xl4 margin-auto");
-			$formulaireLogin->submit("Validation", "Valider", "col s12 bottum_validation_log margin-auto bottum_validation_inscription", "requestLogin(readDataLogin)");
+			$formulaireLogin->openDiv("", "input-field col s12");
+			$formulaireLogin->submit("Validation", "Valider", "bottum_validation_log bottum_validation_inscription modal_validate_bottom", "requestLogin(readDataLogin)");
 			$formulaireLogin->closeDiv(2);
 			//$formulaireLogin->inputText("Remember", "Remember", "checkbox", "remember_checkbox", "true", "", "Remember me");
 			$login .= $formulaireLogin->render();
@@ -75,9 +75,8 @@
 			$formulaireInscription->inputPassword("Password", "Password", "Password", "", "", "material-icons prefix", "lock_outline");
 			$formulaireInscription->closeDiv();
 			$formulaireInscription->openDiv("", "input-field col s12");
-			$formulaireInscription->openDiv("", "col s6 m6 l4 xl4 margin-auto");
-			$formulaireInscription->submit("Validation", "Valider", "col s12 bottum_validation_log bottum_validation_inscription", "requestRegister(readDataRegister)");
-			$formulaireInscription->closeDiv(3);
+			$formulaireInscription->submit("Validation", "Valider", "bottum_validation_log bottum_validation_inscription modal_validate_bottom", "requestRegister(readDataRegister)");
+			$formulaireInscription->closeDiv(2);
 			$inscription .= $formulaireInscription->render();
 			
 			echo $inscription;
@@ -130,9 +129,8 @@
 			$formulaireBecomeMember->inputText("Message", "Message", "Message", "", "", "material-icons prefix", "message", "");
 			$formulaireBecomeMember->closeDiv();
 			$formulaireBecomeMember->openDiv("", "input-field col s12");
-			$formulaireBecomeMember->openDiv("", "input-field col s6 margin-auto");
-			$formulaireBecomeMember->submit("Validation", "Valider", "col s12 bottum_validation_log bottum_validation_inscription", "requestSendBecomeMember(readDataSendBecomeMember)");
-			$formulaireBecomeMember->closeDiv(2);
+			$formulaireBecomeMember->submit("Validation", "Valider", "bottum_validation_log bottum_validation_inscription modal_validate_bottom", "requestSendBecomeMember(readDataSendBecomeMember)");
+			$formulaireBecomeMember->closeDiv();
 			
 			$contact .= $formulaireBecomeMember->render();
 			
@@ -154,7 +152,7 @@
 			$formulaireInscriptionEvent->inputText("Vendre", "Vendre", "A vendre :", "", "", 'material-icons prefix', 'shopping_cart');
 			$formulaireInscriptionEvent->closeDiv();
 			$formulaireInscriptionEvent->openDiv("", "col s12");
-			$formulaireInscriptionEvent->submit("Submit", "Envoyer", "col s4 margin-auto", "requestSendVideGrenier(readDataSendVideGrenier,{$_GET['idevent']}) ,initLoader(\"register\",{$_GET['idevent']}), closeModal(\"page\")");
+			$formulaireInscriptionEvent->submit("Submit", "Envoyer", "bottum_validation_log bottum_validation_inscription modal_validate_bottom", "requestSendVideGrenier(readDataSendVideGrenier,{$_GET['idevent']}) ,initLoader(\"register\",{$_GET['idevent']}), closeModal(\"page\")");
 			$formulaireInscriptionEvent->closeDiv();
 			
 			$contact .= $formulaireInscriptionEvent->render();
@@ -173,8 +171,8 @@
 			$formulaireAddPartenaire->openDiv("", "input-field col s12");
 			$formulaireAddPartenaire->inputText("Nom", "Nom", "Nom", "", "", "material-icons prefix", "contact_mail", "required");
 			$formulaireAddPartenaire->closeDiv();
-			$formulaireAddPartenaire->openDiv("", "input-field col s12");
-			$formulaireAddPartenaire->inputText("Description", "Description", "Description", "", "", "material-icons prefix", "contact_mail", "required");
+			$formulaireAddPartenaire->openDiv("", "input-field col s12 div-description");
+			$formulaireAddPartenaire->textArea("editor1", "Description", "material-icons prefix", "description", "", "textEditor()");
 			$formulaireAddPartenaire->closeDiv();
 			$formulaireAddPartenaire->openDiv("", "input-field col s12");
 			$formulaireAddPartenaire->inputLink("Lien", "Lien", 'Lien', '', "", "material-icons prefix", "contact_mail", "required");
@@ -182,8 +180,8 @@
 			$formulaireAddPartenaire->openDiv("", "input-field col s12");
 			$formulaireAddPartenaire->inputFile("Logo", "Logo", "Logo", "", "material-icons prefix", "contact_mail", "active", "onchange='showPicture(this);'");
 			$formulaireAddPartenaire->closeDiv();
-			$formulaireAddPartenaire->openDiv("", "input-field col s12 m8 l4 xl4 margin-auto");
-			$formulaireAddPartenaire->submit("Validation", "Valider", "col s12 bottum_validation_log margin-auto bottum_validation_inscription", "requestSendNewPartenaire(readDataSendNewPartenaire)");
+			$formulaireAddPartenaire->openDiv("", "input-field col s12");
+			$formulaireAddPartenaire->submit("Validation", "Valider", "bottum_validation_log bottum_validation_inscription modal_validate_bottom", "requestSendNewPartenaire(readDataSendNewPartenaire)");
 			$formulaireAddPartenaire->closeDiv();
 			
 			$add .= $formulaireAddPartenaire->render();
@@ -207,13 +205,14 @@
 			$formulaireModifPartenaire->inputText("Nom", "Nom", "Nom", "", $partenaire->getNom() ?: "", "material-icons prefix", "contact_mail", "required", "active");
 			$formulaireModifPartenaire->closeDiv();
 			$formulaireModifPartenaire->openDiv("", "input-field col s12");
-			$formulaireModifPartenaire->inputText("Description", "Description", "Description", "", $partenaire->getDescription() ?: "", "material-icons prefix", "contact_mail", "required", "active");
+			$formulaireModifPartenaire->textArea("editor1", "Description", "material-icons prefix", "description", "", "textEditor()", $partenaire->getDescription() ?: "");
+			//$formulaireModifPartenaire->inputText("Description", "Description", "Description", "", $partenaire->getDescription() ?: "", "material-icons prefix", "contact_mail", "required", "active");
 			$formulaireModifPartenaire->closeDiv();
 			$formulaireModifPartenaire->openDiv("", "input-field col s12");
 			$formulaireModifPartenaire->inputLink("Lien", "Lien", 'Lien', '', $partenaire->getSite() ?: "", "material-icons prefix", "contact_mail", "required", "active");
 			$formulaireModifPartenaire->closeDiv();
-			$formulaireModifPartenaire->openDiv("", "input-field col s12 m8 l4 xl4 margin-auto");
-			$formulaireModifPartenaire->submit("Validation", "Valider", "col s12 bottum_validation_log margin-auto bottum_validation_inscription", "requestSendModifPartenaire(readDataSendModifPartenaire,{$_GET["idpartenaire"]})");
+			$formulaireModifPartenaire->openDiv("", "input-field col s12");
+			$formulaireModifPartenaire->submit("Validation", "Valider", "bottum_validation_log bottum_validation_inscription modal_validate_bottom", "requestSendModifPartenaire(readDataSendModifPartenaire,{$_GET["idpartenaire"]})");
 			$formulaireModifPartenaire->closeDiv();
 			
 			$modif .= $formulaireModifPartenaire->render();
@@ -232,8 +231,8 @@
 			$formulaireModifPartenaire->openDiv("", "input-field col s12");
 			$formulaireModifPartenaire->inputFile("Logo", "Logo", "Logo", "", "", "", "active", "onchange='showPicture(this);'");
 			$formulaireModifPartenaire->closeDiv();
-			$formulaireModifPartenaire->openDiv("", "input-field col s12 m8 l4 xl4 margin-auto");
-			$formulaireModifPartenaire->submit("Validation", "Valider", "col s12 bottum_validation_log margin-auto bottum_validation_inscription", "requestSendModifImgPartenaire(readDataSendModifImgPartenaire,{$_GET["idpartenaire"]})");
+			$formulaireModifPartenaire->openDiv("", "input-field col s12");
+			$formulaireModifPartenaire->submit("Validation", "Valider", "bottum_validation_log bottum_validation_inscription modal_validate_bottom", "requestSendModifImgPartenaire(readDataSendModifImgPartenaire,{$_GET["idpartenaire"]})");
 			$formulaireModifPartenaire->closeDiv();
 			
 			$modif .= $formulaireModifPartenaire->render();
@@ -269,10 +268,10 @@
 			$formulaireModifEvent->inputNumber("Prix", "Prix", "Tarif", "", $event->getPrix() ?: "", "material-icons prefix", "euro_symbol", "active");
 			$formulaireModifEvent->closeDiv(2);
 			$formulaireModifEvent->openDiv("", "input-field col s12");
-			$formulaireModifEvent->inputText("Description", "Description", "Description", "", $event->getDescription() ?: "", "material-icons prefix", "description", "", "active");
+			$formulaireModifEvent->textArea("editor1", "Description", "material-icons prefix", "description", "", "textEditor()", $event->getDescription() ?: "");
 			$formulaireModifEvent->closeDiv();
-			$formulaireModifEvent->openDiv("", "margin-auto");
-			$formulaireModifEvent->submit("Envoyer", "Modifier", "valide_form", "requestSendModifEvent(readDataSendModifEvent,{$_GET["idevent"]})");
+			$formulaireModifEvent->openDiv("", "");
+			$formulaireModifEvent->submit("Envoyer", "Modifier", "bottum_validation_log bottum_validation_inscription modal_validate_bottom", "requestSendModifEvent(readDataSendModifEvent,{$_GET["idevent"]})");
 			$formulaireModifEvent->closeDiv();
 			
 			$modifEvent .= $formulaireModifEvent->render();
@@ -293,8 +292,8 @@
 			$formulaireModifEvent->openDiv("", "input-field col s12");
 			$formulaireModifEvent->inputFile("Logo", "Logo", "Logo", "", "", "", "active", "onchange='showPicture(this);'");
 			$formulaireModifEvent->closeDiv();
-			$formulaireModifEvent->openDiv("", "input-field col s12 m8 l4 xl4 margin-auto");
-			$formulaireModifEvent->submit("Validation", "Valider", "col s12 bottum_validation_log margin-auto bottum_validation_inscription", "requestSendModifImgEvent(readDataSendModifImgEvent,{$_GET["idevent"]})");
+			$formulaireModifEvent->openDiv("", "input-field col s12");
+			$formulaireModifEvent->submit("Validation", "Valider", "bottum_validation_log bottum_validation_inscription modal_validate_bottom", "requestSendModifImgEvent(readDataSendModifImgEvent,{$_GET["idevent"]})");
 			$formulaireModifEvent->closeDiv();
 			
 			$modif .= $formulaireModifEvent->render();
@@ -318,8 +317,8 @@
 			$formulaireSendMailAllParticipant->openDiv("", "input-field col s12");
 			$formulaireSendMailAllParticipant->inputText("Message", "Message", "Message", "", "", "material-icons prefix", "email", "", "");
 			$formulaireSendMailAllParticipant->closeDiv();
-			$formulaireSendMailAllParticipant->openDiv("", "input-field col s12 m8 l4 xl4 margin-auto");
-			$formulaireSendMailAllParticipant->submit("Validation", "Valider", "col s12 bottum_validation_log margin-auto bottum_validation_inscription", "requestSendMailAllParticipants(readDataSendMailAllParticipants,{$_GET["idevent"]})");
+			$formulaireSendMailAllParticipant->openDiv("", "input-field col s12");
+			$formulaireSendMailAllParticipant->submit("Validation", "Valider", "bottum_validation_log bottum_validation_inscription modal_validate_bottom", "requestSendMailAllParticipants(readDataSendMailAllParticipants,{$_GET["idevent"]})");
 			$formulaireSendMailAllParticipant->closeDiv();
 			
 			$sendEmailAll .= $formulaireSendMailAllParticipant->render();
@@ -340,7 +339,8 @@
 			$formulaireAddPartenaire->inputText("Nom", "Nom", "Nom", "", "", "material-icons prefix", "contact_mail", "required");
 			$formulaireAddPartenaire->closeDiv();
 			$formulaireAddPartenaire->openDiv("", "input-field col s12");
-			$formulaireAddPartenaire->inputText("Description", "Description", "Description", "", "", "material-icons prefix", "contact_mail", "required");
+			$formulaireAddPartenaire->textArea("editor1", "Description", "material-icons prefix", "description", "", "textEditor()");
+			//$formulaireAddPartenaire->inputText("Description", "Description", "Description", "", "", "material-icons prefix", "contact_mail", "required");
 			$formulaireAddPartenaire->closeDiv();
 			$formulaireAddPartenaire->openDiv("", "input-field col s12");
 			$formulaireAddPartenaire->inputLink("Lien", "Lien", 'Lien', '', "", "material-icons prefix", "contact_mail", "required");
@@ -348,8 +348,8 @@
 			$formulaireAddPartenaire->openDiv("", "input-field col s12");
 			$formulaireAddPartenaire->inputFile("Logo", "Logo", "Logo", "", "material-icons prefix", "contact_mail", "active", "onchange='showPicture(this);'");
 			$formulaireAddPartenaire->closeDiv();
-			$formulaireAddPartenaire->openDiv("", "input-field col s12 m8 l4 xl4 margin-auto");
-			$formulaireAddPartenaire->submit("Validation", "Valider", "col s12 bottum_validation_log margin-auto bottum_validation_inscription", "requestSendNewPartenaireEvent(readDataSendNewPartenaireEvent,{$_GET["idevent"]})");
+			$formulaireAddPartenaire->openDiv("", "input-field col s12");
+			$formulaireAddPartenaire->submit("Validation", "Valider", "bottum_validation_log bottum_validation_inscription modal_validate_bottom", "requestSendNewPartenaireEvent(readDataSendNewPartenaireEvent,{$_GET["idevent"]})");
 			$formulaireAddPartenaire->closeDiv();
 			
 			$add .= $formulaireAddPartenaire->render();
@@ -373,13 +373,13 @@
 			$formulaireAddPartenaire->inputText("Nom", "Nom", "Nom", "", $partenaire->getNom() ?: "", "material-icons prefix", "contact_mail", "required", "active");
 			$formulaireAddPartenaire->closeDiv();
 			$formulaireAddPartenaire->openDiv("", "input-field col s12");
-			$formulaireAddPartenaire->inputText("Description", "Description", "Description", "", $partenaire->getDescription() ?: "", "material-icons prefix", "contact_mail", "required", "active");
+			$formulaireAddPartenaire->textArea("editor1", "Description", "material-icons prefix", "description", "", "textEditor()", $partenaire->getDescription() ?: "");
 			$formulaireAddPartenaire->closeDiv();
 			$formulaireAddPartenaire->openDiv("", "input-field col s12");
 			$formulaireAddPartenaire->inputLink("Lien", "Lien", 'Lien', '', $partenaire->getSite() ?: "", "material-icons prefix", "contact_mail", "required", "active");
 			$formulaireAddPartenaire->closeDiv();
-			$formulaireAddPartenaire->openDiv("", "input-field col s12 m8 l4 xl4 margin-auto");
-			$formulaireAddPartenaire->submit("Validation", "Valider", "col s12 bottum_validation_log margin-auto bottum_validation_inscription", "requestSendModifPartenaireEvent(readDataSendModifPartenaireEvent,{$_GET["idpartenaire"]})");
+			$formulaireAddPartenaire->openDiv("", "input-field col s12");
+			$formulaireAddPartenaire->submit("Validation", "Valider", "bottum_validation_log bottum_validation_inscription modal_validate_bottom", "requestSendModifPartenaireEvent(readDataSendModifPartenaireEvent,{$_GET["idpartenaire"]})");
 			$formulaireAddPartenaire->closeDiv();
 			
 			$modif .= $formulaireAddPartenaire->render();
@@ -399,13 +399,62 @@
 			$formulaireModifPartenaireEvent->openDiv("", "input-field col s12");
 			$formulaireModifPartenaireEvent->inputFile("Logo", "Logo", "Logo", "", "", "", "active", "onchange='showPicture(this);'");
 			$formulaireModifPartenaireEvent->closeDiv();
-			$formulaireModifPartenaireEvent->openDiv("", "input-field col s12 m8 l4 xl4 margin-auto");
-			$formulaireModifPartenaireEvent->submit("Validation", "Valider", "col s12 bottum_validation_log margin-auto bottum_validation_inscription", "requestSendModifImgPartenaireEvent(readDataSendModifImgPartenaireEvent,{$_GET["idpartenaire"]})");
+			$formulaireModifPartenaireEvent->openDiv("", "input-field col s12");
+			$formulaireModifPartenaireEvent->submit("Validation", "Valider", "bottum_validation_log bottum_validation_inscription modal_validate_bottom", "requestSendModifImgPartenaireEvent(readDataSendModifImgPartenaireEvent,{$_GET["idpartenaire"]})");
 			$formulaireModifPartenaireEvent->closeDiv();
 			
 			$modif .= $formulaireModifPartenaireEvent->render();
 			$modif .= "<img id='blah' class='margin-auto' style='display: block;' src='#' alt='' />";
 			
 			echo $modif;
+		}
+		
+		//Création formulaire d'ajout d'event
+		
+		if ($_GET["type"] === "AddEvent") {
+			
+			$typeEvent = [
+				"Vide Grenier",
+				"LAN"
+			];
+			
+			$addEvent = "<h1 class='center-align'>Créer un événement</h1>";
+			
+			$formulaireNewEvent = new App\Formulaire("post", "container_addevent margin-auto","form_create_event");
+			$csrf->generateInput("csrf", $formulaireNewEvent);
+			$formulaireNewEvent->openDiv("","col s12");
+			$formulaireNewEvent->select("Type", $typeEvent, "Type d'évènement", "");
+			$formulaireNewEvent->closeDiv();
+			$formulaireNewEvent->openDiv("","input-field col s12");
+			$formulaireNewEvent->inputFile("File","File","Logo de l'événement","","material-icons prefix","add_photo_alternate","active","onchange='showPicture(this);'");
+			$formulaireNewEvent->closeDiv();
+			$formulaireNewEvent->openDiv("","input-field col s12");
+			$formulaireNewEvent->inputText("Name", "Nom", "Nom de l'événement", "", "", "material-icons prefix","label");
+			$formulaireNewEvent->closeDiv();
+			$formulaireNewEvent->openDiv("","input-field col s12");
+			$formulaireNewEvent->inputDate("Date","Date","Date de l'événement","","","material-icons prefix","date_range","active");
+			$formulaireNewEvent->closeDiv();
+			$formulaireNewEvent->openDiv("","input-field col s12");
+			$formulaireNewEvent->openDiv("","input-field col s7");
+			$formulaireNewEvent->inputText("Adresse", "Adresse", "Adresse", "", "", "material-icons prefix","map");
+			$formulaireNewEvent->closeDiv();
+			$formulaireNewEvent->openDiv("","input-field col s3");
+			$formulaireNewEvent->inputNumber("Place", "Place", "Place/Table", "", "", "material-icons prefix","confirmation_number");
+			$formulaireNewEvent->closeDiv();
+			$formulaireNewEvent->openDiv("","input-field col s2");
+			$formulaireNewEvent->inputNumber("Prix", "Prix", "Tarif", "", "", "material-icons prefix","euro_symbol");
+			$formulaireNewEvent->closeDiv(2);
+			$formulaireNewEvent->openDiv("","input-field col s12");
+			$formulaireNewEvent->textArea("editor1", "Description", "material-icons prefix", "description", "", "textEditor()");
+			$formulaireNewEvent->closeDiv();
+			$formulaireNewEvent->openDiv("","input-field col s12");
+			$formulaireNewEvent->submit("Envoyer", "Créer", "bottum_validation_log bottum_validation_inscription modal_validate_bottom","requestSendCreateEvent(readDataSendCreateEvent)");
+			$formulaireNewEvent->closeDiv();
+			
+			$addEvent .= $formulaireNewEvent->render();
+			
+			$addEvent .= "<img id='blah' class='margin-auto' style='display: block;' src='#' alt='' />";
+			
+			echo $addEvent;
 		}
 	}
