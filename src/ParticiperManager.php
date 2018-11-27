@@ -85,7 +85,7 @@
 			
 			$allParticipants = $this->selectParticipants($event->getIdEvenement());
 			
-			$date = strftime('%A  %d  %B  %Y', strtotime($event->getDates()));
+			$date = ucwords(strftime('%A  %d  %B  %Y', strtotime($event->getDates())));
 			
 			if ($event->getType() === "Vide Grenier") {
 				$moreHead = "<th>Vend</th><th>Table</th><th>Paiement</th>";

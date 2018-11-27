@@ -38,13 +38,21 @@
 			                  class = 'responsive-img logo_menu'>
 			</a>
 			<ul class = 'column margin-auto color_a'>
-				<li class = 'navigate_link cursor-pointer' onclick = 'requestEvenements(readData)'>Événements</li>
-				<li class = 'navigate_link cursor-pointer' onclick = 'requestPresentation(readData)'>Présentation</li>
-				<li class = 'navigate_link cursor-pointer' onclick = 'requestPartenaires(readData)'>Partenaires</li>
-				<li class = 'navigate_link cursor-pointer hide-on-med-and-down'
-				    onclick = 'requestWebTV(readData) ; closeNavigateur()'>WebTV
+				<li class = 'navigate_link cursor-pointer' onclick = 'requestEvenements(readData); closeNavigateur()'>
+					Événements
 				</li>
-				<li class = 'navigate_link cursor-pointer' onclick = 'requestContact(readData)'>Contact</li>
+				<li class = 'navigate_link cursor-pointer' onclick = 'requestPresentation(readData); closeNavigateur()'>
+					Présentation
+				</li>
+				<li class = 'navigate_link cursor-pointer' onclick = 'requestPartenaires(readData); closeNavigateur()'>
+					Partenaires
+				</li>
+				<li class = 'navigate_link cursor-pointer' onclick = 'requestWebTV(readData) ; closeNavigateur()'>
+					WebTV
+				</li>
+				<li class = 'navigate_link cursor-pointer' onclick = 'requestContact(readData); closeNavigateur()'>
+					Contact
+				</li>
 			</ul>
 			<div id = 'is_connect'>
 				{{usertool}}

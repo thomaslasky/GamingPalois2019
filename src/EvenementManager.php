@@ -143,7 +143,7 @@
 			$idEvent = $event->getIdevenement();
 			$nom = $event->getNom();
 			$dates = new \DateTime($event->getDates());
-			$date = strftime('%A  %d  %B  %Y', strtotime($event->getDates()));
+			$date = ucwords(strftime('%A  %d  %B  %Y', strtotime($event->getDates())));
 			$adresses = $event->getAdresse();
 			$typePlace = $event->getType();
 			$placePrise = $this->countParticipants($idEvent);
@@ -156,7 +156,7 @@
 			$verifyRegister = $participerManager->verifyInscription($idUser, $idEvent);
 			
 			if (!empty($idUser)) {
-				if ($placeDisponible <= 0) {
+				if ($placeDisponible <= 0 AND $verifyRegister === FALSE) {
 					$action = "<span class='center-align black-text darken-4'>Inscriptions Complète</span>";
 				} elseif ($verifyRegister === FALSE) {
 					if (date("Y-m-d") < $dates) {
@@ -172,7 +172,7 @@
 					$action = "<span id='loader-register-{$idEvent}' class='cursor-pointer bouton_inscription' onclick='requestSendDesinscription(readDataSendDesinscriptionEvent,{$idEvent}), initLoader(\"register\",{$idEvent})'>Desinscription</span>";
 				}
 			} else {
-				$action = "<p><span class='cursor-pointer blue-text darken-2' onclick='requestForm(readDataForm,\"Login\")'>Connectez vous</span> pour vous inscrire</p>";
+				$action = "<p style=\"text-align: center\"><span class='cursor-pointer blue-text darken-2' onclick='requestForm(readDataForm,\"Login\")'>Connectez vous</span> pour vous inscrire</p>";
 			}
 			
 			$allPartenaire = $partenaireManager->readPartenairesByEvent($event->getIdEvenement());

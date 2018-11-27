@@ -1,10 +1,9 @@
-<div style = 'width: 100%; display: flex; flex-direction: column'>
-	<div>
-		<div class = 'col s3'>
-			<div>
-				<img class = 'responsive-img' src = '././Img/Events/{{url}}' alt = 'Image Evenement'>
-			</div>
-			<div>
+<div class = 'col s12'>
+	<div class = 'col s12 m12 l3 xl3'>
+		<div>
+			<img class = 'responsive-img' src = '././Img/Events/{{url}}' alt = 'Image Evenement'>
+		</div>
+		<div>
 		<span class = 'option_modif_event_admin'>
 				<!--<i onclick = 'requestFormEvent(readDataForm,"SendEmailAllParticipant","{{id}}")'
 				   class = 'small material-icons cursor-pointer waves-effect waves-light blue'>email</i>-->
@@ -17,96 +16,95 @@
 				<i onclick = 'requestDeleteEventConfirm("{{id}}")'
 				   class = 'small material-icons cursor-pointer waves-effect waves-light red'>delete</i>
 			</span>
-			</div>
 		</div>
-		<div class = 'col s9'>
+	</div>
+	<div class = 'col s12 m12 l9 xl9'>
+		<div>
 			<div>
-				<div>
-					<h2>{{nom}}</h2>
-				</div>
-				<div>
-					<p>{{description}}</p>
-				</div>
-				<div>
-					<table class = 'centered bordered highlight'>
-						<thead>
-							<tr>
-								<th>Dates</th>
-								<th>Adresse</th>
-								<th>Place</th>
-								<th>Prix</th>
-								<th>Type</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>{{date}}</td>
-								<td>{{adresse}}</td>
-								<td>{{place}}</td>
-								<td>{{prix}}</td>
-								<td>{{type}}</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+				<h2>{{nom}}</h2>
 			</div>
-		</div>
-	</div>
-	<div>
-		<div class = 'collapsible'>
-			<div class = 'collapsible-header space-between' data-collapsible = 'accordion'>
-				<div class = 'col s9' onclick = "collapsible('participants','{{id}}')">
-					<p class = 'valign-wrapper un-surlign col s9'>Participants</p>
-				</div>
-				<div class = 'col s3 cursor-pointer'>
-					<p class = '' onclick = 'requestGeneratePDF(readDataGeneratePDF,"{{id}}")'>Générer une liste
-					                                                                           PDF</p>
-				</div>
+			<div>
+				<p>{{description}}</p>
 			</div>
-			<div id = 'collaps-participants-{{id}}' class = 'collapsible-body collapsible-body-event'>
-				<table class = 'responsive-table centered striped bordered highlight'>
+			<div>
+				<table class = 'responsive-table centered bordered highlight'>
 					<thead>
 						<tr>
-							<th>ID</th>
-							<th>Email</th>
-							<th>Prenom</th>
-							<th>Nom</th>
-							<th>Age</th>
-							<th>Téléphone</th>
-							<th>Status</th>
-							{{morehead}}
+							<th>Dates</th>
+							<th>Adresse</th>
+							<th>Place</th>
+							<th>Prix</th>
+							<th>Type</th>
 						</tr>
 					</thead>
 					<tbody>
-						{{user}}
+						<tr>
+							<td>{{date}}</td>
+							<td>{{adresse}}</td>
+							<td>{{place}}</td>
+							<td>{{prix}}</td>
+							<td>{{type}}</td>
+						</tr>
 					</tbody>
 				</table>
 			</div>
 		</div>
 	</div>
-	<div>
-		<div class = 'collapsible'>
-			<div class = 'collapsible-header space-between' data-collapsible = 'accordion'>
-				<div class = 'col s12' onclick = "collapsible('partenaires','{{id}}')">
-					<p class = 'valign-wrapper un-surlign col s9'>Partenaires</p>
-				</div>
+</div>
+<div class = 'col s12'>
+	<div class = 'collapsible'>
+		<div class = 'collapsible-header space-between' data-collapsible = 'accordion'>
+			<div class = 'col s9' onclick = "collapsible('participants','{{id}}')">
+				<p class = 'valign-wrapper un-surlign col s9'>Participants</p>
 			</div>
-			<div id = 'collaps-partenaires-{{id}}' class = 'collapsible-body collapsible-body-event'>
-				<table class = 'responsive-table centered striped bordered highlight'>
-					<thead>
-						<tr>
-							<th>Logo</th>
-							<th>Nom</th>
-							<th>Description</th>
-							<th>Site</th>
-							<th>Actions</th>
-						</tr>
-					</thead>
-					<tbody>
-						{{partenaires}}
-					</tbody>
-				</table>
+			<div class = 'col s3 cursor-pointer'>
+				<p class = '' onclick = 'requestGeneratePDF(readDataGeneratePDF,"{{id}}")'>Générer une liste
+				                                                                           PDF</p>
 			</div>
+		</div>
+		<div id = 'collaps-participants-{{id}}' class = 'collapsible-body collapsible-body-event'>
+			<table class = 'responsive-table centered striped bordered highlight'>
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Email</th>
+						<th>Prenom</th>
+						<th>Nom</th>
+						<th>Age</th>
+						<th>Téléphone</th>
+						<th>Status</th>
+						{{morehead}}
+					</tr>
+				</thead>
+				<tbody>
+					{{user}}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<div class = 'col s12'>
+	<div class = 'collapsible'>
+		<div class = 'collapsible-header space-between' data-collapsible = 'accordion'>
+			<div class = 'col s12' onclick = "collapsible('partenaires','{{id}}')">
+				<p class = 'valign-wrapper un-surlign col s9'>Partenaires</p>
+			</div>
+		</div>
+		<div id = 'collaps-partenaires-{{id}}' class = 'collapsible-body collapsible-body-event'>
+			<table class = 'responsive-table centered striped bordered highlight'>
+				<thead>
+					<tr>
+						<th>Logo</th>
+						<th>Nom</th>
+						<th>Description</th>
+						<th>Site</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{partenaires}}
+				</tbody>
+			</table>
 		</div>
 	</div>
 </div>

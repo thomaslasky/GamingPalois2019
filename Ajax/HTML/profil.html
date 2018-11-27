@@ -1,28 +1,31 @@
 <div class = 'container_informations col s11 margin-auto'>
 	<div>
-		<h1>Profil</h1>
+		<h1 class = 'flow-text'>Profil</h1>
 	</div>
-	<div class = 'col s3'>
+	<div class = 'col l3 xl3 hide-on-med-and-down'>
 		<img class = 'responsive-img' src = './Img/Logo/logoGP.png'>
 	</div>
-	<div class = 'col s9'>
+	<div class = 'col s12 m12 l9 xl9'>
 		<div class = 'col s12'>
 			<p class = 'center-align'>{{identity}}</p>
 		</div>
-		<form id = 'form_modification_profil' class = 'row flex-direction-column col s12 valign-wrapper'>
-			<div class = 'col s12 center-align space-between'>
-				<div class = 'input-field col s6'>
+		<form id = 'form_modification_profil' class = 'flex-direction-column col s12 valign-wrapper'>
+			<div class = 'col s12 center-align'>
+				
+				<div class = 'input-field col s12 m12 l6 xl6'>
 					<i class = 'material-icons prefix'>contact_mail</i>
 					<input id = 'modify_email' class = '' type = 'email' name = 'Email' value = '{{mail}}'
 					       readonly = '' />
 					<label class = 'active' for = 'modify_email'>Email</label>
 				</div>
-				<div class = 'input-field col s6'>
+				
+				<div class = 'input-field col s12 m12 l6 xl6'>
 					<i class = 'material-icons prefix'>contact_phone</i>
 					<input id = 'modify_telephone' class = '' type = 'tel' name = 'Telephone' value = '{{telephone}}'
 					       readonly = '' />
 					<label class = 'active' for = 'modify_telephone'>Telephone</label>
 				</div>
+			
 			</div>
 			<div id = 'modify_profil' style = 'width: 80%; display: flex; justify-content: space-around'>
 				<span class = 'cursor-pointer' onclick = 'modifyInput("profil","telephone","email")'>Modifier</span>

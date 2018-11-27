@@ -18,8 +18,8 @@
 			
 			$modeleHtml = file_get_contents("../HTML/cardpartenairesadmin.html");
 			
-			$presentation = "<div class='container_partenaires col s10 margin-auto'>";
-			$presentation .= "<h1 class='center-align'>Presentation Manager</h1>";
+			$presentation = "<div class='container_partenaires col s12 m12 l10 xl10 margin-auto'>";
+			$presentation .= "<h1 class='center-align flow-text'>Presentation Manager</h1>";
 			$presentation .= "<div class='space-between go-line'>";
 			
 			$formulairePresentation = new App\Formulaire("post","formulaire_user_log column","form_presentation");

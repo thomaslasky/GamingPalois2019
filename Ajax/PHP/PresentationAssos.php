@@ -12,6 +12,8 @@
 	
 	$modeleHTML = file_get_contents("../HTML/presentation.html");
 	
+	$presentationShow = "";
+	
 	if (!empty($presentation)) {
 		$presentationShow .= $siteManager->showPresentation($presentation, $modeleHTML);
 		echo $presentationShow;

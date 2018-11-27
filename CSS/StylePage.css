@@ -105,18 +105,19 @@
 /*WEB TV*/
 
 .container_webtv_stuff {
-	display: flex;
 	padding: 15px;
+}
+
+.container_webtv_stuff > div , .container_webtv_stuff > div > iframe {
+	padding: 0 !important;
+}
+
+.container_webtv_stuff > div {
+	margin-bottom: 10px;
 }
 
 .container_webtv iframe {
 	height: 500px !important;
-}
-
-/*CONTACT*/
-
-.container_type_contact {
-	display: flex;
 }
 
 /*PRESENTATION*/
@@ -163,6 +164,10 @@
 
 .section_administration {
 	margin-top: 15px;
+}
+
+.container_administration > div {
+	padding: 0 !important;
 }
 
 /*CREATE EVENt*/
